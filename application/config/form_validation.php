@@ -36,7 +36,8 @@
             )
         ),
 
-        'agentController' => array(
+        // controlleur + methode qui charge la vue agent 
+        'agentController/agentView' => array(
 
             array(
                 'field' => 'name',
@@ -75,5 +76,7 @@
             )
 
         ),
+
+
     )
 ?>
