@@ -1,6 +1,8 @@
 <?php
 
     $config = array(
+
+        //controlleur + method qui charge la vue client
         'clientController/clientView' => array(
             array(
                 'field' => 'name',
