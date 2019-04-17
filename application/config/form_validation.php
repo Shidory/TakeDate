@@ -4,6 +4,7 @@
 
         //controlleur + method qui charge la vue client
         'clientController/clientView' => array(
+
             array(
                 'field' => 'name',
                 'label' => 'Nom',
@@ -30,9 +31,49 @@
 
             array(
                 'field' => 'age',
-                'label' => 'age',
+                'label' => 'Age',
                 'rules' => 'required'
             )
-        )
+        ),
+
+        'agentController' => array(
+
+            array(
+                'field' => 'name',
+                'label' => 'Nom',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'matricule',
+                'label' => 'Matricule',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'photo',
+                'label' => 'Photo',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'adresse',
+                'label' => 'Adresse',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'phone',
+                'label' => 'Phone',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'mail',
+                'label' => 'Email',
+                'rules' => 'required'
+            )
+
+        ),
     )
 ?>
