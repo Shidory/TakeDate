@@ -11,10 +11,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
             
             $username = $this->input->post('username');
             $password = $this->input->post('password');
+            $hash = sha1($password);
 
             $data = array(
                 'username' => $username,
-                'password' => $password
+                'password' => $hash
             );
 
             if($this->EntreprisesModel->can_login($data)){
