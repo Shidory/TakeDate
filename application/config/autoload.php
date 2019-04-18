@@ -89,7 +89,11 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
+<<<<<<< HEAD
 $autoload['helper'] = array('url');
+=======
+$autoload['helper'] = array('url', 'file', 'form_validation');
+>>>>>>> deece89aae31e6ed7adc1b69305f3615784c6790
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +136,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('ClientModel', 'RdvModel', 'HoraireModel', 'AgentsModel', 'EntreprisesModel'; 'DepartementModel');
