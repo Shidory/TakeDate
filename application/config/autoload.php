@@ -139,3 +139,6 @@ $autoload['language'] = array();
 */
 <<<<<<< HEAD
 $autoload['model'] = array('ClientModel', 'RdvModel', 'HoraireModel', 'AgentsModel', 'EntreprisesModel', 'DepartementModel');
+=======
+$autoload['model'] = array('ClientModel', 'RdvModel', 'HoraireModel', 'AgentsModel', 'EntreprisesModel','DepartementModel');
+>>>>>>> f4539c463e0af511f4c0a120ce91baa77199e41c
