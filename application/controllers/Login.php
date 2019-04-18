@@ -31,6 +31,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
 
         public function enter(){
-            if()
+            if($this->session->userdata('username') != ''){
+                echo '<h1>Welcome '.$this->session->userdata('username').'</h1>';
+            }
+            else{
+                redirect(base_url('login'));
+            }
         }
     }
