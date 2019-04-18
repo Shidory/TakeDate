@@ -1,17 +1,19 @@
 <div>
 <h3 >Ajouter Agent</h3>
-<?php echo form_open(''); ?>
+<?php echo form_open('agent/AgentController/ajouter_agent'); ?>
 <div>
     <p>Nom :</p>
-    <input type="text" name="nom"  class="champ" required>
-    <p>Numero matricule :</p>
-    <input type="text" name="num_mat"  required>
-    <p>Adresse :</p>
-    <input type="text" name="adresse" required>
+    <input type="text" name="nomAgent"  class="champ" required>
     <p>Telephone :</p>
     <input type="text" nama="telephone" required>
     <p>Email :</p>
     <input type="text" name="email">
+    <p>Photo :</p>
+    <input type="text" name="photo">
+    <p>Nom utilisateur :</p>
+    <input type="text" name="username">
+    <p>Mot de passe :</p>
+    <input type="text" name="pwd">
 </div>
 <br>
 <input type="submit" value="Envoyer">
