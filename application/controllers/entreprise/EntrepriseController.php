@@ -27,6 +27,7 @@ class EntrepriseController extends CI_Controller {
 				"date" => $date,
 				"heure" => $heure,
 				"duree" => $duree,
+				"etat" => "2",
 				"commentaire" => $commentaire
 			);
 
