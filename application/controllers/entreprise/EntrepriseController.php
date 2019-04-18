@@ -7,4 +7,5 @@
 		{
 			$this->load->view('');
 		}
+
 	}

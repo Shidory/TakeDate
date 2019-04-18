@@ -51,7 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 // Le rooting se fait ici
-$route['default_controller'] = 'login';
+$route['default_controller'] = 'Welcome';
+//$route['default_controller'] = 'login';
 $route['login_validation'] = 'loginController/login_validation';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
