@@ -12,6 +12,7 @@ class EntrepriseController extends CI_Controller {
 	public function repporter_rdv(){
 
 		$this->input->post("motif");
+		$this->input->post("date");
 	}
 
 	#######################################################
