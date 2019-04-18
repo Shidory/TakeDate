@@ -3,7 +3,6 @@
 	<div>
 		<span>Client: x</span>
 		<div>
-
 			<?= anchor('annulerRDV/annulerRdv/$id') ?>
 		</div>
 	</div>
