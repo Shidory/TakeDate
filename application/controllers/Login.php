@@ -22,7 +22,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     'username' => $data['username']
                 );
 
-                $this->session->set_userdata($session_data['username']);
+                $this->session->set_userdata($session_data);
                 redirect(base_url('login/enter'));
             }
             else{
@@ -31,17 +31,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
 
         public function enter(){
-            if($this->session->userdata('username') != ''){
-                echo '<h1>Welcome '.$this->session->userdata('username').'</h1>';
-                // echo '<label><a href="'.base_url('Login/logout').'">logout</a></label>';
+            if($this->session->userdata['username'] != ''){
+                echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
+                echo '<label><a href="'.base_url('login/logout').'">logout</a></label>';
             }
             else{
-                redirect(base_url('Login'));
+                redirect(base_url('login'));
             }
         }
 
         public function logout(){
-            $this->session->unset_userdata('username');
-            redirect(base_url('Login'));
+            $this->session->unset_userdata($session_data);
+            redirect(base_url('login'));
         }
     }
