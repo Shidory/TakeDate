@@ -163,6 +163,7 @@
             )
         ),
 
+         // controller + methode qui charge la vue rdv
         'rdvController/redvView' => array(
 
             array(
