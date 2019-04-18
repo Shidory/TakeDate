@@ -21,9 +21,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 $session_data = array(
                     'username' => $data['username']
                 );
+
+                $this->session->set_userdata($session_data['username']);
+                redirect(base_url('Login/enter'));
             }
             else{
-                echo 'Error';
+                redirect();
             }
+        }
+
+        public function enter(){
+            if()
         }
     }
