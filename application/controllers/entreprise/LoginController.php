@@ -9,5 +9,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         public function login_validation(){
             
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+
+            
         }
     }
