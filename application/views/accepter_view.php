@@ -6,45 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body>	 
     <div>
-    <table>
-  <tr>
-    <td>&nbsp;</td>
-    <td>Knocky</td>
-    <td>Flor</td>
-    <td>Ella</td>
-    <td>Juan</td>
-  </tr>
-  <tr>
-    <td>Race</td>
-    <td>Jack Russell</td>
-    <td>Poodle</td>
-    <td>Streetdog</td>
-    <td>Cocker Spaniel</td>
-  </tr>
-  <tr>
-    <td>Age</td>
-    <td>16</td>
-    <td>9</td>
-    <td>10</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>Propriétaire</td>
-    <td>Belle-mère</td>
-    <td>Moi</td>
-    <td>Moi</td>
-    <td>Belle-soeur</td>
-  </tr>
-  <tr>
-    <td>Habitudes alimentaires</td>
-    <td>Mange tous les restes</td>
-    <td>Grignotte la nourriture</td>
-    <td>Mange copieusement</td>
-    <td>Mange jusqu'à ce qu'il éclate</td>
-  </tr>
+        <div>
+            <h3>rendez vous</h3>
+        </div>
+        <table>
+  <thead>
+    <tr>
+      <th>idRdv</th>
+      <th>idClient</th>
+      <th>idEntreprise</th>
+      <th>motif</th>
+      <th>date</th>
+      <th>heure</th>
+      <th>duree</th>
+      <th>commentaire</th>
+      <th>choix</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>business</td>
+        <td>21/11/2001</td>
+        <td>11:22:21</td>
+        <td>23</td>
+        <td>va jouer au bille</td>
+        <td><input type="button" value="accepter">
+            <input type="button" value="refuser">
+        </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>business</td>
+        <td>21/11/2001</td>
+        <td>11:22:21</td>
+        <td>23</td>
+        <td>va jouer au bille</td>
+        <td><input type="button" value="accepter">
+            <input type="button" value="refuser">
+        </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>business</td>
+        <td>21/11/2001</td>
+        <td>11:22:21</td>
+        <td>23</td>
+        <td>va jouer au bille</td>
+        <td><input type="button" value="accepter">
+            <input type="button" value="refuser">
+        </td>
+    </tr>
+  </tbody>
 </table>
+
     </div>
+   
 </body>
 </html>
