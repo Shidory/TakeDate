@@ -16,5 +16,19 @@
                 return false;
             }
         }
+
+        public function getHashPass($username){
+            
+            $this->db->select('pass');
+            $this->db->where('nomComplet', $username);
+            $query = $this->db->get($this->table);
+            
+            if($query->num_rows() > 0){
+                return $query->row();
+            }
+            else{
+                return false;
+            }
+        }
     }
 ?>
