@@ -19,7 +19,7 @@ class EntrepriseController extends CI_Controller {
 
 		if(isset($motif, $date, $heure, $duree, $commentaire)){
 
-			$data['data'] = array(
+			$data = array(
 				"motif" => $motif,
 				"date" => $date,
 				"heure" => $heure,
