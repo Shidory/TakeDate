@@ -11,6 +11,7 @@ class EntrepriseController extends CI_Controller {
 	#######################################################
 	public function repporter_rdv(){
 
+		$this->input->post("motif");
 	}
 
 	#######################################################
