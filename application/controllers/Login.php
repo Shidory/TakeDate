@@ -38,4 +38,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 redirect(base_url('login'));
             }
         }
+
+        public function logout(){
+            
+        }
     }
