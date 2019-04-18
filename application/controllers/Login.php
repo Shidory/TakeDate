@@ -18,7 +18,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             );
 
             if($this->EntreprisesModel->can_login($data)){
-                echo 'Success !';
+                $session_data = array(
+                    'username' => $data['username']
+                );
             }
             else{
                 echo 'Error';
