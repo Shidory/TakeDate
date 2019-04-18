@@ -8,5 +8,12 @@
             $this->db->where('username', $data['username']);
             $this->db->where('pwd', $data['password']);
             $query = $this->db->get($this->tb_agent);
+
+            if($query->num_rows() > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     }
