@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="">
+    <form action="repporter_rdv" method="post">
         <label for="motif" id="motif">motif: </label>
         <input type="text" name="motif">
         <label for="date" id="date">date: </label>
@@ -19,7 +19,8 @@
         <input type="text" name="duree">
         <label for="commentaire" id="duree">commentaire: </label>
         <input type="text" name="commentaire">
-        
+
+        <input type="submit" value="Repporter">
     </form>
 </body>
 </html>
