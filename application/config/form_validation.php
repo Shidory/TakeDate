@@ -76,12 +76,70 @@
             )
 
         ),
-        
+
+        // controlleur + methode qui charge la vue entreprise
         'entrepriseController/entrepriseView' => array(
 
             array(
-                'field' => ''
+                'field' => 'nom',
+                'label' => 'Nom',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'secteur',
+                'label' => 'Secteur',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'adresse',
+                'label' => 'adressePhysique',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'mail',
+                'label' => 'email',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'logo',
+                'label' => 'Logo',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'description',
+                'label' => 'Description',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'phone',
+                'label' => 'Telephone',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'site',
+                'label' => 'Site',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'codePostal',
+                'label' => 'Code Postal',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'pays',
+                'label' => 'Pays',
+                'rules' => 'required'
             )
+
         )
     )
 ?>
