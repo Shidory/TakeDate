@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 redirect(base_url('Login/enter'));
             }
             else{
-                redirect();
+                redirect(base_url('login'));
             }
         }
 
