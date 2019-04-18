@@ -16,6 +16,8 @@
     <input type="text" name ="heure">
     <label for="duree">Durée</label>
     <input type="text" name ="duree">
+    <label for="commentaire">Commentaire</label>
+    <input type="text" name ="commentaire">
     <input type="submit" value = "Annuler">
     </form>
 </body>
