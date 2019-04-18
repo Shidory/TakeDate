@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>hello world</p>
-</body>
-</html>
+<div>
+<h3 >Ajouter Agent</h3>
+<?php echo form_open(''); ?>
+<div>
+    <p>Nom :</p>
+    <input type="text" name="nom"  class="champ" required>
+    <p>Numero matricule :</p>
+    <input type="text" name="num_mat"  required>
+    <p>Adresse :</p>
+    <input type="text" name="adresse" required>
+    <p>Telephone :</p>
+    <input type="text" nama="telephone" required>
+    <p>Email :</p>
+    <input type="text" name="email">
+</div>
+<br>
+<input type="submit" value="Envoyer">
+<?php echo form_close() ?>
+</div>
