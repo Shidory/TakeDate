@@ -11,11 +11,15 @@ class EntrepriseController extends CI_Controller {
 	#######################################################
 	public function repporter_rdv(){
 
-		$this->input->post("motif");
-		$this->input->post("date");
-		$this->input->post("heure");
-		$this->input->post("duree");
-		$this->input->post("commentaire");
+		$motif = $this->input->post("motif");
+		$date = $this->input->post("date");
+		$heure = $this->input->post("heure");
+		$duree = $this->input->post("duree");
+		$commentaire = $this->input->post("commentaire");
+
+		if(isset($motif, $date, $heure, $duree, $commentaire)){
+
+		}
 		
 	}
 
