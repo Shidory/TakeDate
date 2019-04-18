@@ -12,8 +12,8 @@ class EntrepriseController extends CI_Controller {
 	public function repporter_rdv(){
 
 		$idRdv = $this->input->get("idRdv");
-		$idClient = $this->input->get("idClient");
-		$idEntreprise = $this->input->get("idEntreprise");
+		/*$idClient = $this->input->get("idClient");
+		$idEntreprise = $this->input->get("idEntreprise");*/
 
 		$motif = $this->input->post("motif");
 		$date = $this->input->post("date");
@@ -25,8 +25,8 @@ class EntrepriseController extends CI_Controller {
 
 			$data = array(
 
-				"idClient" => $idClient,
-				"idEntreprise" => $idEntreprise,
+				//"idClient" => $idClient,
+				//"idEntreprise" => $idEntreprise,
 				"motif" => $motif,
 				"date" => $date,
 				"heure" => $heure,
@@ -37,7 +37,7 @@ class EntrepriseController extends CI_Controller {
 
 			try{
 
-				$this->EntreprisesModel->reporter_rdv($data);
+				$this->EntreprisesModel->reporter_rdv($idRdv, $data);
 			}
 			catch(Exception $e){
 
