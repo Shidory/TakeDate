@@ -12,6 +12,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            
+            $data = array(
+                'username' => $username,
+                'password' => $password
+            );
         }
     }
