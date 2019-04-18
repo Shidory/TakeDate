@@ -164,7 +164,7 @@
         ),
 
          // controller + methode qui charge la vue rdv
-        'rdvController/redvView' => array(
+        'rdvController/rdvView' => array(
 
             array(
                 'field' => 'motif',
@@ -197,7 +197,16 @@
             )
         ),
 
-        'departementController/departementView'
+         // controller + methode qui charge la vue departement
+        'departementController/departementView' => array(
+
+            array(
+                'field' => 'nom',
+                'label' => 'Nom',
+                'rules' => 'required'
+            ) 
+
+        )
 
 
 
