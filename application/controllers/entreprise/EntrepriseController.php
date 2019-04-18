@@ -5,7 +5,7 @@ class EntrepriseController extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('reporter_view');
+		$this->repporter_rdv();
 	}
 
 	#######################################################
