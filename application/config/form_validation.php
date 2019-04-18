@@ -76,7 +76,12 @@
             )
 
         ),
+        
+        'entrepriseController/entrepriseView' => array(
 
-
+            array(
+                'field' => ''
+            )
+        )
     )
 ?>
