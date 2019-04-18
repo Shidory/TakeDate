@@ -52,5 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Le rooting se fait ici
 $route['default_controller'] = 'welcome';
+$route['annuler_rdv'] = 'client/ClientController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
