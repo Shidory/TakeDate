@@ -13,6 +13,8 @@ class EntrepriseController extends CI_Controller {
 
 		$this->input->post("motif");
 		$this->input->post("date");
+		$this->input->post("heure");
+		
 	}
 
 	#######################################################
