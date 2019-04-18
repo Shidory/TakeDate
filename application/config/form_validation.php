@@ -139,7 +139,66 @@
                 'label' => 'Pays',
                 'rules' => 'required'
             )
+        ),
 
-        )
+        // controller + methode qui charge la vue horaire
+        'horaireController/horaireView' => array(
+
+            array(
+                'field' => 'jour',
+                'label' => 'Jour',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'heureDebut',
+                'label' => 'Heure Debut',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'heureFin',
+                'label' => 'Heure Fin',
+                'rules' => 'required'
+            )
+        ),
+
+        'rdvController/redvView' => array(
+
+            array(
+                'field' => 'motif',
+                'label' => 'Motif',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'date',
+                'label' => 'Date',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'heure',
+                'label' => 'Heure',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'etat',
+                'label' => 'Etat',
+                'rules' => 'required'
+            ),
+
+            array(
+                'field' => 'commentaire',
+                'label' => 'Commentaire',
+                'rules' => 'required'
+            )
+        ),
+
+        'departementController/departementView'
+
+
+
     )
 ?>
