@@ -27,7 +27,15 @@ class EntrepriseController extends CI_Controller {
 				"commentaire" => $commentaire
 			);
 
-			$this->EntreprisesModel->reporter_rdv($data);
+			try{
+
+				$this->EntreprisesModel->reporter_rdv($data);
+			}
+			catch(Exception $e){
+
+				redirect('reporter_view');
+			}
+			
 		}
 		
 	}
