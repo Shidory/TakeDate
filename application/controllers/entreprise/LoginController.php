@@ -17,6 +17,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 'password' => $password
             );
 
-            
+            if($this->entreprisesModel->can_login()){
+                echo 'Success !';
+            }
+            else{
+                echo 'Error';
+            }
         }
     }
