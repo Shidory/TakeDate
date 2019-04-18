@@ -14,6 +14,9 @@
     <input type="text" name="username">
     <p>Mot de passe :</p>
     <input type="text" name="pwd">
+    <p>Confirmer mot de passe :</p>
+    <input type="text" name="confpwd">
+    
 </div>
 <br>
 <input type="submit" value="Envoyer">
