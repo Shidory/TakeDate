@@ -1,6 +1,6 @@
 <?php
 
-    class HoraireEntreprise extends CI_Controller{
-        
+    class HoraireController extends CI_Controller{
+
     }
 ?>
