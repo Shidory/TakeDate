@@ -27,7 +27,7 @@ class EntrepriseController extends CI_Controller {
 				"commentaire" => $this->commentaire;
 			);
 
-			
+			$this->EntrepriseModel->reporter_rdv($data);
 		}
 		
 	}
