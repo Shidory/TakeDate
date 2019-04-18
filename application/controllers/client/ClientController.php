@@ -5,6 +5,10 @@ class ClientController extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('');
+		$this->annuler_rdv();
+	}
+
+	public function annuler_rdv(){
+		
 	}
 }
