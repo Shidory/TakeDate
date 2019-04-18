@@ -6,7 +6,7 @@
     </head>
     <body>
         <div style="width: 50%; padding: 10px" class="container">
-            <?= form_open("logInAdmin/login_validation"); ?>
+            <?= form_open("login_validation"); ?>
                 <p class="h3 text-center mb-4">Sign in</p>
                 <div style="margin-bottom: 5%" class="md-form">
                     <i class="fa fa-envelope prefix grey-text"></i>
