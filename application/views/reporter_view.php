@@ -8,6 +8,18 @@
 </head>
 <body>
     
-    
+    <form action="">
+        <label for="motif" id="motif">motif: </label>
+        <input type="text" name="motif">
+        <label for="date" id="date">date: </label>
+        <input type="date" name="date">
+        <label for="heure" id="motif">heure: </label>
+        <input type="text" name="heure">
+        <label for="duree" id="duree">duree: </label>
+        <input type="text" name="duree">
+        <label for="commentaire" id="duree">commentaire: </label>
+        <input type="text" name="commentaire">
+        
+    </form>
 </body>
 </html>
