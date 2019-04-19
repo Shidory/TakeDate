@@ -2,6 +2,10 @@
 
     class HoraireController extends CI_Controller{
 
+        public function index(){
+            $this->load->view('login');
+        }
+
         public function horaireView(){
             $this->load->view('horaire_view');
         }

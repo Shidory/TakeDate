@@ -7,39 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?= form_open('horaire')?>
-        <?= form_label("Jour : ", "jour");?>
-        <?= form_input(
-                ['name' => "jour", 
-                 'id'   => "jour", 
-                 'type' => "date"
-                ]
-            ); 
-        ?>
-        <br>
-
-        <?= form_label("Heure debut :", "heureDebut"); ?>
-        <?= form_input(
-                ['name' => 'heureDebut',
-                 'id'   => 'heureDebut',
-                 'type' => 'text'
-                ]
-            );
-        ?>
-        <br>
-
-        <?= form_label("Heure Fin :", "heurefin"); ?>
-        <?= form_input(
-                ['name' => 'heureFin',
-                 'id'   => 'heurefin',
-                 'type' => 'text'
-                ]
-            );
-        ?>
-
-        <br>
-        <?= form_submit("Save", "Enregistrer");?>
+    <form action="horaire" method="post">
         
-    <?= form_close()?>
+    </form>
 </body>
 </html>
