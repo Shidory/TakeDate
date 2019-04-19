@@ -58,3 +58,4 @@ $route['repporter_rdv'] = 'entreprise/EntrepriseController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['horaire'] = 'horaire/HoraireController';
+$route['rdv'] = 'rdv/RdvController';
