@@ -20,13 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-<<<<<<< HEAD
 		$this->load->view('ajouter_agent');
 		//echo anchor('index');
-=======
-		$this->load->view('login/login');
-		// echo anchor(base_url());
-
->>>>>>> cb147529e0f4a52b7e4ee8784e03eb8538bff1cb
 	}
 }
