@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('reporter_view');
+		$this->load->view('horaire/horaire_view');
+
 	}
 }
