@@ -12,7 +12,7 @@ class rdvEntrepriseController extends CI_Controller {
 	{
 		$idAgent=1;
 		$rdvPris=$this->RdvModel->afficherRdv($idAgent);
-		//$this->load->views('RdvDejaPris',compact('rdvPris'));
-		var_dump($rdvPris);
+		$this->load->views('RdvDejaPris',compact('rdvPris'));
+
 	}
 }

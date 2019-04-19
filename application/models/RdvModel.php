@@ -18,21 +18,23 @@ class RdvModel extends CI_Model{
 	}
 
 	//afficher les rendez vous en fonction des agents [Caleb]
-    public function afficherRDV($idRdv)
+    public function afficherRDV($idAgent)
 	{
 
-    	//$query=$this->db->select('NomClient, date, heure, dure')
-		//				->from('tb_rdv')
-		//				->join('tb_client, tb_rdv.idClient=tb_client.idClient')
-		//				->where('idAgent=:idAgent')
-		//				->get();
-    	$this->db->select('NomClient, date , heure, dure');
-    	$this->where('idRdv='.$idRdv);
-    	return $this->db-get('tb_rdv, tb_client')->result_array();
-    	//return $query->result();
-
-
+    	$query=$this->db->select('*')
+						->from('tb_rdv')
+						->join('tb_client, tb_client.idClient=tb_rdv.idClient')
+						->join('tb_agent, tb_agent.idEntreprise=tb_rdv.idEntreprise')
+						->where(array('tb_agent.idAgent='.$idAgent))
+						->where('idAgent=:idAgent')
+						->get();
+		return $query->get->result();
+    	/*$this->db->select('NomClient, date , heure, dure');
+    	//$this->db->where('idRdv='.$idRdv);
+    	return $this->db-get('tb_rdv, tb_client')->result_array();*/
 	}
+
+
 	//cette methode parle d'elle même! j'espère que cela passera sans me prendre la tête [Caleb]
 	public  function annulerRDV($idRdv,$etat)
 	{
@@ -43,6 +45,9 @@ class RdvModel extends CI_Model{
 		$this->db->where('idRdv', $idRdv);
 		$this->db->update('tb_rdv', $data);
 		redirect('view/RdvDejaPris');
+	}
+	public function get_id_rdv(){
+
 	}
 }
 ?>
