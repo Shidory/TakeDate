@@ -7,10 +7,18 @@ class EntrepriseController extends CI_Controller {
 	{
 		$this->load->view('accepter_view');
 	}
-	public function accepter_refuser($id, $data)
+	public function accepter_refuser($id)
 	{
+		$choix = $_POST['choix'];
 		$this->_rules();
-		
+		 
+		$data = array(
+					'choix' => $_POST['choix']
+					);
+		for($i= 0, $i < $data.length(), $i++){
+			if($data[i] = 'accepter')
+			$this->EntreprisesModel->accepter_refuser_rdv($id, $data);
+		}
 		
 	}
 }
