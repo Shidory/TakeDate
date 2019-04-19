@@ -13,13 +13,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $hash = sha1($password);//Encodage du mot de passe
-            // Mot de passe venant de la base de données pour permettre la vérification de l'authentification
-            $pass_db = $this->EntreprisesModel->getHashPass($username);
+            // Données venant de la base de données pour permettre la vérification de l'authentification
+            $data_db = $this->EntreprisesModel->get_db_data($username);
             // Cette ligne permet de convertir la variable $pass_db en une chaîne de caractères
-            $pass_db = json_decode(json_encode($pass_db), TRUE);
+            $data_db = json_decode(json_encode($data_db), TRUE);
 
             // Vérification de l'authentification
-            if($pass_db['pwd'] == $hash){
+            if($data_db['pwd'] == $hash){
                 // Création d'un tableau de données
                 $data = array(
                     'username' => $username,
@@ -30,6 +30,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 if($this->EntreprisesModel->can_login($data)){
                     // Création d'un tableau de données de session
                     $session_data = array(
+                        'id' => $data_db['idAgent'],
                         'username' => $data['username']
                     );
                     // Création des données de session
@@ -48,7 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         // Fonction de redirection en cas de resultat positif de la verification de l'authentification
         public function enter(){
-            if($this->session->userdata['username'] != ''){
+            if($this->session->userdata['username'] != '' && $this->session->userdata['id'] != null){
                 echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
                 echo '<label><a href="'.base_url('login/logout').'">logout</a></label>';
             }

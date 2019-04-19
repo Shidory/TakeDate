@@ -4,6 +4,7 @@
 
         public $tb_agent = 'tb_agent';
         
+        // Fonction de permettant l'authentification
         public function can_login($data){
             $this->db->where('username', $data['username']);
             $this->db->where('pwd', $data['password']);
@@ -17,8 +18,10 @@
             }
         }
 
-        public function getHashPass($username){
+        // Fonction permettant de recupérer des données dans la base
+        public function get_db_data($username){
             
+            $this->db->select('idAgent');
             $this->db->select('pwd');
             $this->db->where('username', $username);
             $query = $this->db->get($this->tb_agent);
