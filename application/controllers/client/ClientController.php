@@ -10,14 +10,20 @@ class ClientController extends CI_Controller {
 
 	public function annuler_rdv(){
 
-		$id = $this->input->get("id");
+		/*$id = $this->input->get("id");
 		$idClient = $this->input->get("idClient");
 		$idEntrprise = $this->input->get("idEntrprise");
 		$motif = $this->input->get("motif");
 		$date = $this->input->get("date");
 		$duree = $this->input->get("duree");
-		$commentaire= $this->input->get("commentaire");
-		;
+		$commentaire= $this->input->get("commentaire");*/
+		$id = "1";
+		$idClient ="1" ;
+		$idEntrprise ="2";
+		$motif = "hgjkfjhkljkhj";
+		$date = "wvgvh";
+		$duree = "20";
+		$commentaire="dhqhgdsfvsjhdf";
 		if (isset($id)){
 
 			$data = array (
@@ -27,9 +33,9 @@ class ClientController extends CI_Controller {
 				'date'=>$date,
 				'duree'=>$duree,
 				'etat' => '0',
-				'commentaire'=>$commentaire;
-			)
-			$this->ClientModel->annuler_rdv($id,$data)
+				'commentaire'=>$commentaire
+			);
+			$this->ClientModel->annuler_rdv($id,$data);
 
 		}
 	}
