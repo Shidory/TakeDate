@@ -7,4 +7,12 @@ class EntrepriseController extends CI_Controller {
 	{
 		$this->load->view('');
 	}
+
+	public function get_Entreprise()
+	{
+		$entreprise=$this->EntreprisesModel->get_Entreprise();
+		$data['dataEntreprise']=$entreprise;
+		$this->load->view('',$data);
+
+	}
 }
