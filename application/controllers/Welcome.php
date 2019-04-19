@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('horaire/horaire_view');
+		$this->load->view('login/login');
 		// echo anchor(base_url());
 	}
 }

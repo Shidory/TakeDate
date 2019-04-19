@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Le rooting se fait ici
 $route['default_controller'] = 'welcome';
-$route['login_validation'] = 'loginController/login_validation';
+$route['login_validation'] = 'login/loginController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['horaire'] = 'horaire/HoraireController';
