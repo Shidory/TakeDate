@@ -57,4 +57,5 @@ $route['login_validation'] = 'login/loginController';
 $route['repporter_rdv'] = 'entreprise/EntrepriseController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['lister_entreprise'] = 'entreprise/EntrepriseController/get_Entreprise';
 $route['horaire'] = 'horaire/HoraireController';
