@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="horaire" method="post">
     
+        <label for="jour">Jour : </label>
+        <input type="datetime" name="jour" id="jour"><br>
+        <label for="datedebut">Date debut : </label>
+        <input type="text" name="datedebut" id="datedebut"><br>
+        <label for="datefin">Date fin : </label>
+        <input type="text" name="datefin" id="datefin">
+        <input type="submit" value="Enregistrer">
+    </form>
 </body>
 </html>
