@@ -19,7 +19,7 @@ class AgentController extends CI_Controller {
 		$pwd= $this->input->post('pwd');
 		$confpwd=$this->input->post('confpwd');
 		
-		if($this->form->run()){
+		if($this->form_validation->run()){
 		$nomAgent= $this->input->post('nomAgent');
 		$telephone= $this->input->post('telephone');
 		$email= $this->input->post('email');
