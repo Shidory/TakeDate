@@ -61,7 +61,7 @@
 		$commentaire = $this->input->post("commentaire");
 
 		//Vérification de l'existance des clés fournies
-		if(isset($motif, $date, $heure, $duree, $commentaire)){
+		if(isset($idClient, $idEntreprise, $motif, $date, $heure, $duree, $commentaire)){
 
 			$data = array(
 				
