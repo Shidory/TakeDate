@@ -20,7 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		//chargement de la vue annuler
 		$this->load->view('annuler_view');
-		//echo anchor('index');
+		$this->load->view('login/login');
 	}
 }
