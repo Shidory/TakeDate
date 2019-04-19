@@ -1,15 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+	defined('BASEPATH') OR exit('No direct script access allowed');
 
-class EntrepriseController extends CI_Controller {
+	class EntrepriseController extends CI_Controller {
 
 	public function index()
 	{
-		$this->repporterRdv();
+		$this->repporter_rdv();
 	}
 
 	#######################################################
-	public function repporterRdv(){
+	public function repporter_rdv(){
 
 		$idRdv = $this->input->get("idRdv");
 		
@@ -33,7 +33,7 @@ class EntrepriseController extends CI_Controller {
 
 			try{
 
-				$this->EntreprisesModel->reporterRdv($idRdv, $data);
+				$this->EntreprisesModel->reporter_rdv($idRdv, $data);
 			}
 			catch(Exception $e){
 

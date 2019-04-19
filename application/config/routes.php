@@ -54,5 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 //rooting vers le controlleur de l'entreprise
 $route['repporter_rdv'] = 'entreprise/EntrepriseController';
+$route['default_controller'] = 'login';
+$route['login_validation'] = 'loginController/login_validation';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
