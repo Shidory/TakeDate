@@ -3,12 +3,10 @@
 
 	class EntrepriseController extends CI_Controller {
 
-	public function index()
+		public function index()
 	{
 		$this->repporter_rdv();
 	}
-
-	#######################################################
 	public function repporter_rdv(){
 
 		//Réccupération des données venant du formulaire
@@ -51,6 +49,21 @@
 		
 	}
 
-	#######################################################
+
+	public function get_Entreprise()
+	{
+		// cette methode permet d'envoyer les information  de l'entreprise à une vue
+		$entreprise=$this->EntreprisesModel->get_Entreprise();
+		$data['dataEntreprise']=$entreprise;
+		$this->load->view('',$data);
+
+	}
 }
+<<<<<<< HEAD
 >>>>>>> cb147529e0f4a52b7e4ee8784e03eb8538bff1cb
+=======
+
+	
+
+
+>>>>>>> 52e1207863cfd6b19ea4ded33d2e02651dce1b64
