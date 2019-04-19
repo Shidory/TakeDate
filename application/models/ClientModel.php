@@ -7,8 +7,8 @@ class ClientModel extends CI_Model{
       $this->db->update('tb_rdv', $data);
       $this->db->where('id',$id);  
     }
-    public function modifier_rdv$id,$data(){
-        //requete de modification
+    public function modifier_rdv($id,$data){
+        //requete de modification du rdv
         $this->db->where('id',$id);
         $this->db->update('tb_rdv', $data);
         
