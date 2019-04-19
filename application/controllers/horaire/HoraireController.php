@@ -12,12 +12,12 @@
 
         public function enregistrer(){
 
-            $jour = $this->input->post('jour');
+            $jour        = $this->input->post('jour');
             $heure_debut = $this->input->post('heureDebut');
             $heure_fin   = $this->input->post('heureFin');
             $idagent     = $this->session->userdata['id'];
 
-            $this->HoraireModel->enregistrer($data);
+            $this->HoraireModel->ajouterHoraire($data);
         }
     }
 ?>
