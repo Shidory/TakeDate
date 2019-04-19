@@ -54,7 +54,7 @@
 		//Réccupération des données venant du formulaire
 		$idRdv = $this->input->get("idRdv");
 		$idClient = $this->input->get("idClient");
-		$idEntreprise = $this->input->get("idEntreprise");
+		$idEntreprise = $this->input->get("id");
 
 		$motif = $this->input->post("motif");
 		$date = $this->input->post("date");
@@ -79,13 +79,13 @@
 
 			try{
 
-				//Appel de la méthdode reporter_rdv en lui passant  
+				//Appel de la méthdode modifier_rdv en lui passant  
 				//l'id et le tableau des valeurs en paramètre
-				$this->EntreprisesModel->reporter_rdv($idRdv, $data);
+				$this->EntreprisesModel->modifier_rdv($idRdv, $data);
 			}
 			catch(Exception $e){
 
-				redirect('reporter_view');
+				redirect('modiifer_view');
 			}
 			
 		}
