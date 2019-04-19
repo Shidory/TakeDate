@@ -22,5 +22,6 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('login/login');
 		// echo anchor(base_url());
+
 	}
 }
