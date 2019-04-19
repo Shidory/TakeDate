@@ -9,7 +9,7 @@
 		}
 
 		#######################################################
-		public function repporter_rdv(){
+		public function reporter_rdv(){
 
 			//Réccupération des données venant du formulaire
 			$idRdv = $this->input->get("idRdv");
