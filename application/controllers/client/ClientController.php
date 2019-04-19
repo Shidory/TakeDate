@@ -29,7 +29,7 @@ class ClientController extends CI_Controller {
 				'etat' => '0',
 				'commentaire'=>$commentaire;
 			)
-			$this->ClientModel->annuler_rdv($id,$etat);
+			$this->ClientModel->annuler_rdv($id,$data)
 
 		}
 	}
