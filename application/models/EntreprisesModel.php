@@ -33,15 +33,15 @@
             }
         }
 
-        public function get_Entreprise()
-        {
-            //cette methode recupere tout les elements de la table tb_entreprise
+    #######################################################
+    public function get_Entreprise()
+    {
+        //cette methode recupere tout les elements de la table tb_entreprise
             $this->db->select('*');
             return $this->db->get('tb_entreprise')->result_array();
         }
 }
 
-   
 ?>
 
         
