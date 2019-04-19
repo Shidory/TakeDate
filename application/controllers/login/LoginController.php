@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-    class Login extends CI_Controller{
+    class LoginController extends CI_Controller{
 
         public function index(){
             $this->load->view('login');//Chargement de la page de connexion
@@ -35,15 +35,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     );
                     // Création des données de session
                     $this->session->set_userdata($session_data);
-                    redirect(base_url('login/enter'));
+                    redirect(base_url('loginController/enter'));
                 }
                 else{
-                    redirect(base_url('login'));
+                    redirect(base_url('loginController'));
                 }
 
             }
             else{
-                echo 'Mot de passe incorrect !';
+                redirect(base_url('loginController'));
             }
         }
 
