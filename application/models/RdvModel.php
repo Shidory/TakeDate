@@ -21,15 +21,16 @@ class RdvModel extends CI_Model{
     public function afficherRDV($idAgent)
 	{
 
-    	$query=$this->db->select('*')
-						->from('tb_rdv')
-						->join('tb_client, tb_client.idClient=tb_rdv.idClient')
-						->join('tb_agent, tb_agent.idEntreprise=tb_rdv.idEntreprise')
-						->where(array('tb_agent.idAgent='.$idAgent))
-						->where('idAgent=:idAgent')
-						->get();
-		return $query->get->result();
-    	/*$this->db->select('NomClient, date , heure, dure');
+    	$this->db->select('*');
+		$this->db->from('tb_rdv');
+		$this->db->join('tb_client, tb_client.idClient=tb_rdv.idClient');
+		$this->db->join('tb_agent, tb_agent.idEntreprise=tb_rdv.idEntreprise');
+		$this->db->where(array('tb_agent.idAgent='.$idAgent));
+		$this->db->where('idAgent=:idAgent');
+		$query=$this->db->get();
+		return $query;
+
+		/*$this->db->select('NomClient, date , heure, dure');
     	//$this->db->where('idRdv='.$idRdv);
     	return $this->db-get('tb_rdv, tb_client')->result_array();*/
 	}
