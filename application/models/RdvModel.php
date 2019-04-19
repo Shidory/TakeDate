@@ -19,6 +19,7 @@ class RdvModel extends CI_Model{
 		);
 
 		$this->db->replace('etat', 0);
+		redirect('RdvDejaPris');
 	}
 }
 ?>

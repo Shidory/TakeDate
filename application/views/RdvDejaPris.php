@@ -7,7 +7,6 @@
 		<span>Client: x</span>
 		<div>
 			<?php
-				$idAgent = $_SESSION['idAgent'];
 				$rdvModel=new RdvModel();
 				$id=$rdvModel->afficherRDV();
 				anchor('annulerRDV/annulerRdv/$id')
