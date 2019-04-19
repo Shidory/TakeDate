@@ -18,7 +18,7 @@ class RdvModel extends CI_Model{
 	}
 
 	//afficher les rendez vous en fonction des agents [Caleb]
-    public function afficherRDV($idAgent)
+    public function afficherRDV($idRdv)
 	{
 
     	//$query=$this->db->select('NomClient, date, heure, dure')
@@ -27,8 +27,7 @@ class RdvModel extends CI_Model{
 		//				->where('idAgent=:idAgent')
 		//				->get();
     	$this->db->select('NomClient, date , heure, dure');
-    	$this->where('idAgent='.$idAgent);
-    	$this->where('idClient=idClient');
+    	$this->where('idRdv='.$idRdv);
     	return $this->db-get('tb_rdv, tb_client')->result_array();
     	//return $query->result();
 
