@@ -3,11 +3,49 @@
 
 	class EntrepriseController extends CI_Controller {
 
-
-	public function index()
+		public function index()
 	{
-		$this->load->view('');
+		$this->repporter_rdv();
 	}
+	public function repporter_rdv(){
+
+		//Réccupération des données venant du formulaire
+		$idRdv = $this->input->get("idRdv");
+		
+		$motif = $this->input->post("motif");
+		$date = $this->input->post("date");
+		$heure = $this->input->post("heure");
+		$duree = $this->input->post("duree");
+		$commentaire = $this->input->post("commentaire");
+
+		//Vérification de l'existance des clés fournies
+		if(isset($motif, $date, $heure, $duree, $commentaire)){
+
+			$data = array(
+
+				"motif" => $motif,
+				"date" => $date,
+				"heure" => $heure,
+				"duree" => $duree,
+				"etat" => "2",
+				"commentaire" => $commentaire
+			);
+
+			try{
+
+				//Appel de la méthdode reporter_rdv en lui passant  
+				//l'id et le tableau des valeurs en paramètre
+				$this->EntreprisesModel->reporter_rdv($idRdv, $data);
+			}
+			catch(Exception $e){
+
+				redirect('reporter_view');
+			}
+			
+		}
+		
+	}
+
 
 	public function get_Entreprise()
 	{
@@ -17,4 +55,7 @@
 
 	}
 }
+
+	
+
 
