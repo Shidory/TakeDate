@@ -10,7 +10,7 @@ class AgentController extends CI_Controller {
 	}
 	public function prendre_rdv()
 	{
-		//recuperation des donnees dans la vue
+		//recuperation des données dans la vue
 		$motif= $this->input->post('motif');
 		$date= $this->input->post('date');
 		$heure= $this->input->post('heure');
