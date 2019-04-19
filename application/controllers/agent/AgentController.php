@@ -10,7 +10,7 @@ class AgentController extends CI_Controller {
 	}
 	public function ajouter_agent()
 	{
-		//
+		
 		$nomAgent= $this->input->post('nomAgent');
 		$telephone= $this->input->post('telephone');
 		$email= $this->input->post('email');
@@ -35,10 +35,10 @@ class AgentController extends CI_Controller {
 				'email'=> $email,
 				'photo'=> $photo,
 				'user'=> $username,
-				'pass'=>sha1($pwd) //hachage du pwd
+				'pass'=>sha1($pwd) 
 			);
-			$this->AgentModel->ajouter_agent($data);//insertion des donnees
-			redirect(base_url('login'));// redirection vers la page login
+			$this->AgentModel->ajouter_agent($data);
+			redirect(base_url('login'));
 		}
 		}
 	}
