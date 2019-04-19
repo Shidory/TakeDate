@@ -10,6 +10,7 @@
     #######################################################
     public function reporterr_rdv($idRdv, $data){
 
+        //Requête de modification du rendez-vous
         $this->db->where('idRdv', $idRdv);
         $this->db->update('tb_rdv', $data);
     }
