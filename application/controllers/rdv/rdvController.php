@@ -31,7 +31,7 @@ class AgentController extends CI_Controller {
 						'idEntreprise' => $idEntreprise,
 						'idClient' => $idClient
 					);
-		$this->AgentsModel->prendre_rdv($data);		
+		$this->rdvModel->prendre_rdv($data);		
 		
 	}
 }
