@@ -17,7 +17,7 @@ class AgentController extends CI_Controller {
 		$photo= $this->input->post('photo');
 		$username= $this->input->post('username');
 		$pwd= $this->input->post('pwd');
-		$confpwd=$this-><input->post('confpwd');
+		$confpwd=$this->input->post('confpwd');
 		
 		if($this->form->run()){
 		$nomAgent= $this->input->post('nomAgent');
