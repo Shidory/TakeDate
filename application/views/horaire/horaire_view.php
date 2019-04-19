@@ -12,9 +12,9 @@
         <label for="jour">Jour : </label>
         <input type="date" name="jour" id="jour" required><br>
         <label for="datedebut" >Date debut : </label>
-        <input type="text" name="datedebut" id="datedebut" required><br>
+        <input type="time" name="heuredebut" id="heuredebut" required><br>
         <label for="datefin">Date fin : </label>
-        <input type="text" name="datefin" id="datefin" required><br>
+        <input type="time" name="heurefin" id="heurefin" required><br>
         <input type="submit" value="Enregistrer">
         
     </form>
