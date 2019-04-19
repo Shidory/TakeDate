@@ -3,7 +3,7 @@
     class HoraireController extends CI_Controller{
 
         public function index(){
-            $this->load->view('login');
+            $this->enregistrer();
         }
 
         public function horaireView(){
@@ -14,6 +14,10 @@
 
             $jour = $this->input->post('jour');
             $heure_debut = $this->input->post('heureDebut');
+            $heure_fin   = $this->input->post('heureFin');
+            $idagent     = $this->session->userdata['id'];
+
+            
         }
     }
 ?>
