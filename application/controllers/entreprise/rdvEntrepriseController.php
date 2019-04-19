@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class rdvEntrepriseController extends CI_Controller {
 
 	public function __construct(){
-		parrent::__construct();
+		parent::__construct();
 }
 
 	//fonction dans le but de lister les rendezvous
@@ -12,6 +12,7 @@ class rdvEntrepriseController extends CI_Controller {
 	{
 		$idAgent=1;
 		$rdvPris=$this->RdvModel->afficherRdv($idAgent);
-		$this->load->views('RdvDejaPris',compact('rdvPris'));
+		//$this->load->views('RdvDejaPris',compact('rdvPris'));
+		var_dump($rdvPris);
 	}
 }

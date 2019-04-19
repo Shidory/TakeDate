@@ -14,8 +14,7 @@ class RdvModel extends CI_Model{
 
 	public function __construct()
 	{
-		parrent::__construct();
-		$this->load->database();
+		parent::__construct();
 	}
 
 	//afficher les rendez vous en fonction des agents [Caleb]
@@ -44,6 +43,7 @@ class RdvModel extends CI_Model{
 
 		$this->db->where('idRdv', $idRdv);
 		$this->db->update('tb_rdv', $data);
+		redirect('view/RdvDejaPris');
 	}
 }
 ?>
