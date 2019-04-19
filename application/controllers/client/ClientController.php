@@ -9,11 +9,12 @@ class ClientController extends CI_Controller {
 	}
 
 	public function annuler_rdv(){
+
 		$id = $this->input->get("id");
 		
 		if (isset($id)){
 
-			$this->ClientModel->annuler_rdv($id);
+			$this->ClientModel->annuler_rdv($id,$etat);
 		}
 	}
 }
