@@ -4,7 +4,7 @@
 
     public function ajouter_agent($data)
     {
-        //
+        //insertion des donnees dans la base des donnees
         
         $this->db->insert('tb_agent', $data);
     }
