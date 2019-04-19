@@ -5,7 +5,7 @@
     <p>Nom :</p>
     <input type="text" name="nomAgent"  class="champ" required>
     <p>Telephone :</p>
-    <input type="text" nama="telephone" required>
+    <input type="text" name="telephone" required>
     <p>Email :</p>
     <input type="text" name="email">
     <p>Photo :</p>
