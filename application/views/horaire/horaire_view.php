@@ -37,6 +37,7 @@
             );
         ?>
 
+        <br>
         <?= form_submit("Save", "Enregistrer");?>
         
     <?= form_close()?>
