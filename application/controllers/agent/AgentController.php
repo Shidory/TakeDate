@@ -5,12 +5,12 @@ class AgentController extends CI_Controller {
 
 	public function index()
 	{
-		//chargement de la page ajouter_agent dans view
+		//chargement de la page ajouter_agent dans la vue
 		$this->load->view('ajouter_agent');
 	}
 	public function ajouter_agent()
 	{
-		
+		//recuperation des donnees dans la vue
 		$nomAgent= $this->input->post('nomAgent');
 		$telephone= $this->input->post('telephone');
 		$email= $this->input->post('email');
