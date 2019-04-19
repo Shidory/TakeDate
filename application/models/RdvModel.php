@@ -2,10 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class RdvModel extends CI_Model{
 
+	public $idRdv;
+	public $idClient;
+	public $idEntreprise;
+	public $motif;
+	public $date;
+	public $heure;
+	public $duree;
+	public $etat;
+	public $commentaire;
+
+
+
 	//afficher les rendez vous en fonction des agents [Caleb]
     public function afficherRDV($idAgent)
 	{
-		$this->load-database();
+
     	$query=$this->db->select('NomClient, date, heure, dure')
 						->from('tb_rdv')
 						->join('tb_client, tb_rdv.idClient=tb_client.idClient')
