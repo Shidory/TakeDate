@@ -17,14 +17,27 @@
             ); 
         ?>
         <br>
+
         <?= form_label("Heure debut :", "heureDebut"); ?>
         <?= form_input(
                 ['name' => 'heureDebut',
                  'id'   => 'heureDebut',
                  'type' => 'text'
                 ]
-            );?>
+            );
+        ?>
+        <br>
 
+        <?= form_label("Heure Fin :", "heurefin"); ?>
+        <?= form_input(
+                ['name' => 'heureFin',
+                 'id'   => 'heurefin',
+                 'type' => 'text'
+                ]
+            );
+        ?>
+
+        <?= form_submit("Save", "Enregistrer");?>
         
     <?= form_close()?>
 </body>
