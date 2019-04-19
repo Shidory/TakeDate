@@ -35,8 +35,9 @@
         #######################################################
         public function modifier_rdv($id, $data){
 
-            //Requête de repport du rendez-vous
+            //Requête de modification du rendez-vous
             $this->db->where('idRdv', $idRdv);
+            $this->db->update('tb_rdv', $data);
         }
 
         #######################################################
