@@ -17,7 +17,7 @@
             $heure_fin   = $this->input->post('heureFin');
             $idagent     = $this->session->userdata['id'];
 
-            
+            $this->HoraireModel->enregistrer($data);
         }
     }
 ?>
