@@ -53,7 +53,9 @@
 
 		//Réccupération des données venant du formulaire
 		$idRdv = $this->input->get("idRdv");
-		
+		$idClient = $this->input->get("idClient");
+		$idEntreprise = $this->input->get("idEntreprise");
+
 		$motif = $this->input->post("motif");
 		$date = $this->input->post("date");
 		$heure = $this->input->post("heure");
