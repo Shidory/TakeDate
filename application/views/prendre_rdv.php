@@ -1,6 +1,6 @@
 <div>
 <h3 >Prendre un rendez-vous</h3>
-<?php echo form_open(''); ?>
+<?php echo form_open('rdv/rdvController/prendre_rdv'); ?>
 <div>
     <p>Motif :</p>
     <input type="text" name="motif"  class="champ" required>
