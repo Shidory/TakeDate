@@ -5,6 +5,7 @@ class AgentController extends CI_Controller {
 
 	public function index()
 	{
+		//chargement de la page
 		$this->load->view('ajouter_agent');
 	}
 	public function ajouter_agent()
@@ -25,7 +26,7 @@ class AgentController extends CI_Controller {
 		$username= $this->input->post('username');
 		$pwd= $this->input->post('pwd');
 		$confpwd=$this-><input->post('confpwd');
-
+//authentification du mot de passe
 		if($pwd === $confpwd){
 			$data = array(
 				'nom'=> $nomAgent,
@@ -33,10 +34,10 @@ class AgentController extends CI_Controller {
 				'email'=> $email,
 				'photo'=> $photo,
 				'user'=> $username,
-				'pass'=>sha1($pwd)
+				'pass'=>sha1($pwd) //hachage du pwd
 			);
-			$this->AgentModel->insert($data);
-			redirect(base_url('login'));
+			$this->AgentModel->insert($data);//insertion des donnees
+			redirect(base_url('login'));// redirection vers la page login
 		}
 		}
 	}
