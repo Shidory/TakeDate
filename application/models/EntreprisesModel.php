@@ -9,15 +9,15 @@
         parent::__construct();
     }
 
-    #######################################################
+   
     public function reporterr_rdv($idRdv, $data){
 
-        //Requête de modification du rendez-vous
+       
         $this->db->where('idRdv', $idRdv);
         $this->db->update('tb_rdv', $data);
     }
 
-    #######################################################
+   
     public $tb_agent = 'tb_agent';
         
         public function can_login($data){
@@ -35,13 +35,13 @@
 
         public function get_Entreprise()
         {
+            //cette methode recupere tout les elements de la table tb_entreprise
             $this->db->select('*');
             return $this->db->get('tb_entreprise')->result_array();
         }
-    }
-
-    #######################################################
 }
+
+   
 ?>
 
         

@@ -49,6 +49,7 @@
 
 	public function get_Entreprise()
 	{
+		// cette methode permet d'envoyer les information  de l'entreprise à une vue
 		$entreprise=$this->EntreprisesModel->get_Entreprise();
 		$data['dataEntreprise']=$entreprise;
 		$this->load->view('',$data);
