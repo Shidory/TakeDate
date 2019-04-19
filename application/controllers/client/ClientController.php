@@ -19,7 +19,7 @@ class ClientController extends CI_Controller {
 		$commentaire= $this->input->get("commentaire");*/
 		$id = "1";
 		$idClient ="1" ;
-		$idEntrprise ="2";
+		$idEntrprise ="1";
 		$motif = "hgjkfjhkljkhj";
 		$date = "wvgvh";
 		$duree = "20";
