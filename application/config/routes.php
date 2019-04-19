@@ -52,7 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Le rooting se fait ici
 $route['default_controller'] = 'welcome';
-$route['login_validation'] = 'login/loginController';
+$route['login'] = 'login/loginController';
+$route['login_validation'] = 'login/loginController/login_validation';
 //rooting vers le controlleur de l'entreprise
 $route['repporter_rdv'] = 'entreprise/EntrepriseController';
 $route['404_override'] = '';
