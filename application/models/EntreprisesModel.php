@@ -33,7 +33,7 @@
         }
 
         #######################################################
-        public function modifier_rdv(){
+        public function modifier_rdv($id, $data){
 
 
         }
