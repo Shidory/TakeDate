@@ -20,7 +20,7 @@ class AgentController extends CI_Controller {
 		$idEntreprise = 1;
 		$idClient = 1;
 
-		echo $commentaire, $date;
+		echo $commentaire, $date, $heure;
 		$data = array(
 						'motif'=> $motif,
 						'date'=> $date,
