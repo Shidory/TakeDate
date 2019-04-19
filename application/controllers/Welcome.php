@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('prendre_rdv');
-		//echo anchor('index');
+
+		$this->load->view('horaire/horaire_view');
 	}
 }
