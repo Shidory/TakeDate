@@ -27,7 +27,7 @@ class AgentController extends CI_Controller {
 		$username= $this->input->post('username');
 		$pwd= $this->input->post('pwd');
 		$confpwd=$this-><input->post('confpwd');
-//authentification du mot de passe
+
 		if($pwd === $confpwd){
 			$data = array(
 				'nom'=> $nomAgent,
@@ -37,7 +37,7 @@ class AgentController extends CI_Controller {
 				'user'=> $username,
 				'pass'=>sha1($pwd) //hachage du pwd
 			);
-			$this->AgentModel->insert($data);//insertion des donnees
+			$this->AgentModel->ajouter_agent($data);//insertion des donnees
 			redirect(base_url('login'));// redirection vers la page login
 		}
 		}
