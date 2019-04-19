@@ -9,7 +9,7 @@ class EntreprisesModel extends CI_Model{
     function accepter_refuser_rdv($id, $data)
     {
         $this->db->where('idRdv', $id);
-        $this->db->update('etat', $data);
+        $this->db->update('tb_entreprise', $data);
     }
 }
 ?>

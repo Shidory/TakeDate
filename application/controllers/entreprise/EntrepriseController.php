@@ -7,4 +7,10 @@ class EntrepriseController extends CI_Controller {
 	{
 		$this->load->view('accepter_view');
 	}
+	public function accepter_refuser($id, $data)
+	{
+		$this->_rules();
+		
+		
+	}
 }
