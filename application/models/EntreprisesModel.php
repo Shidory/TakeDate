@@ -9,7 +9,7 @@ class EntreprisesModel extends CI_Model{
     }
 
     #######################################################
-    public function reporter_rdv($idRdv, $data){
+    public function reporterRdv($idRdv, $data){
 
         $this->db->where('idRdv', $idRdv);
         $this->db->update('tb_rdv', $data);
