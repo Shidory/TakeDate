@@ -36,7 +36,7 @@ class AgentController extends CI_Controller {
 				'pass'=>sha1($pwd)
 			);
 			$this->AgentModel->insert($data);
-			redirect(base_url(''));
+			redirect(base_url('login'));
 		}
 		}
 	}
