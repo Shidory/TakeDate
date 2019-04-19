@@ -16,19 +16,18 @@ class ClientController extends CI_Controller {
 		$motif = $this->input->get("motif");
 		$date = $this->input->get("date");
 		$duree = $this->input->get("duree");
-		$etat = $this->input->get("etat");
 		$commentaire= $this->input->get("commentaire");
 		;
 		if (isset($id)){
 
 			$data = array (
-				'idClient',
-				'idEntreprise',
+				'idClient'=>$idClient,
+				'idEntreprise'=>$idEntrprise,
 				'motif'=>$motif,
-				'date',
-				'duree',
+				'date'=>$date,
+				'duree'=>$duree,
 				'etat' => '0',
-				'commentaire';
+				'commentaire'=>$commentaire;
 			)
 			$this->ClientModel->annuler_rdv($id,$etat);
 
