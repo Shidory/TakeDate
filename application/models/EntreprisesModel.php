@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class EntreprisesModel extends CI_Model{
 
-    public __construct()
+    function __construct()
     {
         parent::__construct();
     }
