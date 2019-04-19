@@ -55,4 +55,5 @@ $route['default_controller'] = 'Welcome';
 //$route['default_controller'] = 'login';
 $route['login_validation'] = 'loginController/login_validation';
 $route['404_override'] = '';
+
 $route['translate_uri_dashes'] = FALSE;
