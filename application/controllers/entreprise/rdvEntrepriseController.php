@@ -10,9 +10,15 @@ class rdvEntrepriseController extends CI_Controller {
 	//fonction dans le but de lister les rendezvous
 	public function liste_rendez_vous_approuve()
 	{
-		$idAgent=1;
-		$rdvPris=$this->RdvModel->afficherRdv($idAgent);
-		$this->load->views('RdvDejaPris',compact('rdvPris'));
+		$idAgent=2;
+		$data['rdvPris']=$this->RdvModel->afficherRdv($idAgent);
+		$this->load->view('RdvDejaPris',$data);
+
+	}
+	public  function annuler_rdv_controller(){
+		$idRdv=2;
+		$etat="0";
+		$data['rdvPris']=$this->RdvModel->annulerRDV($idRdv,$etat);var_dump($data);
 
 	}
 }
