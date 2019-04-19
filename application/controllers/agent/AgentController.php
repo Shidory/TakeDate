@@ -18,28 +18,21 @@ class AgentController extends CI_Controller {
 		$username= $this->input->post('username');
 		$pwd= $this->input->post('pwd');
 		$confpwd=$this->input->post('confpwd');
-		
-		if($this->form_validation->run()){
-		$nomAgent= $this->input->post('nomAgent');
-		$telephone= $this->input->post('telephone');
-		$email= $this->input->post('email');
-		$photo= $this->input->post('photo');
-		$username= $this->input->post('username');
-		$pwd= $this->input->post('pwd');
-		$confpwd=$this->input->post('confpwd');
+		$idEntreprise = 1;
+		$idDept = 1;
 
-		if($pwd === $confpwd){
-			$data = array(
-				'nom'=> $nomAgent,
-				'telephone'=> $telephone,
-				'email'=> $email,
-				'photo'=> $photo,
-				'user'=> $username,
-				'pass'=>sha1($pwd) 
-			);
-			$this->AgentModel->ajouter_agent($data);
-			redirect(base_url('login'));
-		}
-		}
+		echo $nomAgent, $telephone;
+		$data = array(
+						'nomAgent'=> $nomAgent,
+						'telephone'=> $telephone,
+						'email'=> $email,
+						'photo'=> $photo,
+						'username'=> $username,
+						'pwd'=>sha1($pwd),
+						'idEntreprise' => $idEntreprise,
+						'idDept' => $idDept
+					);
+		$this->AgentsModel->ajouter_agent($data);		
+		
 	}
 }
