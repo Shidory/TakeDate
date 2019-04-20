@@ -49,11 +49,20 @@
 
 	public function get_Entreprise()
 	{
-		// cette methode permet d'envoyer les information  de l'entreprise à une vue
+		// cette methode permet d'envoyer les informations  des entreprises à une vue
 		$entreprise=$this->EntreprisesModel->get_Entreprise();
 		$data['dataEntreprise']=$entreprise;
 		$this->load->view('',$data);
 
+	}
+
+	public function get_Random_Entreprise()
+	{
+		//cette methode envoie les informations recuperée via la methode get_Random_Entreprises,d'une entreprise 
+		//à une vue
+		$random=$this->EntreprisesModel->get_Random_Entreprises();
+		$data['dataEntreprises']=$random;
+		
 	}
 }
 
