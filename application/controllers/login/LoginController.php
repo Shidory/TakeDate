@@ -4,9 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     class LoginController extends CI_Controller{
 
         public function index(){
-            $this->horaire_view();
+            $this->login_validation();
         }
-        
+
         // ============================================================>
         public function login_validation(){
             
@@ -50,8 +50,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
 
         // ==================================================================>
-        // methode qui charge la vue login_agent
-        public function login_view(){
-            $this->load->view('login/login_agent');
-        }
+        
     }
