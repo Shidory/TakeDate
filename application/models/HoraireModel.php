@@ -6,10 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             parent::__construct();
         }
 
+        // =======================================================================>
         public function ajouter_horaire($data){
             $this->db->insert('tb_horaire',$data);
         }
         
+        // =======================================================================>
         public function get_horaire($idAgent){
             // recuperation de l'horaire par rapport a un agent
             $req = $this->db->select('h.jour, h.heure_debut, h.heure_fin, a.nomAgent')
