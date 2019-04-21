@@ -142,7 +142,7 @@
         ),
 
         // controller + methode qui charge la vue horaire
-        'horaireController/horaireView' => array(
+        'horaireController/enregistrer' => array(
 
             array(
                 'field' => 'jour',

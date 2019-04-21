@@ -18,8 +18,9 @@
             // $this->session->userdata['id']
             $idagent     =  1 ;
 
-            echo $heure_debut;
-
+            if($this->form_validation->run()){
+                
+            }
             $data        = array(
                                 'idAgent'       => $idagent,
                                 'jour'          => $jour,
@@ -28,7 +29,6 @@
                            );
 
             $this->HoraireModel->ajouter_horaire($data);
-            echo "bien joué";
         }
     }
 ?>
