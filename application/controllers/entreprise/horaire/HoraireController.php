@@ -27,7 +27,7 @@
                                 'heureFin'      => $heure_fin
                            );
 
-            $this->HoraireModel->ajouterHoraire($data);
+            $this->HoraireModel->ajouter_horaire($data);
             echo "bien joué";
         }
     }
