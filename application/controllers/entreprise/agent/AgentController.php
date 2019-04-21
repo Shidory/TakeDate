@@ -5,8 +5,7 @@ class AgentController extends CI_Controller {
 
 	public function index()
 	{
-		//chargement de la page ajouter_agent dans la vue
-		$this->load->view('ajouter_agent');
+		
 	}
 	public function ajouter_agent()
 	{
@@ -21,7 +20,6 @@ class AgentController extends CI_Controller {
 		$idEntreprise = 1;
 		$idDept = 1;
 
-		echo $nomAgent, $telephone;
 		$data = array(
 						'nomAgent'=> $nomAgent,
 						'telephone'=> $telephone,
@@ -34,5 +32,10 @@ class AgentController extends CI_Controller {
 					);
 		$this->AgentsModel->ajouter_agent($data);		
 		
+	}
+
+	public function agent_view(){
+		//chargement de la page ajouter_agent dans la vue
+		$this->load->view('ajouter_agent');
 	}
 }

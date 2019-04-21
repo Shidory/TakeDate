@@ -6,6 +6,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         public function index(){
             $this->horaire_view();
         }
+        
         // ============================================================>
         public function login_validation(){
             
