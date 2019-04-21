@@ -16,7 +16,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             // recuperation de l'horaire par rapport a un agent
             $req = $this->db->select('h.jour, h.heure_debut, h.heure_fin, a.nomAgent')
                      ->from('tb_horaire as h')
-                     ->where('a.idAgent',$idAgent)
                      ->join('tb_agent as a', 'a.idAgent = h.idAgent')
                      ->get();  
 
