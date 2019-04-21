@@ -5,7 +5,7 @@
 
 		public function index(){
 
-			$this->repporter_rdv();
+			$this->reporter_rdv();
 		}
 
 		#######################################################
