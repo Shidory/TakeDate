@@ -6,7 +6,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         public function index(){
             $this->horaire_view();
         }
-
+        // ============================================================>
         public function login_validation(){
             
             $username = $this->input->post('username');
@@ -31,6 +31,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
+        // =================================================================>
         public function enter(){
             if($this->session->userdata['username'] != ''){
                 echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
@@ -41,11 +42,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
+        // ==================================================================>
         public function logout(){
             $this->session->unset_userdata($session_data);
             redirect(base_url('login'));
         }
 
+        // ==================================================================>
         // methode qui charge la vue login_agent
         public function login_view(){
             $this->load->view('login/login_agent');
