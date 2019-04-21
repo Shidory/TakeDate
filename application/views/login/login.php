@@ -6,8 +6,7 @@
     </head>
     <body>
         <div style="width: 50%; padding: 10px" class="container">
-
-            <form action="login/loginController/login_validation" method="post">
+            <?= form_open("login_validation"); ?>
                 <p class="h3 text-center mb-4">Sign in</p>
                 <div style="margin-bottom: 5%" class="md-form">
                     <i class="fa fa-envelope prefix grey-text"></i>
@@ -26,7 +25,7 @@
                 <div class="text-center">
                     <button type="submit" style="background-color: rgb(30,90,93); color: white; font-weight: bold" class="btn col-md-12">Login</button>
                 </div>
-            </form>
+            <?= form_close(); ?>
         </div>
     </body>
 </html>
