@@ -6,5 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->db->insert('tb_horaire',$data);
         }
         
+        public function get_horaire(){
+            
+        }
     }
 ?>
