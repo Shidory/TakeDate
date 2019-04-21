@@ -46,6 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             redirect(base_url('login'));
         }
 
+        // methode qui charge la vue login_agent
         public function login_view(){
             $this->load->view('login/login_agent');
         }
