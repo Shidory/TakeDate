@@ -3,14 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class EntreprisesModel extends CI_Model
 {
-
+    public $tb_agent = 'tb_agent';
+  
     public function __construct()
     {
-
         parent::__construct();
     }
-
-
+  ###########################################################################
     public function reporterr_rdv($idRdv, $data)
     {
 
@@ -18,8 +17,9 @@ class EntreprisesModel extends CI_Model
         $this->db->where('idRdv', $idRdv);
         $this->db->update('tb_rdv', $data);
     }
-    public $tb_agent = 'tb_agent';
-
+    
+  ##########################################################################
+    
     public function can_login($data)
     {
         $this->db->where('username', $data['username']);
@@ -32,7 +32,8 @@ class EntreprisesModel extends CI_Model
             return false;
         }
     }
-
+  
+  ###########################################################################
     public function get_Entreprise()
     {
         //cette methode recupere tout les elements de la table tb_entreprise
@@ -40,6 +41,8 @@ class EntreprisesModel extends CI_Model
         return $this->db->get('tb_entreprise')->result_array();
     }
 
+    #########################################################################
+   
     public function get_Random_Entreprises()
     {
         //cette methode recupere une seule entreprise dans la table tb_entreprise d'une maniere aleatoire
