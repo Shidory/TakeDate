@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="horaire" method="post">
+    <!-- <form action="welcome/enregistrer" method="post">
     
-        <label for="jour">Jour : </label>
+        <label for="jour">Jour</label>
         <input type="date" name="jour" id="jour" required><br>
-        <label for="datedebut" >Date debut : </label>
+        <label for="heuredebut" >HeureDebut</label>
         <input type="time" name="heuredebut" id="heuredebut" required><br>
-        <label for="datefin">Date fin : </label>
+        <label for="heurefin">HeureFin</label>
         <input type="time" name="heurefin" id="heurefin" required><br>
         <input type="submit" value="Enregistrer">
         
-    </form>
+    </form> -->
 </body>
 </html>

@@ -39,6 +39,7 @@ class EntrepriseController extends CI_Controller
 			);
 	
 			$this->EntreprisesModel->update_data($id, $data);
+			$this->reporter_rdv();
 
 		}
 		else{
@@ -50,6 +51,44 @@ class EntrepriseController extends CI_Controller
 			);
 	
 			$this->EntreprisesModel->update_data($id, $data);
+
+
+		#######################################################
+		public function reporter_rdv(){
+
+			//Réccupération des données venant du formulaire
+			$idRdv = $this->input->get("idRdv");
+			
+			$motif = $this->input->post("motif");
+			$date = $this->input->post("date");
+			$heure = $this->input->post("heure");
+			$duree = $this->input->post("duree");
+			$commentaire = $this->input->post("commentaire");
+
+			//Vérification de l'existance des clés fournies
+			if(isset($motif, $date, $heure, $duree, $commentaire)){
+
+				$data = array(
+
+					"motif" => $motif,
+					"date" => $date,
+					"heure" => $heure,
+					"duree" => $duree,
+					"etat" => "2",
+					"commentaire" => $commentaire
+				);
+
+				try{
+
+					//Appel de la méthdode reporter_rdv en lui passant  
+					//l'id et le tableau des valeurs en paramètre
+					$this->EntreprisesModel->reporter_rdv($idRdv, $data);
+				}
+				catch(Exception $e){
+
+					redirect('reporter_view');
+				}
+			}
 
 		}
 		redirect(base_url());
