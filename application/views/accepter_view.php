@@ -44,11 +44,8 @@
                     <td><?php echo $row->duree; ?></td>
                     <td><?php echo $row->etat; ?></td>
                     <td><?php echo $row->commentaire; ?></td>
-                    <td>
-                       <a href="<?php echo base_url(); ?>EntrepriseController/update_data/<?php echo $row->idRdv; ?>">Accepter</a>
-                        
-                    </td>
-                    <td><a href="entreprise/refuser_controller/1">Refuser</a></td>
+                    <td><a href="<?php echo base_url(); ?>entreprise/EntrepriseController/accepter_refuser_rdv?id=<?php echo $row->idRdv; ?>&state=1">Accepter</a></td>
+                    <td><a href="<?php echo base_url(); ?>entreprise/EntrepriseController/accepter_refuser_rdv?id=<?php echo $row->idRdv; ?>&state=0">Refuser</a></td>
                 </tr>
             <?php 
                     }
@@ -64,32 +61,38 @@
                 ?>
             </tbody>
             </table>
-            <form action="EntrepriseController/form_validation" method="post">
-                <?php 
-                    if(isset($rdv_data)){
-                        foreach($rdv_data->result() as $row){
-                            ?>
-                            <label>idRdv</label>
-                            <input type="text" name="motif" value="<?php echo $row->motif?>"/><br>
-                            <label>date</label>
-                            <input type="date" name="date" value="<?php echo $row->date?>"/><br>
-                            <label>heure</label>
-                            <input type="datetime" name="heure" value="<?php echo $row->heure?>"/><br>
-                            <label>duree</label>
-                            <input type="text" name="duree" value="<?php echo $row->duree?>"/><br>
-                            <label>etat</label>
-                            <input type="text" name="etat" value="<?php echo $row->etat?>"/><br>
-                            <label>commentaire</label>
-                            <input type="text" name="commentaire" value="<?php echo $row->commentaire?>"/><br>
-                            <input type="hidden" name="hidden_id" value="<?php $row->id?>"/><br>
-                            <input type="submit" name="update" value="Update">
-                            <?php
-                        }
-                    }
-                ?>
-            </form>
+            
            
 
+        </div>
+        <div>
+        <form action="entreprise/EntrepriseController/update_data/" method="post">
+           
+           <?php 
+                if(isset($rdv_data)){
+                    foreach($fetch_data->result() as $row){
+      
+            ?>
+                       
+                       <label>motif</label>
+                       <input type="text" name="motif" value="<?= $row->motif?>"/><br>
+                       <label>date</label>
+                       <input type="date" name="date" value="<?= $row->date?>"/><br>
+                       <label>heure</label>
+                       <input type="datetime" name="heure" value="<?= $row->heure?>"/><br>
+                       <label>duree</label>
+                       <input type="text" name="duree" value="<?= $row->duree?>"/><br>
+                       <label>etat</label>
+                       <input type="text" name="etat" value="<?= $row->etat?>"/><br>
+                       <label>commentaire</label>
+                       <input type="text" name="commentaire" value="<?= $row->commentaire?>"/><br>
+                       <input type="hidden" name="hidden_id" value="<?= $row->idRdv?>"/><br>
+                       <input type="submit" name="update" value="Update">
+                       <?php
+                   }
+               }
+               ?>
+       </form>
         </div>
     </body>
 </html>
