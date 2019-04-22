@@ -13,5 +13,6 @@ class ClientModel extends CI_Model{
         $this->db->update('tb_rdv', $data);
         
     }
+    
 }
 ?>
