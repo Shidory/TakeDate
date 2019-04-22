@@ -52,6 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'welcome';
 $route['login_validation'] = 'login/LoginController/login_validation';
+//le routing du client
+$route['annuler_rdv'] = 'client/ClientController';
+$route['modifier_rdv'] = 'client/ClientController/modifier_rdv';
+$route['login_validation'] = 'login/loginController';
 //rooting vers le controlleur de l'entreprise
 $route['repporter_rdv'] = 'entreprise/EntrepriseController';
 $route['lister_entreprise'] = 'entreprise/EntrepriseController/get_Entreprise';
@@ -59,3 +63,5 @@ $route['horaire'] = 'horaire/HoraireController';
 $route['rdv'] = 'rdv/RdvController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['horaire'] = 'entreprise/horaire/HoraireController';
+$route['rdv'] = 'rdv/RdvController';
