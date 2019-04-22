@@ -21,6 +21,7 @@ class EntreprisesModel extends CI_Model
         return $query;
     }
 
+
     public function get_state($id){
         $this->db->select('etat')
                  ->where("idRdv", $id);
@@ -33,16 +34,10 @@ class EntreprisesModel extends CI_Model
         $this->db->update("tb_rdv", $state);
     }
 
+    #######################################################    
+    public function reporter_rdv($idRdv, $data){
 
-
-    public $tb_agent = 'tb_agent';
-  
-   
-  ###########################################################################
-    public function reporterr_rdv($idRdv, $data)
-    {
-
-        //Requête de repport du rendez-vous
+        //Requête de report du rendez-vous
         $this->db->where('idRdv', $idRdv);
         $this->db->update('tb_rdv', $data);
     }
@@ -51,6 +46,7 @@ class EntreprisesModel extends CI_Model
     
     public function can_login($data)
     {
+        $tb_agent = 'tb_agent';
         $this->db->where('username', $data['username']);
         $this->db->where('pwd', $data['password']);
         $query = $this->db->get($this->tb_agent);

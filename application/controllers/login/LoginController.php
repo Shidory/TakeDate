@@ -50,7 +50,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             }
             else{
-                redirect(base_url('loginController'));
+                //redirect(base_url('LoginController'));
+                redirect('login_validation');
             }
         }
 

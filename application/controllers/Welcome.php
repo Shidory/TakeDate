@@ -7,6 +7,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
+		//$this->load->view('horaire/horaire_view');
+		$this->load->view('login/login');
+
 		$id_rdv = 1;
 		$this->load->model("EntreprisesModel");
 		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();

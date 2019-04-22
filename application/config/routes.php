@@ -50,21 +50,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-// Le rooting se fait ici
-
-$route['default_controller'] = 'Welcome';
-//$route['default_controller'] = 'login';
-
 $route['default_controller'] = 'welcome';
-
+$route['login_validation'] = 'login/LoginController/login_validation';
 //le routing du client
 $route['annuler_rdv'] = 'client/ClientController';
 $route['modifier_rdv'] = 'client/ClientController/modifier_rdv';
 $route['login_validation'] = 'login/loginController';
 //rooting vers le controlleur de l'entreprise
 $route['repporter_rdv'] = 'entreprise/EntrepriseController';
+$route['lister_entreprise'] = 'entreprise/EntrepriseController/get_Entreprise';
+$route['horaire'] = 'horaire/HoraireController';
+$route['rdv'] = 'rdv/RdvController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['lister_entreprise'] = 'entreprise/EntrepriseController/get_Entreprise';
 $route['horaire'] = 'entreprise/horaire/HoraireController';
 $route['rdv'] = 'rdv/RdvController';
