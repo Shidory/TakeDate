@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-   <form action="agent/Repondre_commentaireController/repondre_commentaire">
+   <form action="agent/Repondre_commentaireController/repondre_commentaire" method="post">
    <label for="commentaire">Commentaire</label>
     <input type="text" name="commentaire">
     <input type="submit" value ='repondre'>

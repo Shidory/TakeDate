@@ -11,10 +11,10 @@ class Repondre_commentaireController extends CI_Controller {
 	public function repondre_commentaire()
 	{
 		//recuperation des données dans la vue
-        $contenu= $this->input->post('contenu');
+        $contenu= $this->input->post('commentaire');
         $idAgent= 1;
 		$id_comment= 1;
-		echo $contenu;
+		//var_dump($contenu);die();
 		$data = array(
                         'contenu'=> $contenu,
                         'idAgent'=> $idAgent,
