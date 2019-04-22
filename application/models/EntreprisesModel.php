@@ -19,14 +19,8 @@ class EntreprisesModel extends CI_Model
         $this->db->where('idRdv', $id);
         $query = $this->db->get("tb_rdv");
         return $query;
-
-        #######################################################
-        public $tb_agent = 'tb_agent';
-            
-        public function can_login($data){
-   
-        public function reporter_rdv($idRdv, $data){
-
+    }
+    #######################################################
 
     public function get_state($id){
         $this->db->select('etat')

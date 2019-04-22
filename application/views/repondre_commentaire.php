@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="commentaire">Commentaire</label>
+   <form action="repondre_commentaire">
+   <label for="commentaire">Commentaire</label>
     <input type="text" name="commentaire">
     <input type="submit" value ='repondre'>
+   </form>
 </body>
 </html>
