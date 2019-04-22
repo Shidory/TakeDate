@@ -9,5 +9,10 @@ class AgentsModel extends CI_Model{
         
         $this->db->insert('tb_agent', $data);
     }
+    public function repondre_commentaire($data)
+    {
+        //recuperation de l'id du commentaire client
+        $ths->db->insert('tb_reponse_commentaire',$data);
+    }
 }
 ?>
