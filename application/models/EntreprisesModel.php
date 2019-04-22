@@ -17,12 +17,20 @@ class EntreprisesModel extends CI_Model{
     function accepter_refuser_rdv($id)
     {
         $this->db->where('idRdv', $id);
-        $query = $this->db->get("tb_rdv", $data);
+        $query = $this->db->get("tb_rdv");
         return $query;
     }
-    public function update_data($data, $id){
-        $this->db->where("id", $id);
-        $this->db->update("tb_rdv", $data);
+
+    public function get_state($id){
+        $this->db->select('etat')
+                 ->where("idRdv", $id);
+
+        return $this->db->get('tb_rdv');
+    }
+
+    public function update_data($id, $state){
+        $this->db->where("idRdv", $id);
+        $this->db->update("tb_rdv", $state);
     }
 
 }
