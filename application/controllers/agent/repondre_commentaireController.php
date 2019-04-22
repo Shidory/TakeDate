@@ -20,7 +20,7 @@ class Repondre_commentaireController extends CI_Controller {
                         'idAgent'=> $idAgent,
 						'id_comment' => $id_comment
 					);
-		$this->AgentModel->repondre_commentaire($data);		
+		$this->AgentsModel->repondre_commentaire($data);		
 		
 	}
 }
