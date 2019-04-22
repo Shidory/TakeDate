@@ -23,4 +23,28 @@ class Welcome extends CI_Controller {
 		$this->load->view('horaire/horaire_view');
 
 	}
+
+	public function enregistrer(){
+
+		$jour        = $this->input->post('jour');
+		$heure_debut = $this->input->post('heuredebut');
+		$heure_fin   = $this->input->post('heurefin');
+		// $this->session->userdata['id']
+		$idagent     =  1 ;
+
+		if($this->form_validation->run() == FALSE){
+			echo "hey";
+		}
+		else{
+			echo "salut";
+		}
+		// $data        = array(
+		//                     'idAgent'       => $idagent,
+		//                     'jour'          => $jour,
+		//                     'heureDebut'    => $heure_debut,
+		//                     'heureFin'      => $heure_fin
+		//                );
+
+		// $this->HoraireModel->ajouter_horaire($data);
+	}
 }

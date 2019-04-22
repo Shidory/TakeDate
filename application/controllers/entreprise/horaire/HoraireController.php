@@ -19,16 +19,19 @@
             $idagent     =  1 ;
 
             if($this->form_validation->run()){
-                
+                echo "hey";
             }
-            $data        = array(
-                                'idAgent'       => $idagent,
-                                'jour'          => $jour,
-                                'heureDebut'    => $heure_debut,
-                                'heureFin'      => $heure_fin
-                           );
+            else{
+                echo "salut";
+            }
+            // $data        = array(
+            //                     'idAgent'       => $idagent,
+            //                     'jour'          => $jour,
+            //                     'heureDebut'    => $heure_debut,
+            //                     'heureFin'      => $heure_fin
+            //                );
 
-            $this->HoraireModel->ajouter_horaire($data);
+            // $this->HoraireModel->ajouter_horaire($data);
         }
     }
 ?>
