@@ -1,14 +1,43 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class EntreprisesModel extends CI_Model
 {
-    public $tb_agent = 'tb_agent';
-  
-    public function __construct()
+    function __construct()
     {
         parent::__construct();
     }
+
+    public function fetch_data()
+	{
+        $query = $this->db->get("tb_rdv");
+        return $query;
+	}
+
+
+    function accepter_refuser_rdv($id)
+    {
+        $this->db->where('idRdv', $id);
+        $query = $this->db->get("tb_rdv");
+        return $query;
+    }
+
+    public function get_state($id){
+        $this->db->select('etat')
+                 ->where("idRdv", $id);
+
+        return $this->db->get('tb_rdv');
+    }
+
+    public function update_data($id, $state){
+        $this->db->where("idRdv", $id);
+        $this->db->update("tb_rdv", $state);
+    }
+
+
+
+    public $tb_agent = 'tb_agent';
+  
+   
   ###########################################################################
     public function reporterr_rdv($idRdv, $data)
     {
@@ -52,3 +81,4 @@ class EntreprisesModel extends CI_Model
         return $this->db->get('tb_entreprise')->result_array();
     }
 }
+?>
