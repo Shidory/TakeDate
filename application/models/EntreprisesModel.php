@@ -22,7 +22,7 @@
             
         public function can_login($data){
    
-        public function reporterr_rdv($idRdv, $data){
+        public function reporter_rdv($idRdv, $data){
 
         
             $this->db->where('idRdv', $idRdv);
