@@ -6,10 +6,24 @@ class EntreprisesModel extends CI_Model{
     {
         parent::__construct();
     }
-    function accepter_refuser_rdv($id, $data)
+
+    public function fetch_data()
+	{
+        $query = $this->db->get("tb_rdv");
+        return $query;
+	}
+
+
+    function accepter_refuser_rdv($id)
     {
         $this->db->where('idRdv', $id);
-        $this->db->update('tb_entreprise', $data);
+        $query = $this->db->get("tb_rdv", $data);
+        return $query;
     }
+    public function update_data($data, $id){
+        $this->db->where("id", $id);
+        $this->db->update("tb_rdv", $data);
+    }
+
 }
 ?>
