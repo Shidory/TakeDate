@@ -4,7 +4,6 @@
 	class EntrepriseController extends CI_Controller {
 
 		public function index(){
-
 			$this->repporter_rdv();
 		}
 
@@ -99,8 +98,5 @@
 
 		}
 	}
+
 ?>
-
-	
-
-

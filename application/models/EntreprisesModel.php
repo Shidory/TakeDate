@@ -8,49 +8,37 @@
 
             parent::__construct();
         }
-
+      
+        #######################################################
+        public $tb_agent = 'tb_agent';
         #######################################################
         public function reporterr_rdv($idRdv, $data){
-
-            //Requête de repport du rendez-vous
             $this->db->where('idRdv', $idRdv);
             $this->db->update('tb_rdv', $data);
         }
-
-        #######################################################
-        public $tb_agent = 'tb_agent';
-            
-        public function can_login($data){
-   
-        public function reporterr_rdv($idRdv, $data){
-
-        
-            $this->db->where('idRdv', $idRdv);
-            $this->db->update('tb_rdv', $data);
+        ######################################################
+        public function get_Entreprise()
+        {
+            //cette methode recupere tout les elements de la table tb_entreprise
+            $this->db->select('*');
+            return $this->db->get('tb_entreprise')->result_array();
         }
+        ######################################################
+      public function can_login($data){
+            $this->db->where('username', $data['username']);
+            $this->db->where('pwd', $data['password']);
+            $query = $this->db->get($this->tb_agent);
 
-        public $tb_agent = 'tb_agent';
-        
-    public function can_login($data){
-        $this->db->where('username', $data['username']);
-        $this->db->where('pwd', $data['password']);
-        $query = $this->db->get($this->tb_agent);
-
-        if($query->num_rows() > 0){
-            return true;
+            if($query->num_rows() > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
-        else{
-            return false;
-        }
-    }
 
     #######################################################
-    public function get_Entreprise()
-    {
-        //cette methode recupere tout les elements de la table tb_entreprise
-        $this->db->select('*');
-        return $this->db->get('tb_entreprise')->result_array();
-    }
+   
 }
 
 ?>
