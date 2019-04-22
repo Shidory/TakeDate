@@ -12,7 +12,6 @@
         <div>
             <h3>rendez vous</h3>
         </div>
-        <form action="entreprise" method="post">
 
                 
         <table>
@@ -73,8 +72,5 @@
         </table>
 
     </div>
-</form>	 
-    
-   
 </body>
 </html>
