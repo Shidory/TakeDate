@@ -39,11 +39,8 @@ class EntrepriseController extends CI_Controller
 			);
 	
 			$this->EntreprisesModel->update_data($id, $data);
-
-<<<<<<< HEAD
 			$this->reporter_rdv();
-=======
->>>>>>> 950da7ee9761c9a59dd01cc38ee32c626da5072e
+
 		}
 		else{
 			$newState = "0";
@@ -55,7 +52,7 @@ class EntrepriseController extends CI_Controller
 	
 			$this->EntreprisesModel->update_data($id, $data);
 
-<<<<<<< HEAD
+
 		#######################################################
 		public function reporter_rdv(){
 
@@ -92,8 +89,7 @@ class EntrepriseController extends CI_Controller
 					redirect('reporter_view');
 				}
 			}
-=======
->>>>>>> 950da7ee9761c9a59dd01cc38ee32c626da5072e
+
 		}
 		redirect(base_url());
 	}
