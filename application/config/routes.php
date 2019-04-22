@@ -53,4 +53,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // Le rooting se fait ici
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
+//$route['entreprise'] = 'entreprise/EntrepriseController';
+//$route['accepter'] = 'entreprise/EntrepriseController/accepter_controller';
 $route['translate_uri_dashes'] = FALSE;
