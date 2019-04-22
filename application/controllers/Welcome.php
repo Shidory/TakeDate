@@ -20,7 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('accepter_view');
+		$this->load->model("EntreprisesModel");
+		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
+		$this->load->view('accepter_view', $data);
 		//echo anchor('index');
 	}
 }
