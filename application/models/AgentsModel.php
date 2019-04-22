@@ -12,7 +12,7 @@ class AgentsModel extends CI_Model{
     public function repondre_commentaire($data)
     {
         //recuperation de l'id du commentaire client
-        $ths->db->insert('tb_reponse_commentaire',$data);
+        $this->db->insert('tb_reponse_commentaire',$data);
     }
 }
 ?>
