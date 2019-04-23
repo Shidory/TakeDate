@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
 		
 
 		//chargement de la vue horaire
-		$this->load->view('horaire/horaire_view');
+		$this->load->view('repondre_commentaire');
 	}
 
 	public function enregistrer(){

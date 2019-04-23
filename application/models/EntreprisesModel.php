@@ -20,7 +20,7 @@ class EntreprisesModel extends CI_Model
         $query = $this->db->get("tb_rdv");
         return $query;
     }
-
+    #######################################################
 
     public function get_state($id){
         $this->db->select('etat')
