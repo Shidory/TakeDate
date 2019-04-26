@@ -3,26 +3,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+
 	public function index()
 	{
-		//chargement de la vue annuler
-		$this->load->view('annuler_view');
-		$this->load->view('login/login');
-		$this->load->view('horaire/horaire_view');
+		$entreprise = $this->EntreprisesModel->get_Entreprise_Index();
+		$data['dataEntreprise'] = $entreprise;
+		$this->load->view('index',$data);
 	}
+	public function listentreprise()
+	{
+		$entreprise = $this->EntreprisesModel->get_Entreprise();
+		$random = $this->EntreprisesModel->get_Random_Entreprises();
+		$data['dataEntreprise'] = $entreprise;
+		$data['randomEntreprise'] = $random;
+		$this->load->view('listentreprise',$data);
+	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	public function register()
+	{
+		$this->load->view('register');
+	}
+	public function entreprise()
+	{
+		$idEntreprise=$this->input->get('id');
+		$agent = $this->AgentsModel->get_Agent($idEntreprise);
+		
+		$random = $this->EntreprisesModel->get_Random_Entreprises();
+		$data['randomEntreprise'] = $random;
+		$data['agent'] = $agent;
+		$this->load->view('entreprise',$data);
+	}
+	
 }
