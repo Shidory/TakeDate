@@ -6,7 +6,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         public function index(){
             $this->load->view('login');//Chargement de la page de connexion
         }
-
         // Methode de validation des données du formulaire
         public function login_validation(){
             // Données venant du formulaire
@@ -17,7 +16,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $data_db = $this->EntreprisesModel->get_db_data($username);
             // Cette ligne permet de convertir la variable $pass_db en une chaîne de caractères
             $data_db = json_decode(json_encode($data_db), TRUE);
-
             // Vérification de l'authentification
             if($data_db['pwd'] == $hash){
                 // Création d'un tableau de données
@@ -25,7 +23,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     'username' => $username,
                     'password' => $hash
                 );
-
                 // Vérification de la valeur de la fonction can_login du model EntreprisesModel
                 if($this->EntreprisesModel->can_login($data)){
                     // Création d'un tableau de données de session
@@ -57,10 +54,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 redirect(base_url('login'));
             }
         }
-
         // Fonction de déconnexion
         public function logout(){
             $this->session->unset_userdata($session_data);//Destruction des valeurs de session
             redirect(base_url('login'));
         }
     }
+?>

@@ -106,8 +106,6 @@
                 </ul>
             </div>
         </nav>
-
-
         <?php foreach ($randomEntreprise as $row) { ?>
             <div class="row center">
                 <h2 class="collection-title"><?php echo $row['nomEntreprise'] ?> est l'entreprise de la semaine</h2>
@@ -118,8 +116,6 @@
                 </div>
             </div>
         <?php } ?>
-
-
         <div class="row">
             <div class="container">
                 <div class="row">
@@ -136,13 +132,11 @@
                                     </div>
                                     <div class="col s8 blue-text">
                                         <h5><?php echo $row['nomAgent'] ?></h5>
-                                        <p>Secretaire adjoint<?php echo $row['idAgent']?></p>
+                                        <p>Secretaire adjoint</p>
                                     </div>
                                 </div>
                             </a>
-                         
-                            </div>
-                       
+                        </div>
                          <div id="horaire" class="modal modal-fixed-footer">
                             <div class="modal-content">
                                 <h5>Horaire de <?php echo $row['nomAgent'] ?></h5>
@@ -158,7 +152,7 @@
                                         <tr>
                                             <td>Lundi 30/05</td>
                                             <td>12h - 16h</td>
-                                            <td><a class="blue-text" href="#">Ajouter un RDV</a></td>
+                                            <td><a class="blue-text" href="prendre_rdv">Ajouter un RDV</a></td>
                                         </tr>
                                         <tr>
                                             <td>Mardi 01/06</td>
@@ -172,7 +166,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-
                             </div>
                             <div class="modal-footer">
                                 <a href="#!" class="modal-close waves-effect waves-red btn-flat">Fermer</a>
