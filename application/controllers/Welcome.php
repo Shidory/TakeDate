@@ -36,5 +36,9 @@ class Welcome extends CI_Controller {
 		$data['agent'] = $agent;
 		$this->load->view('entreprise',$data);
 	}
+	public function rdv()
+	{
+		$this->load->view('rdv');
+	}
 	
 }
