@@ -98,6 +98,7 @@ class EntrepriseController extends CI_Controller
 	public function notifier($adresse){
 
 		$message = "";
+		$this->email->clear();
 	}
 
 	#######################################################
