@@ -42,6 +42,7 @@ class AgentController extends CI_Controller {
 	#######################################################
 	public function notifier(){
 
+		
 	}
 
 	#######################################################

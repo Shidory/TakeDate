@@ -93,7 +93,14 @@ class EntrepriseController extends CI_Controller
 		}
 		redirect(base_url());
 	}
-	
+
+	#######################################################
+	public function notifier(){
+
+
+	}
+
+	#######################################################
 	public function updated(){
 		$this->index();
 	}
