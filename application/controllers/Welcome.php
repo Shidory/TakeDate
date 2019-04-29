@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
 	{
 		$entreprise = $this->EntreprisesModel->get_Entreprise_Index();
 		$data['dataEntreprise'] = $entreprise;
+		$this->load->view('header');
 		$this->load->view('index',$data);
 	}
 	public function list_entreprise()
@@ -44,7 +45,7 @@ class Welcome extends CI_Controller {
 		$data['agent'] = $agent;
 		$this->load->view('entreprise',$data);
 	}
-	
+
 	public function rdv()
 	{
 		$this->load->view('rdv');
