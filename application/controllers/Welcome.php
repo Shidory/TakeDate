@@ -7,18 +7,20 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
-		//$this->load->view('horaire/horaire_view');
-		$this->load->view('login/login');
+		$this->load->view('horaire/horaire_view');
+		// $this->load->view('login/login');
 
-		$id_rdv = 1;
-		$this->load->model("EntreprisesModel");
-		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
-		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
-		$this->load->view('accepter_view', $data);
+		// $id_rdv = 1;
+		// $this->load->model("EntreprisesModel");
+		// $data["fetch_data"] = $this->EntreprisesModel->fetch_data();
+		// $data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
+		// $this->load->view('accepter_view', $data);
+
+
 		
 
 		//chargement de la vue horaire
-		$this->load->view('repondre_commentaire');
+		// $this->load->view('repondre_commentaire');
 	}
 
 	public function enregistrer(){
@@ -28,8 +30,9 @@ class Welcome extends CI_Controller {
 		$heure_fin   = $this->input->post('heurefin');
 		// $this->session->userdata['id']
 		$idagent     =  1 ;
-
-		if($this->form_validation->run() == FALSE){
+		
+		
+		if($this->form_validation->run()){
 			echo "hey";
 		}
 		else{

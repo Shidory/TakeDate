@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <form action="welcome/enregistrer" method="post">
+    <form action="welcome/enregistrer" method="post">
     
         <label for="jour">Jour</label>
         <input type="date" name="jour" id="jour" required><br>
@@ -17,6 +17,6 @@
         <input type="time" name="heurefin" id="heurefin" required><br>
         <input type="submit" value="Enregistrer">
         
-    </form> -->
+    </form>
 </body>
 </html>

@@ -24,5 +24,5 @@
                 'rules' => 'required'
             )
         )
-    )
+    );
 ?>
