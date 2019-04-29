@@ -97,8 +97,9 @@ class EntrepriseController extends CI_Controller
 	#######################################################
 	public function notifier($adresse){
 
-		$message = "";
+		$message = "votre rendez-vous a été reporté";
 		$this->email->clear();
+		$this->email->from('simonmwepu@gmail.com');
 	}
 
 	#######################################################
