@@ -4,6 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class EntrepriseController extends CI_Controller
 
 {
+	
+	public function index(){
+		$this->load->view('listentreprise');
+	}
+	
 	public function _rules() 
     {
         $this->form_validation->set_rules('nom','Nom Entreprise','trim|required', array('required' => 'Saisissez le nom de l entreprise'));
@@ -13,12 +18,13 @@ class EntrepriseController extends CI_Controller
         $this->form_validation->set_rules('pwd','Mot de passe','trim|required', array('required' => 'Saisissez le mot de passe'));
         $this->form_validation->set_rules('pwdConf','Confirmation Mot de passe','trim|required', array('required' => 'Confirmez le mot de passe'));
         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-    }
+	}
+	
 	public function inscription_entreprise()
     {
         $this->_rules();
 
-        if ($this->form_validation->run()){
+        // if ($this->form_validation->run()){
            echo 'ok';
             $pwd = $this->input->post('pwd');
 			$pwdConf = $this->input->post('pwdConf');
@@ -42,26 +48,26 @@ class EntrepriseController extends CI_Controller
 			else{
 				redirect('Welcome/register');
 			}
-        }
-        else{
-            $data['error'] = array('err1'=>'','err2'=>'');
-            $data['title'] = "Inscription entreprise";
-//            $this->load->view('_inc/header_admin',$data);
-redirect('Welcome/register');
-//            $this->load->view('_inc/footer_admin');
-        }
+//         }
+//         else{
+//             $data['error'] = array('err1'=>'','err2'=>'');
+//             $data['title'] = "Inscription entreprise";
+// //            $this->load->view('_inc/header_admin',$data);
+// redirect('Welcome/register');
+// //            $this->load->view('_inc/footer_admin');
+//         }
 
     }
-	public function index()
-	{
+	// public function index()
+	// {
 
 		
-		$this->load->model("EntreprisesModel");
-		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
-		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
-		$this->load->view('accepter_view', $data);
-		$this->accepter_controller();
-	}
+	// 	$this->load->model("EntreprisesModel");
+	// 	$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
+	// 	$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
+	// 	$this->load->view('accepter_view', $data);
+	// 	$this->accepter_controller();
+	// }
 
 	public function update_data()
 	{

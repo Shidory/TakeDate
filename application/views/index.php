@@ -66,7 +66,7 @@
 					</li>
 					
 					<li>
-						<a href="listentreprise">
+						<a href="entreprise">
 							Entreprises
 						</a>
 					</li>
