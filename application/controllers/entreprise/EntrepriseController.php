@@ -95,9 +95,9 @@ class EntrepriseController extends CI_Controller
 	}
 
 	#######################################################
-	public function notifier(){
+	public function notifier($adresse){
 
-
+		
 	}
 
 	#######################################################
