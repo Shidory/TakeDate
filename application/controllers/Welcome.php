@@ -8,7 +8,7 @@ class Welcome extends CI_Controller {
 	{
 
 		//$this->load->view('horaire/horaire_view');
-		$this->load->view('reporter_rdv');
+		$this->load->view('entreprise/notifier');
 
 		$id_rdv = 1;
 		$this->load->model("EntreprisesModel");
