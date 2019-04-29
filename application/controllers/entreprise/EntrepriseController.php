@@ -119,12 +119,6 @@ class EntrepriseController extends CI_Controller
 	}
 
 	#######################################################
-	public function updated(){
-		$this->index();
-	}
-
-		$this->repporter_rdv();
-	}
 
 	public function repporter_rdv()
 	{
