@@ -152,7 +152,7 @@
                                         <tr>
                                             <td>Lundi 30/05</td>
                                             <td>12h - 16h</td>
-                                            <td><a class="blue-text" href="prendre_rdv">Ajouter un RDV</a></td>
+                                            <td><a class="blue-text" href="rdv">Ajouter un RDV</a></td>
                                         </tr>
                                         <tr>
                                             <td>Mardi 01/06</td>

@@ -40,7 +40,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             }
             else{
-                redirect(base_url('loginController'));
+                //redirect(base_url('LoginController'));
+                redirect('login_validation');
             }
         }
 
@@ -54,10 +55,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 redirect(base_url('login'));
             }
         }
-        // Fonction de déconnexion
+   // Fonction de déconnexion
+
         public function logout(){
             $this->session->unset_userdata($session_data);//Destruction des valeurs de session
             redirect(base_url('login'));
         }
     }
 ?>
+
+   

@@ -62,7 +62,7 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li class="site-nav--active active">
-						<a href="Welcome/index" class="site-nav__link">Acceuil</a>
+						<a href="index" class="site-nav__link">Acceuil</a>
 					</li>
 					
 					<li>
