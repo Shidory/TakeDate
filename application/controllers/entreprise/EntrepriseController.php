@@ -11,6 +11,16 @@ class EntrepriseController extends CI_Controller
 		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
 		$this->load->view('accepter_view', $data);
 		$this->accepter_controller();
+
+		$this->email->initialize(array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'smtp.sendgrid.net',
+			'smtp_user' => 'sendgridusername',
+			'smtp_pass' => 'sendgridpassword',
+			'smtp_port' => 587,
+			'crlf' => "\r\n",
+			'newline' => "\r\n"
+		  ));
 	}
 
 	public function update_data(){
