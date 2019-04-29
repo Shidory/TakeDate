@@ -100,6 +100,14 @@ class EntrepriseController extends CI_Controller
 		$message = "votre rendez-vous a été reporté";
 		$this->email->clear();
 		$this->email->from('simonmwepu@gmail.com');
+		$this->email->reply_to('sarahddiur@gmail.com');
+		$this->email->to($adresse);
+		$this->email->subject('Double petrova');
+		$this->email->message($message);
+		if($this->email->send()===TRUE){
+			return true
+		}
+		return false;
 	}
 
 	#######################################################
