@@ -81,11 +81,11 @@
 				<ul class="right hide-on-med-and-down">
 
 					<li class="site-nav--active active">
-						<a href="index" class="site-nav__link">Acceuil</a>
+						<a href="welcome" class="site-nav__link">Acceuil</a>
 					</li>
 
 					<li>
-						<a href="listentreprise">
+						<a href="entreprise">
 							Entreprises
 						</a>
 					</li>

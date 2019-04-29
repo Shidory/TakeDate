@@ -74,3 +74,4 @@ $route['rdv']                 = 'rdv/RdvController';
 
 $route['login']               = 'login/LoginController';
 $route['register']            = 'entreprise/EntrepriseController/register';
+// $route['index']               = '';

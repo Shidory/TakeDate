@@ -333,11 +333,11 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li class="site-nav--active active">
-						<a href="index" class="site-nav__link">Acceuil</a>
+						<a href="welcome" class="site-nav__link">Acceuil</a>
 					</li>
 					
 					<li>
-						<a href="listentreprise">
+						<a href="entreprise">
 							Entreprises
 						</a>
 					</li>
@@ -352,44 +352,7 @@
 				</ul>
 			</div>
 		</nav>
-		<ul class="side-nav" id="nav-mobile">
-			<li> <a href="login" id="customer_login_link">Se connecter</a> </li>
-			<li> <a href="register" id="customer_register_link">S'inscrire</a> </li>
-	
-			<li class="site-nav--active active">
-				<a href="index" class="site-nav__link">Acceuil</a>
-			</li>
 		
-			<li>
-				<a href="listentreprise">
-					Entreprises
-				</a>
-			</li>
-			
-		</ul>
-	
-		<div data-section-id="header" data-section-type="header-section">
-			<header role="banner">
-				<div class="popup-search-wrapper">
-					<form action="https://materialize-shopify-themes.myshopify.com/search" method="get" role="search">
-						<label for="Search" class="label-hidden">
-							Taper un mot clé
-						</label>
-						<input type="search" name="q" id="Search" value="" placeholder="Taper un mot clé">
-						<button type="submit" class="btn-flat btn-floating waves-effect">
-							<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-								viewBox="0 0 20 20">
-								<path fill="#444"
-									d="M18.64 17.02l-5.31-5.31c.81-1.08 1.26-2.43 1.26-3.87C14.5 4.06 11.44 1 7.75 1S1 4.06 1 7.75s3.06 6.75 6.75 6.75c1.44 0 2.79-.45 3.87-1.26l5.31 5.31c.45.45 1.26.54 1.71.09.45-.36.45-1.17 0-1.62zM3.25 7.75c0-2.52 1.98-4.5 4.5-4.5s4.5 1.98 4.5 4.5-1.98 4.5-4.5 4.5-4.5-1.98-4.5-4.5z" />
-							</svg>
-							<span class="icon-fallback-text">Search</span>
-						</button>
-					</form>
-					<i class="popup-close material-icons">close</i>
-				</div>
-			</header>
-		</div>
-	</div>
 
 	<main role="main" id="MainContent">
 		<div class="section container">
