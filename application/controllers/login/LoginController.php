@@ -4,17 +4,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
     class LoginController extends CI_Controller{
 
         public function index(){
-<<<<<<< HEAD
-            $this->login_validation();
-        }
 
-        // ============================================================>
-=======
+            $this->login_validation();
             $this->load->view('login');//Chargement de la page de connexion
         }
 
         // Methode de validation des données du formulaire
->>>>>>> 762767b58750ceaa66e0acdefec77d3f449584dd
         public function login_validation(){
             // Données venant du formulaire
             $username = $this->input->post('username');
@@ -55,11 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
-<<<<<<< HEAD
-        // =================================================================>
-=======
         // Fonction de redirection en cas de resultat positif de la verification de l'authentification
->>>>>>> 762767b58750ceaa66e0acdefec77d3f449584dd
         public function enter(){
             if($this->session->userdata['username'] != '' && $this->session->userdata['id'] != null){
                 echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
@@ -70,11 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
-<<<<<<< HEAD
-        // ==================================================================>
-=======
         // Fonction de déconnexion
->>>>>>> 762767b58750ceaa66e0acdefec77d3f449584dd
         public function logout(){
             $this->session->unset_userdata($session_data);//Destruction des valeurs de session
             redirect(base_url('login'));
