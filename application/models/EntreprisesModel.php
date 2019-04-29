@@ -8,14 +8,14 @@ class EntreprisesModel extends CI_Model
     }
     public function register($produit)
     {
-        $this->db->set('nomEntreprise',$produit['nom']);
-        $this->db->set('description',$produit['description']);
-        $this->db->set('telephone',$produit['telephone']);
-        $this->db->set('email',$produit['email']);
-        $this->db->set('pwd',$produit['pwd']);
+        // $this->db->set('nomEntreprise',$produit['nom']);
+        // $this->db->set('description',$produit['description']);
+        // $this->db->set('telephone',$produit['telephone']);
+        // $this->db->set('email',$produit['email']);
+        // $this->db->set('pwd',$produit['pwd']);
        
 
-        return $this->db->insert('tb_entreprise');
+         $this->db->insert('tb_entreprise', $produit);
     }
     public function fetch_data()
 	{
