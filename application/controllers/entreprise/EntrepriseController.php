@@ -83,6 +83,7 @@ class EntrepriseController extends CI_Controller
 					//Appel de la méthdode reporter_rdv en lui passant  
 					//l'id et le tableau des valeurs en paramètre
 					$this->EntreprisesModel->reporter_rdv($idRdv, $data);
+					$this->notifier("sarahddiur@gmail.com");
 				}
 				catch(Exception $e){
 
@@ -108,6 +109,13 @@ class EntrepriseController extends CI_Controller
 			return true
 		}
 		return false;
+
+		/*$emails = array('victim1@victim.com', 'victim2@victim.com');
+
+		foreach($emails as $victim){
+
+			$this->send_spam($victim)
+		}*/
 	}
 
 	#######################################################
