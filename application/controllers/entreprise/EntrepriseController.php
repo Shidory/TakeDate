@@ -19,6 +19,10 @@ class EntrepriseController extends CI_Controller
         $this->form_validation->set_rules('pwdConf','Confirmation Mot de passe','trim|required', array('required' => 'Confirmez le mot de passe'));
         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
 	}
+
+	public function register(){
+		$this->load->view("register");
+	}
 	
 	public function inscription_entreprise()
     {
