@@ -4,10 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class EntrepriseController extends CI_Controller
 {
 
-	public function index()
-	{
+	public function index(){
 
-		
 		$this->load->model("EntreprisesModel");
 		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
 		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
@@ -15,8 +13,8 @@ class EntrepriseController extends CI_Controller
 		$this->accepter_controller();
 	}
 
-	public function update_data()
-	{
+	public function update_data(){
+
 		$id_rdv = $this->uri->segment(3);
 		$this->load->model("EntreprisesModel");
 		$data['rdv_data'] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv) ;
@@ -51,50 +49,50 @@ class EntrepriseController extends CI_Controller
 			);
 	
 			$this->EntreprisesModel->update_data($id, $data);
-
-
-		#######################################################
-		public function reporter_rdv(){
-
-			//Réccupération des données venant du formulaire
-			$idRdv = $this->input->get("idRdv");
-			
-			$motif = $this->input->post("motif");
-			$date = $this->input->post("date");
-			$heure = $this->input->post("heure");
-			$duree = $this->input->post("duree");
-			$commentaire = $this->input->post("commentaire");
-
-			//Vérification de l'existance des clés fournies
-			if(isset($motif, $date, $heure, $duree, $commentaire)){
-
-				$data = array(
-
-					"motif" => $motif,
-					"date" => $date,
-					"heure" => $heure,
-					"duree" => $duree,
-					"etat" => "2",
-					"commentaire" => $commentaire
-				);
-
-				try{
-
-					//Appel de la méthdode reporter_rdv en lui passant  
-					//l'id et le tableau des valeurs en paramètre
-					$this->EntreprisesModel->reporter_rdv($idRdv, $data);
-					$this->notifier("sarahddiur@gmail.com");
-				}
-				catch(Exception $e){
-
-					redirect('reporter_view');
-				}
-			}
-
 		}
 		redirect(base_url());
 	}
 
+	#######################################################
+	public function reporter_rdv(){
+
+		//Réccupération des données venant du formulaire
+		$idRdv = $this->input->get("idRdv");
+		
+		$motif = $this->input->post("motif");
+		$date = $this->input->post("date");
+		$heure = $this->input->post("heure");
+		$duree = $this->input->post("duree");
+		$commentaire = $this->input->post("commentaire");
+
+		//Vérification de l'existance des clés fournies
+		if(isset($motif, $date, $heure, $duree, $commentaire)){
+
+			$data = array(
+
+				"motif" => $motif,
+				"date" => $date,
+				"heure" => $heure,
+				"duree" => $duree,
+				"etat" => "2",
+				"commentaire" => $commentaire
+			);
+
+			try{
+
+				//Appel de la méthdode reporter_rdv en lui passant  
+				//l'id et le tableau des valeurs en paramètre
+				$this->EntreprisesModel->reporter_rdv($idRdv, $data);
+				$this->notifier("sarahddiur@gmail.com");
+			}
+			catch(Exception $e){
+
+				redirect('reporter_view');
+			}
+		}
+
+	}
+	
 	#######################################################
 	public function notifier($adresse){
 
@@ -106,10 +104,12 @@ class EntrepriseController extends CI_Controller
 		$this->email->subject('Double petrova');
 		$this->email->message($message);
 		if($this->email->send()===TRUE){
-			return true
+			return true;
 		}
-		return false;
-
+		else{
+			return false;
+		}
+	
 		/*$emails = array('victim1@victim.com', 'victim2@victim.com');
 
 		foreach($emails as $victim){
