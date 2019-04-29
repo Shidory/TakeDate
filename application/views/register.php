@@ -74,7 +74,7 @@
 
 
 	<meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/20302737/digital_wallets/dialog">
-	<script id="shopify-features"head>
+	<script id="shopify-features">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -132,7 +132,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
 
-		type="application/json">{"accessToken":"35296d37158a1bea1de61bf4abf416cf","betas":[],"domain":"materialize-shopify-themes.myshopify.com","shopId":20302737,"smart_payment_buttons_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/spb.en.js"}</script>
+	<script>	type="application/json">{"accessToken":"35296d37158a1bea1de61bf4abf416cf","betas":[],"domain":"materialize-shopify-themes.myshopify.com","shopId":20302737,"smart_payment_buttons_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/spb.en.js"}</script>
 	<script>var Shopify = Shopify || {};
 		Shopify.shop = "materialize-shopify-themes.myshopify.com";
 		Shopify.currency = { "active": "USD", "rate": "1.0" };
