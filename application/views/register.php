@@ -13,13 +13,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="theme-color" content="#7db557">
-	<link rel="canonical" href="rdv">
+	<link rel="canonical" href="register.html">
 
 
 
 
 	<title>
-	Prendre Rendez-vous
+		Créer un compte prestataire
 	</title>
 
 
@@ -74,7 +74,64 @@
 
 
 	<meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/20302737/digital_wallets/dialog">
-	<script id="shopify-features"
+	<script id="shopify-features"<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#7db557">
+    <link rel="canonical" href="index">
+
+    <title>
+        TakeDate
+    </title>
+
+
+    <link href="<?php echo base_url('') ?>assets/css/gallery-materialize.mincfcd.css?0" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="<?php echo base_url('') ?>assets/css/theme.scsscfcd.css?0" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/20302737/digital_wallets/dialog">
+
+    <script integrity="sha256-ZGMHgi9G7WU+Z7WiP2suSn84yzoN83sGf9nMWJhVHAw=" defer="defer" src="<?php echo base_url('') ?>assets/js/express_buttons-646307822f46ed653e67b5a23f6b2e4a7f38cb3a0df37b067fd9cc5898551c0c.js" crossorigin="anonymous"></script>
+    <script integrity="sha256-6HOSr+Kf4wcoL05qrRLLS8wq/v1rf+vwtw7f0xX5aEw=" defer="defer" src="<?php echo base_url('') ?>assets/js/features-e87392afe29fe307282f4e6aad12cb4bcc2afefd6b7febf0b70edfd315f9684c.js" crossorigin="anonymous"></script>
+    <style>
+        #shopify-section-header>nav,
+        .gradient-back {
+            background: rgb(221, 135, 182);
+            background: linear-gradient(90deg, rgba(221, 135, 182, 1) 0%, rgba(4, 195, 159, 1) 100%);
+        }
+
+        .viollet {
+            color: rgb(221, 135, 182);
+        }
+
+        .greener {
+            color: #04c39f;
+        }
+
+        #semaine {
+            height: 300px;
+        }
+
+        * {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        #p {
+            background: rgba(221, 135, 182, 0.4);
+        }
+
+        #p p {
+            color: #fff;
+            size: 30px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+
 		type="application/json">{"accessToken":"35296d37158a1bea1de61bf4abf416cf","betas":[],"domain":"materialize-shopify-themes.myshopify.com","shopId":20302737,"smart_payment_buttons_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/spb.en.js"}</script>
 	<script>var Shopify = Shopify || {};
 		Shopify.shop = "materialize-shopify-themes.myshopify.com";
@@ -340,41 +397,60 @@
 				<div class="col s12 m6 offset-m3">
 					<div class="card login-wrapper">
 						<div class="card-content">
-						<form method="post" action="https://materialize-shopify-themes.myshopify.com/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
-									<h4 class="center">Prendre Rendez-vous</h4>
-									<div class="input-field">
-										<label for="NomComplet">Nom Complet</label>
-										<input type="text" name="customer[nom_complet]" id="FirstName" autofocus>
-									</div>
+
+							<form method="post" action="<?php echo base_url('entreprise/EntrepriseController/inscription_entreprise')?>"
+								id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type"
+									value="create_customer" /><input type="hidden" name="utf8" value="✓" />
+								<h4 class="center">Créez un compte prestataire</h4>
+
+								<div class="input-field">
+									<label for="name">
+										Nom
+									</label>
+									<input type="text" name="name" id="nom">
+								</div>
+
+								<div class="input-field">
+									<label for="phone">
+										Numero de téléphone
+									</label>
+									<input type="text" name="customer[last_name]" id="telephone">
+								</div>
+
+								<div class="input-field">
+									<label for="Email">
+										Email
+									</label>
+									<input type="email" name="email" id="email" class="" value=""
+										spellcheck="false" autocomplete="off" autocapitalize="off">
+								</div>
 								
-									<div class="input-field">
-										<label for="Telephone">Telephone</label>
-										<input type="text" name="customer[telephone]" id="Telephone">
-									</div>
-									<div class="input-field">
-										<label for="Email">Email</label>
-										<input type="text" name="customer[email]" id="Email">
-									</div>
-									<div class="input-field ">
-										<label for="Motif">Motif</label>
-										<textarea id="motif" class="materialize-textarea"></textarea>
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[date]" id="Date" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[heure]" id="Heure" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[identreprise]" id="IdEntreprise" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[etat]" id="Etat" class="" value="0" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<p>
-										<input type="submit" value="Enregistrer" class="btn-large z-depth-0">
-									</p>
-								</form>
+								<div class="input-field">
+                        			<label for="desc">
+                           					 Description
+                        					</label>
+                        				<textarea name="desc" id="description" rows="10"></textarea>
+                    			</div>
+
+								<div class="input-field">
+									<label for="pwd">
+										Mot de passe
+									</label>
+									<input type="password" name="pwd" id="pwd" class="">
+								</div>
+
+								<div class="input-field">
+									<label for="pwd">
+										Confirmez le Mot de passe
+									</label>
+									<input type="password" name="pwd" id="pwdConf" class="">
+								</div>
+
+								<p>
+									<input type="submit" value="Créer" class="btn-large z-depth-0">
+								</p>
+							</form>
+
 						</div>
 					</div>
 				</div>
@@ -391,7 +467,8 @@
 							All</a>. <a class="white-text" target="_blank" rel="nofollow"
 							href="https://www.shopify.com/?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore">
 							Powered
-							by ITOT-Afica</a></small>
+							by ITOT-Afica</a>
+							</small>
 				</div>
 			</div>
 		</footer>

@@ -4,7 +4,7 @@
 <html class="no-js supports-no-cookies" lang="en">
 <!--<![endif]-->
 
-<!-- Mirrored from materialize-shopify-themes.myshopify.com/account/register by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2019 07:19:46 GMT -->
+<!-- Mirrored from materialize-shopify-themes.myshopify.com/account/login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2019 07:19:44 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
@@ -13,38 +13,38 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="theme-color" content="#7db557">
-	<link rel="canonical" href="rdv">
+	<link rel="canonical" href="login.html">
 
 
 
 
 	<title>
-	Prendre Rendez-vous
+	
+	TakeDate
+		&ndash; Materialize Shopify Themes
+
 	</title>
 
 
 
 
 	<meta property="og:site_name" content="Materialize Shopify Themes">
-	<meta property="og:url" content="register.html">
-	<meta property="og:title" content="Create Account">
+	<meta property="og:url" content="login.html">
+	<meta property="og:title" content="Account">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="Materialize Shopify Themes">
 
 
 	<meta name="twitter:site" content="@materializecss">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Create Account">
+	<meta name="twitter:title" content="Account">
 	<meta name="twitter:description" content="Materialize Shopify Themes">
 
 
 
-	<link href="<?php echo base_url('')?>assets/css/gallery-materialize.mincfcd.css" rel="stylesheet"
-		type="text/css" media="all" />
+	<link href="<?php echo base_url('')?>assets/css/gallery-materialize.mincfcd.css" rel="stylesheet" type="text/css" media="all" />
 
-	<link href="<?php echo base_url('')?>assets/css/theme.scsscfcd.css" rel="stylesheet"
-		type="text/css" media="all" />
-
+	<link href="<?php echo base_url('')?>assets/css/theme.scsscfcd.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- Lato Font -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
@@ -101,7 +101,7 @@
 			}
 		})();</script>
 	<script
-		id="__st">var __st = { "a": 20302737, "offset": -14400, "reqid": "d1f8f737-856a-4e7b-af53-440411ca02a1", "pageurl": "materialize-shopify-themes.myshopify.com\/account\/register", "u": "e5b73edc8e83" };</script>
+		id="__st">var __st = { "a": 20302737, "offset": -14400, "reqid": "f99358d5-06f3-41a3-bfe7-59f6bf5e22e1", "pageurl": "materialize-shopify-themes.myshopify.com\/account\/login", "u": "03c135d7719d" };</script>
 	<script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
 	<script>window.Shopify = window.Shopify || {};
 		window.Shopify.Checkout = window.Shopify.Checkout || {};
@@ -225,7 +225,6 @@
 	<script integrity="sha256-6HOSr+Kf4wcoL05qrRLLS8wq/v1rf+vwtw7f0xX5aEw=" defer="defer"
 		src="<?php echo base_url('')?>assets/js/features-e87392afe29fe307282f4e6aad12cb4bcc2afefd6b7febf0b70edfd315f9684c.js"
 		crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<style>
 		#shopify-section-header>nav,
 		.gradient-back {
@@ -236,9 +235,8 @@
 		.viollet {
 			color: rgb(221, 135, 182);
 		}
-	
 		.viollet-back {
-			background-color: rgb(221, 135, 182);
+			background-color:rgb(221, 135, 182);
 		}
 	
 		.greener {
@@ -252,15 +250,18 @@
 		nav .nav-header h1 {
 			text-transform: capitalize;
 		}
-	
-		.login-wrapper {
+		.page-footer{
+			position:absolute;
+			bottom: 0;
+			width: 100%;
+		}
+		.login-wrapper{
 			border-radius: 10px;
 		}
 	</style>
 </head>
 
-<body id="create-account" class="template-register ">
-
+<body id="account" class="template-login white ">
 	<div id="shopify-section-header" class="shopify-section">
 	
 		<nav class="nav-extended">
@@ -270,8 +271,8 @@
 				</div>
 			</div>
 			<div class="nav-wrapper container">
-				<a href="index.html" itemprop="url" class="brand-logo site-logo">
-					Meet All
+				<a href="index" itemprop="url" class="brand-logo site-logo">
+				TakeDate
 				</a>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
@@ -280,7 +281,7 @@
 					</li>
 					
 					<li>
-						<a href="listentreprise">
+						<a href="listentreprise.html">
 							Entreprises
 						</a>
 					</li>
@@ -296,19 +297,25 @@
 			</div>
 		</nav>
 		<ul class="side-nav" id="nav-mobile">
-			<li> <a href="login" id="customer_login_link">Se connecter</a> </li>
-			<li> <a href="register" id="customer_register_link">S'inscrire</a> </li>
+			<li> <a href="account/login.html" id="customer_login_link">Se connecter</a> </li>
+			<li> <a href="account/register.html" id="customer_register_link">S'inscrire</a> </li>
 	
 			<li class="site-nav--active active">
-				<a href="index" class="site-nav__link">Acceuil</a>
+				<a href="index.html" class="site-nav__link">Acceuil</a>
 			</li>
-		
 			<li>
-				<a href="listentreprise">
+				<a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
+			</li>
+			<li>
+				<a href="cart.html">
 					Entreprises
 				</a>
 			</li>
-			
+			<li>
+				<a class="fullscreen-search" href="#">
+					Recherche
+				</a>
+			</li>
 		</ul>
 	
 		<div data-section-id="header" data-section-type="header-section">
@@ -340,47 +347,60 @@
 				<div class="col s12 m6 offset-m3">
 					<div class="card login-wrapper">
 						<div class="card-content">
-						<form method="post" action="https://materialize-shopify-themes.myshopify.com/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
-									<h4 class="center">Prendre Rendez-vous</h4>
+							<div id="CustomerLoginForm">
+								<form method="post"
+									action="#"
+									id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type"
+										value="customer_login" /><input type="hidden" name="utf8" value="✓" />
+									<h4 class="center">Se connecter</h4>
 									<div class="input-field">
-										<label for="NomComplet">Nom Complet</label>
-										<input type="text" name="customer[nom_complet]" id="FirstName" autofocus>
-									</div>
-								
-									<div class="input-field">
-										<label for="Telephone">Telephone</label>
-										<input type="text" name="customer[telephone]" id="Telephone">
-									</div>
-									<div class="input-field">
-										<label for="Email">Email</label>
-										<input type="text" name="customer[email]" id="Email">
-									</div>
-									<div class="input-field ">
-										<label for="Motif">Motif</label>
-										<textarea id="motif" class="materialize-textarea"></textarea>
+										<label for="CustomerEmail">
+											Email
+										</label>
+										<input type="email" name="email" id="email" class=""
+											spellcheck="false" autocomplete="off" autocapitalize="off" autofocus>
 									</div>
 									<div class="input-field">
-										<input type="hidden" name="customer[date]" id="Date" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
+										<label for="CustomerPassword">
+											Mot de passe
+										</label>
+										<input type="password" name="email" id="email" class="">
 									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[heure]" id="Heure" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[identreprise]" id="IdEntreprise" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[etat]" id="Etat" class="" value="0" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<p>
-										<input type="submit" value="Enregistrer" class="btn-large z-depth-0">
-									</p>
+									<input type="submit" class="btn-large z-depth-0" value="Se connecter">
+									<a href="#recover" class="blue-text" id="RecoverPassword">Mot de passe oublié?</a>
 								</form>
+							</div>
+
+							<div id="RecoverPasswordForm" class="hide">
+								<h4 class="center">Reinitialiser mon mot de passe</h4>
+								<p>Nous allons vous envoyer un mail de reinitialisation</p>
+								<form method="post"
+									action="#"
+									accept-charset="UTF-8"><input type="hidden" name="form_type"
+										value="recover_customer_password" /><input type="hidden" name="utf8"
+										value="✓" />
+									<div class="input-field">
+										<label for="RecoverEmail">
+											Email
+										</label>
+										<input type="email" name="email" id="RecoverEmail" spellcheck="false"
+											autocomplete="off" autocapitalize="off">
+									</div>
+									<input type="submit" class="btn-large z-depth-0" value="Envoyer">
+									<a href="#" class="blue-text" id="HideRecoverPasswordLink">
+										Annuler
+									</a>
+								</form>
+
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		<div class="form-success hide" id="ResetSuccess">
+			Nous avons envoyé un mail pour la reinitialisation de votre mot de passe.
+		</div>
 	</main>
 
 	<div id="shopify-section-footer" class="shopify-section">
@@ -411,12 +431,12 @@
 		type="text/javascript"></script>
 
 	<!--[if (gt IE 9)|!(IE)]><!-->
-	<script src="<?php echo base_url('')?>assets/js/vendorcfcd.js" defer="defer"></script>
+	<script src="<?php echo base_url('')?>assets/js/vendorcfcd.js?0" defer="defer"></script>
 	<!--<![endif]-->
 	<!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendor.js?0"></script><![endif]-->
 
 	<!--[if (gt IE 9)|!(IE)]><!-->
-	<script src="<?php echo base_url('')?>assets/js/themecfcd.js?" defer="defer"></script>
+	<script src="<?php echo base_url('')?>assets/js/themecfcd.js?0" defer="defer"></script>
 	<!--<![endif]-->
 	<!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
@@ -432,7 +452,4 @@
 	</script>
 
 </body>
-
-<!-- Mirrored from materialize-shopify-themes.myshopify.com/account/register by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2019 07:19:46 GMT -->
-
 </html>

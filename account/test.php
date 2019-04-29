@@ -13,13 +13,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="theme-color" content="#7db557">
-	<link rel="canonical" href="rdv">
+	<link rel="canonical" href="register.html">
 
 
 
 
 	<title>
-	Prendre Rendez-vous
+		Créer un compte prestataire
 	</title>
 
 
@@ -39,10 +39,10 @@
 
 
 
-	<link href="<?php echo base_url('')?>assets/css/gallery-materialize.mincfcd.css" rel="stylesheet"
+	<link href="../../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/gallery-materialize.mincfcd.css?0" rel="stylesheet"
 		type="text/css" media="all" />
 
-	<link href="<?php echo base_url('')?>assets/css/theme.scsscfcd.css" rel="stylesheet"
+	<link href="../../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.scsscfcd.css?0" rel="stylesheet"
 		type="text/css" media="all" />
 
 	<!-- Lato Font -->
@@ -67,7 +67,7 @@
 
 	<!--[if (gt IE 9)|!(IE)]><!-->
 	<script
-		src="<?php echo base_url('')?>assets/js/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js"
+		src="../../cdn.shopify.com/s/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js"
 		defer="defer"></script>
 	<!--<![endif]-->
 	<!--[if lte IE 9]><script src="//cdn.shopify.com/s/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js"></script><![endif]-->
@@ -179,7 +179,7 @@
 					(new Image()).src = 'http://v.shopify.com/internal_errors/track?error=trekkie_load';
 				};
 				script.async = true;
-				script.src = '<?php echo base_url('')?>assets/js/trekkie.storefront.min97e4.js?v=2017.09.05.1';
+				script.src = '../../cdn.shopify.com/s/javascripts/tricorder/trekkie.storefront.min97e4.js?v=2017.09.05.1';
 				var first = document.getElementsByTagName('script')[0];
 				first.parentNode.insertBefore(script, first);
 			};
@@ -215,15 +215,15 @@
 
 			var eventsListenerScript = document.createElement('script');
 			eventsListenerScript.async = true;
-			eventsListenerScript.src = "<?php echo base_url('')?>assets/js/shop_events_listener-acf771159f9849ef6e5265782c99efe8b99406214c96a4373224ecafe285d7bb.js";
+			eventsListenerScript.src = "../../cdn.shopify.com/s/assets/shop_events_listener-acf771159f9849ef6e5265782c99efe8b99406214c96a4373224ecafe285d7bb.js";
 			document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
 
 		})();</script>
 	<script integrity="sha256-ZGMHgi9G7WU+Z7WiP2suSn84yzoN83sGf9nMWJhVHAw=" defer="defer"
-		src="<?php echo base_url('')?>assets/js/express_buttons-646307822f46ed653e67b5a23f6b2e4a7f38cb3a0df37b067fd9cc5898551c0c.js"
+		src="../../cdn.shopify.com/s/assets/storefront/express_buttons-646307822f46ed653e67b5a23f6b2e4a7f38cb3a0df37b067fd9cc5898551c0c.js"
 		crossorigin="anonymous"></script>
 	<script integrity="sha256-6HOSr+Kf4wcoL05qrRLLS8wq/v1rf+vwtw7f0xX5aEw=" defer="defer"
-		src="<?php echo base_url('')?>assets/js/features-e87392afe29fe307282f4e6aad12cb4bcc2afefd6b7febf0b70edfd315f9684c.js"
+		src="../../cdn.shopify.com/s/assets/storefront/features-e87392afe29fe307282f4e6aad12cb4bcc2afefd6b7febf0b70edfd315f9684c.js"
 		crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<style>
@@ -266,7 +266,7 @@
 		<nav class="nav-extended">
 			<div class="nav-background">
 				<div class="pattern active"
-					style="background-image: url('<?php echo base_url('')?>assets/img/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
+					style="background-image: url('../../cdn.shopify.com/s/files/1/2030/2737/files/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
 				</div>
 			</div>
 			<div class="nav-wrapper container">
@@ -276,39 +276,52 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li class="site-nav--active active">
-						<a href="index" class="site-nav__link">Acceuil</a>
+						<a href="index.html" class="site-nav__link">Acceuil</a>
 					</li>
-					
 					<li>
-						<a href="listentreprise">
+						<a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
+					</li>
+					<li>
+						<a href="list_entreprise.html">
 							Entreprises
 						</a>
 					</li>
-					
 					<li>
-						<a href="login" id="customer_login_link">Se connecter</a>
+						<a class="fullscreen-search" href="#">
+							<i class="material-icons">search</i>
+						</a>
+					</li>
+	
+					<li>
+						<a href="account/login.html" id="customer_login_link">Se connecter</a>
 					</li>
 					<li>
-						<a href="register" id="customer_register_link">S'inscrire</a>
+						<a href="account/register.html" id="customer_register_link">S'inscrire</a>
 					</li>
 	
 				</ul>
 			</div>
 		</nav>
 		<ul class="side-nav" id="nav-mobile">
-			<li> <a href="login" id="customer_login_link">Se connecter</a> </li>
-			<li> <a href="register" id="customer_register_link">S'inscrire</a> </li>
+			<li> <a href="account/login.html" id="customer_login_link">Se connecter</a> </li>
+			<li> <a href="account/register.html" id="customer_register_link">S'inscrire</a> </li>
 	
 			<li class="site-nav--active active">
-				<a href="index" class="site-nav__link">Acceuil</a>
+				<a href="index.html" class="site-nav__link">Acceuil</a>
 			</li>
-		
 			<li>
-				<a href="listentreprise">
+				<a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
+			</li>
+			<li>
+				<a href="cart.html">
 					Entreprises
 				</a>
 			</li>
-			
+			<li>
+				<a class="fullscreen-search" href="#">
+					Recherche
+				</a>
+			</li>
 		</ul>
 	
 		<div data-section-id="header" data-section-type="header-section">
@@ -340,41 +353,53 @@
 				<div class="col s12 m6 offset-m3">
 					<div class="card login-wrapper">
 						<div class="card-content">
-						<form method="post" action="https://materialize-shopify-themes.myshopify.com/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
-									<h4 class="center">Prendre Rendez-vous</h4>
-									<div class="input-field">
-										<label for="NomComplet">Nom Complet</label>
-										<input type="text" name="customer[nom_complet]" id="FirstName" autofocus>
-									</div>
-								
-									<div class="input-field">
-										<label for="Telephone">Telephone</label>
-										<input type="text" name="customer[telephone]" id="Telephone">
-									</div>
-									<div class="input-field">
-										<label for="Email">Email</label>
-										<input type="text" name="customer[email]" id="Email">
-									</div>
-									<div class="input-field ">
-										<label for="Motif">Motif</label>
-										<textarea id="motif" class="materialize-textarea"></textarea>
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[date]" id="Date" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[heure]" id="Heure" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[identreprise]" id="IdEntreprise" class="" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<div class="input-field">
-										<input type="hidden" name="customer[etat]" id="Etat" class="" value="0" spellcheck="false" autocomplete="off" autocapitalize="off">
-									</div>
-									<p>
-										<input type="submit" value="Enregistrer" class="btn-large z-depth-0">
-									</p>
-								</form>
+
+							<form method="post" action="#"
+								id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type"
+									value="create_customer" /><input type="hidden" name="utf8" value="✓" />
+								<h4 class="center">Créez un compte prestataire</h4>
+
+								<div class="input-field">
+									<label for="name">
+										Nom
+									</label>
+									<input type="text" name="name" id="name">
+								</div>
+
+								<div class="input-field">
+									<label for="phone">
+										Numero de téléphone
+									</label>
+									<input type="text" name="customer[last_name]" id="LastName">
+								</div>
+
+								<div class="input-field">
+									<label for="Email">
+										Email
+									</label>
+									<input type="email" name="email" id="Email" class="" value=""
+										spellcheck="false" autocomplete="off" autocapitalize="off">
+								</div>
+
+								<div class="input-field">
+									<label for="pwd">
+										Mot de passe
+									</label>
+									<input type="password" name="pwd" id="pwd" class="">
+								</div>
+
+								<div class="input-field">
+									<label for="pwd">
+										Confirmez le Mot de passe
+									</label>
+									<input type="password" name="pwd" id="pwd" class="">
+								</div>
+
+								<p>
+									<input type="submit" value="Créer" class="btn-large z-depth-0">
+								</p>
+							</form>
+
 						</div>
 					</div>
 				</div>
@@ -400,23 +425,23 @@
 
 	<!-- Javascript -->
 
-	<script src="<?php echo base_url('')?>assets/js/jquery.min.js"></script>
+	<script src="../../ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 	<script
-		src="<?php echo base_url('')?>assets/js/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js"
+		src="../../cdn.shopify.com/s/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js"
 		type="text/javascript"></script>
 
 	<script
-		src="<?php echo base_url('')?>assets/js/api.jquery-e94e010e92e659b566dbc436fdfe5242764380e00398907a14955ba301a4749f.js"
+		src="../../cdn.shopify.com/s/assets/themes_support/api.jquery-e94e010e92e659b566dbc436fdfe5242764380e00398907a14955ba301a4749f.js"
 		type="text/javascript"></script>
 
 	<!--[if (gt IE 9)|!(IE)]><!-->
-	<script src="<?php echo base_url('')?>assets/js/vendorcfcd.js" defer="defer"></script>
+	<script src="../../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendorcfcd.js?0" defer="defer"></script>
 	<!--<![endif]-->
 	<!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendor.js?0"></script><![endif]-->
 
 	<!--[if (gt IE 9)|!(IE)]><!-->
-	<script src="<?php echo base_url('')?>assets/js/themecfcd.js?" defer="defer"></script>
+	<script src="../../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/themecfcd.js?0" defer="defer"></script>
 	<!--<![endif]-->
 	<!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
