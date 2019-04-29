@@ -3,24 +3,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-
+	
 	public function index()
 	{
+		$entreprise = $this->EntreprisesModel->get_Entreprise_Index();
+		$data['dataEntreprise'] = $entreprise;
+		$this->load->view('index',$data);
+	}
+	public function list_entreprise()
+	{
+		$entreprise = $this->EntreprisesModel->get_Entreprise();
+		$random = $this->EntreprisesModel->get_Random_Entreprises();
+		$data['dataEntreprise'] = $entreprise;
+		$data['randomEntreprise'] = $random;
+		$this->load->view('listentreprise',$data);
+	}
 
-		$this->load->view('horaire/horaire_view');
-		// $this->load->view('login/login');
+	public function login()
+	{
+		$this->load->view('login');
+	}
 
-		// $id_rdv = 1;
-		// $this->load->model("EntreprisesModel");
-		// $data["fetch_data"] = $this->EntreprisesModel->fetch_data();
-		// $data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
-		// $this->load->view('accepter_view', $data);
+	public function register()
+	{
+		$this->load->view('register');
+	}
 
+	public function test()
+	{
+		$this->load->view('test');
+	}
 
+	public function entreprise()
+	{
+		$idEntreprise=$this->input->get('id');
+		$agent = $this->AgentsModel->get_Agent($idEntreprise);
 		
-
-		//chargement de la vue horaire
-		// $this->load->view('repondre_commentaire');
+		$random = $this->EntreprisesModel->get_Random_Entreprises();
+		$data['randomEntreprise'] = $random;
+		$data['agent'] = $agent;
+		$this->load->view('entreprise',$data);
+	}
+	
+	public function rdv()
+	{
+		$this->load->view('rdv');
+		
 	}
 
 	public function enregistrer(){
@@ -47,4 +75,5 @@ class Welcome extends CI_Controller {
 
 		// $this->HoraireModel->ajouter_horaire($data);
 	}
+	
 }

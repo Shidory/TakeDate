@@ -4,17 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     class LoginController extends CI_Controller{
 
         public function index(){
-<<<<<<< HEAD
-            $this->login_validation();
-        }
-
-        // ============================================================>
-=======
             $this->load->view('login');//Chargement de la page de connexion
         }
-
         // Methode de validation des données du formulaire
->>>>>>> 762767b58750ceaa66e0acdefec77d3f449584dd
         public function login_validation(){
             // Données venant du formulaire
             $username = $this->input->post('username');
@@ -24,7 +16,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $data_db = $this->EntreprisesModel->get_db_data($username);
             // Cette ligne permet de convertir la variable $pass_db en une chaîne de caractères
             $data_db = json_decode(json_encode($data_db), TRUE);
-
             // Vérification de l'authentification
             if($data_db['pwd'] == $hash){
                 // Création d'un tableau de données
@@ -32,7 +23,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     'username' => $username,
                     'password' => $hash
                 );
-
                 // Vérification de la valeur de la fonction can_login du model EntreprisesModel
                 if($this->EntreprisesModel->can_login($data)){
                     // Création d'un tableau de données de session
@@ -55,11 +45,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
-<<<<<<< HEAD
-        // =================================================================>
-=======
         // Fonction de redirection en cas de resultat positif de la verification de l'authentification
->>>>>>> 762767b58750ceaa66e0acdefec77d3f449584dd
         public function enter(){
             if($this->session->userdata['username'] != '' && $this->session->userdata['id'] != null){
                 echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
@@ -69,17 +55,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 redirect(base_url('login'));
             }
         }
+   // Fonction de déconnexion
 
-<<<<<<< HEAD
-        // ==================================================================>
-=======
-        // Fonction de déconnexion
->>>>>>> 762767b58750ceaa66e0acdefec77d3f449584dd
         public function logout(){
             $this->session->unset_userdata($session_data);//Destruction des valeurs de session
             redirect(base_url('login'));
         }
-
-        // ==================================================================>
-        
     }
+?>
+
+   
