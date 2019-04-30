@@ -361,31 +361,6 @@
 								</div>
 
 								<div class="input-field">
-									<label for="adresse">
-										Adresse
-									</label>
-									<input type="text" name="adresse" id="adresse">
-								</div>
-
-								<div class="input-field">
-									<label for="pays">
-										Pays
-									</label>
-									<input type="text" name="pays" id="pays">
-								</div>
-
-								<div class="input-field">
-									<label for="code">
-										Code Postal
-									</label>
-									<input type="text" name="codepostal" id="code">
-								</div>
-
-								<div class="input-field">
-									<input type="file" name="logo " id="nom" >
-								</div>
-
-								<div class="input-field">
                         			<label for="desc">
                            					 Description
                         					</label>
@@ -393,11 +368,18 @@
                     			</div>
 
 								<div class="input-field">
-									<label for="site">
-										Site
-									</label>
-									<input type="text" name="site" id="site" class="">
-								</div>
+                        			<label for="pwd">
+                           					 Mot de passe
+                        					</label>
+                        				<input type="password" name="pwd" id="pwd">
+                    			</div>
+
+								<div class="input-field">
+                        			<label for="confpwd">
+                           					 Confirmer le mot de passe
+                        					</label>
+                        				<input type="password" name="confpwd" id="confpwd">
+                    			</div>
 
 								<p>
 									<input type="submit" value="Créer" class="btn-large z-depth-0">

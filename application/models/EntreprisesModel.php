@@ -18,6 +18,7 @@ class EntreprisesModel extends CI_Model
     
     ##################################################
     public function  profil($data, $id){
+        
         $this->db->where('idEntreprise', $id)
                 ->update("tb_entreprise", array(
                         'adresse' => $data["adresse"],
@@ -83,6 +84,7 @@ class EntreprisesModel extends CI_Model
         return $this->db->get('tb_entreprise')->result_array();
     }
 
+    #########################################################################
     public function get_Entreprise_Index()
     {
         //cette methode recupere tout les elements de la table tb_entreprise
