@@ -12,7 +12,7 @@ class EntrepriseController extends CI_Controller
 		$this->load->view('accepter_view', $data);
 		$this->accepter_controller();
 
-		$this->email->initialize(array(
+		/*$this->email->initialize(array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'smtp.sendgrid.net',
 			'smtp_user' => 'sendgridusername',
@@ -21,6 +21,16 @@ class EntrepriseController extends CI_Controller
 			'crlf' => "\r\n",
 			'newline' => "\r\n"
 		  ));
+
+		  $this->email->from('your@example.com', 'Your Name');
+		  $this->email->to('someoneexampexample@example.com');
+		  $this->email->cc('another@another-example.com');
+		  $this->email->bcc('them@their-example.com');
+		  $this->email->subject('Email Test');
+		  $this->email->message('Testing the email class.');
+		  $this->email->send();
+		  
+		  echo $this->email->print_debugger();*/
 	}
 
 	public function update_data(){
@@ -93,7 +103,7 @@ class EntrepriseController extends CI_Controller
 				//Appel de la méthdode reporter_rdv en lui passant  
 				//l'id et le tableau des valeurs en paramètre
 				$this->EntreprisesModel->reporter_rdv($idRdv, $data);
-				$this->notifier("sarahddiur@gmail.com");
+				$this->notifier();
 			}
 			catch(Exception $e){
 
@@ -104,28 +114,20 @@ class EntrepriseController extends CI_Controller
 	}
 	
 	#######################################################
-	public function notifier($adresse){
-
-		$message = "votre rendez-vous a été reporté";
-		$this->email->clear();
-		$this->email->from('simonmwepu@gmail.com');
-		$this->email->reply_to('sarahddiur@gmail.com');
-		$this->email->to($adresse);
-		$this->email->subject('Double petrova');
-		$this->email->message($message);
-		if($this->email->send()===TRUE){
-			return true;
-		}
-		else{
-			return false;
-		}
+	public function notifier(){
+		
+		$from_email = "simonmwepu@gmail.com";
+		$to_email = $this->input->post('email');
+		$this->email->from($from_email, 'Identification');
+        $this->email->to($to_email);
+        $this->email->subject('Send Email Codeigniter');
+		$this->email->message('matako');
+		if($this->email->send())
+			$this->session->set_flashdata("email_sent","Congragulation Email Send Successfully.");
+		else
+            $this->session->set_flashdata("email_sent","You have encountered an error");
+        $this->load->view('entreprise/notifier');
 	
-		/*$emails = array('victim1@victim.com', 'victim2@victim.com');
-
-		foreach($emails as $victim){
-
-			$this->send_spam($victim)
-		}*/
 	}
 
 	#######################################################
