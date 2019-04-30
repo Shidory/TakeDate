@@ -10,7 +10,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function ajouter_horaire($data){
             $this->db->insert('tb_horaire',$data);
         }
-        
+        public function get_Agent()
+        {
+            $this->db->select('*');
+            return $this->db->get('tb_agent')->result_array();
+        }
         // =======================================================================>
         public function get_horaire($idAgent){
             // recuperation de l'horaire par rapport a un agent
