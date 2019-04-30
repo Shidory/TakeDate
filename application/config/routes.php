@@ -61,7 +61,7 @@ $route['login_validation']    = 'login/loginController';
 
 //rooting vers le controlleur de l'entreprise
 
-$route['entreprise']          = 'entreprise/EntrepriseController';   
+$route['entreprise']          = 'welcome/list_entreprise';   
 $route['lister_entreprise']   = 'entreprise/EntrepriseController/get_Entreprise';
 $route['horaire']             = 'horaire/HoraireController';
 $route['rdv']                 = 'rdv/RdvController';
@@ -74,4 +74,7 @@ $route['rdv']                 = 'rdv/RdvController';
 
 $route['login']               = 'login/LoginController';
 $route['register']            = 'entreprise/EntrepriseController/register';
+$route['inscription']         = 'entreprise/EntrepriseController/inscription_entreprise';
+$route['inscription2']         = 'entreprise/EntrepriseController/upload_logo';
+
 // $route['index']               = '';
