@@ -349,7 +349,7 @@
 						<div class="card-content">
 							<div id="CustomerLoginForm">
 								<form method="post"
-									action="#"
+									action="login_validation"
 									id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type"
 										value="customer_login" /><input type="hidden" name="utf8" value="✓" />
 									<h4 class="center">Se connecter</h4>
@@ -361,10 +361,10 @@
 											spellcheck="false" autocomplete="off" autocapitalize="off" autofocus>
 									</div>
 									<div class="input-field">
-										<label for="CustomerPassword">
+										<label for="pwd">
 											Mot de passe
 										</label>
-										<input type="password" name="email" id="email" class="">
+										<input type="password" name="pwd" id="pwd" class="">
 									</div>
 									<input type="submit" class="btn-large z-depth-0" value="Se connecter">
 									<a href="#recover" class="blue-text" id="RecoverPassword">Mot de passe oublié?</a>
