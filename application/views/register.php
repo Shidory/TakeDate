@@ -335,7 +335,7 @@
 									<label for="name">
 										Nom
 									</label>
-									<input type="text" name="name" id="nom">
+									<input type="text" name="name" id="name">
 								</div>
 
 								<div class="input-field">
@@ -349,11 +349,11 @@
 									<label for="phone">
 										Numero de téléphone
 									</label>
-									<input type="text" name="tel" id="telephone">
+									<input type="text" name="tel" id="phone">
 								</div>
 
 								<div class="input-field">
-									<label for="Email">
+									<label for="email">
 										Email
 									</label>
 									<input type="email" name="email" id="email" class="" value=""
@@ -364,7 +364,7 @@
                         			<label for="desc">
                            					 Description
                         					</label>
-                        				<textarea name="desc" id="description" rows="10"></textarea>
+                        				<textarea name="desc" id="desc" rows="10"></textarea>
                     			</div>
 
 								<div class="input-field">

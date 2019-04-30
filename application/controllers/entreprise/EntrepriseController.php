@@ -66,7 +66,7 @@ class EntrepriseController extends CI_Controller
 					"email" 		=> $this->input->post('email'),
 					"adresse" 		=> $this->input->post('adresse'),
 					"description"   => $this->input->post('desc'),
-					"pwd"			=> $this->input->post('pwd');
+					"pwd"			=> $this->input->post('pwd')
 				);
 				try{
 					$this->EntreprisesModel->register($entreprise);
