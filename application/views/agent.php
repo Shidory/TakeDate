@@ -20,10 +20,10 @@
     </title>
 
 
-    <link href="../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/gallery-materialize.mincfcd.css?0" rel="stylesheet"
+    <link href="<?php echo base_url('')?>assets/css/gallery-materialize.mincfcd.css?0" rel="stylesheet"
         type="text/css" media="all" />
 
-    <link href="../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.scsscfcd.css?0" rel="stylesheet" type="text/css"
+    <link href="<?php echo base_url('')?>assets/css/theme.scsscfcd.css?0" rel="stylesheet" type="text/css"
         media="all" />
 
     <!-- Material Icons -->
@@ -39,7 +39,7 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
-    <link rel="stylesheet" href="calendar/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url('')?>assets/calendar/css/style.css">
     <style>
         #shopify-section-header>nav,
         .gradient-back {
@@ -67,7 +67,7 @@
             background: rgba(221, 135, 182, 0.4);
         }
         .mt-1{
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         #p p {
@@ -303,7 +303,7 @@
         <!--<![endif]-->
         <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
-        <script src="calendar/js/index.js"></script>
+        <script src="<?php echo base_url('')?>assets/calendar/js/index.js"></script>
 
         <script>
             $(document).ready(function () {
