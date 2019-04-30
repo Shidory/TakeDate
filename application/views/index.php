@@ -118,7 +118,7 @@
 			</div>
 			<div class="row">
 				<div class=" s12 center">
-					<a href="listentreprise" title="Voir toutes les entreprises inscrite" class="btn-large gradient-back">les voir toutes</a>
+					<a href="entreprise" title="Voir toutes les entreprises inscrite" class="btn-large gradient-back">les voir toutes</a>
 				</div>
 			</div>
 		</div>

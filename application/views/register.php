@@ -318,40 +318,6 @@
 
 <body id="create-account" class="template-register ">
 
-	<div id="shopify-section-header" class="shopify-section">
-	
-		<nav class="nav-extended">
-			<div class="nav-background">
-				<div class="pattern active"
-					style="background-image: url('<?php echo base_url('')?>assets/img/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
-				</div>
-			</div>
-			<div class="nav-wrapper container">
-				<a href="index.html" itemprop="url" class="brand-logo site-logo">
-					Meet All
-				</a>
-				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li class="site-nav--active active">
-						<a href="welcome" class="site-nav__link">Acceuil</a>
-					</li>
-					
-					<li>
-						<a href="entreprise">
-							Entreprises
-						</a>
-					</li>
-					
-					<li>
-						<a href="login" id="customer_login_link">Se connecter</a>
-					</li>
-					<li>
-						<a href="register" id="customer_register_link">S'inscrire</a>
-					</li>
-	
-				</ul>
-			</div>
-		</nav>
 		
 
 	<main role="main" id="MainContent">
@@ -361,9 +327,8 @@
 					<div class="card login-wrapper">
 						<div class="card-content">
 
-							<form method="post" action="<?php echo base_url('entreprise/EntrepriseController/inscription_entreprise')?>"
-								id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type"
-									value="create_customer" /><input type="hidden" name="utf8" value="✓" />
+							<form method="post" enctype="multipart/form-data" action="inscription2" id="create_customer" accept-charset="UTF-8">
+								<input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
 								<h4 class="center">Créez un compte prestataire</h4>
 
 								<div class="input-field">
@@ -374,10 +339,17 @@
 								</div>
 
 								<div class="input-field">
+									<label for="secteur">
+										Secteur
+									</label>
+									<input type="text" name="secteur" id="secteur">
+								</div>
+
+								<div class="input-field">
 									<label for="phone">
 										Numero de téléphone
 									</label>
-									<input type="text" name="customer[last_name]" id="telephone">
+									<input type="text" name="tel" id="telephone">
 								</div>
 
 								<div class="input-field">
@@ -387,7 +359,32 @@
 									<input type="email" name="email" id="email" class="" value=""
 										spellcheck="false" autocomplete="off" autocapitalize="off">
 								</div>
-								
+
+								<div class="input-field">
+									<label for="adresse">
+										Adresse
+									</label>
+									<input type="text" name="adresse" id="adresse">
+								</div>
+
+								<div class="input-field">
+									<label for="pays">
+										Pays
+									</label>
+									<input type="text" name="pays" id="pays">
+								</div>
+
+								<div class="input-field">
+									<label for="code">
+										Code Postal
+									</label>
+									<input type="text" name="codepostal" id="code">
+								</div>
+
+								<div class="input-field">
+									<input type="file" name="logo " id="nom" >
+								</div>
+
 								<div class="input-field">
                         			<label for="desc">
                            					 Description
@@ -396,17 +393,10 @@
                     			</div>
 
 								<div class="input-field">
-									<label for="pwd">
-										Mot de passe
+									<label for="site">
+										Site
 									</label>
-									<input type="password" name="pwd" id="pwd" class="">
-								</div>
-
-								<div class="input-field">
-									<label for="pwd">
-										Confirmez le Mot de passe
-									</label>
-									<input type="password" name="pwd" id="pwdConf" class="">
+									<input type="text" name="site" id="site" class="">
 								</div>
 
 								<p>
