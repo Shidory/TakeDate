@@ -8,22 +8,29 @@ class EntreprisesModel extends CI_Model
     }
     public function register($produit)
     {
-        // $this->db->set('nomEntreprise',$produit['nom']);
-        // $this->db->set('description',$produit['description']);
-        // $this->db->set('telephone',$produit['telephone']);
-        // $this->db->set('email',$produit['email']);
-        // $this->db->set('pwd',$produit['pwd']);
-       
-
          $this->db->insert('tb_entreprise', $produit);
     }
     public function fetch_data()
 	{
         $query = $this->db->get("tb_rdv");
         return $query;
-	}
+    }
+    
+    ##################################################
+    public function  profil($data, $id){
+        $this->db->where('idEntreprise', $id)
+                ->update("tb_entreprise", array(
+                        'adresse' => $data["adresse"],
+                        'logo' => $data["logo"],
+                        'pays' => $data["pays"],
+                        'codePostal' => $data["code_postal"],
+                        'siteWeb' => $data["site_web"]
+                ));
 
+        return true;
+    } 
 
+    ######################################################
     function accepter_refuser_rdv($id)
     {
         $this->db->where('idRdv', $id);
