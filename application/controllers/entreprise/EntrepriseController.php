@@ -53,10 +53,10 @@ class EntrepriseController extends CI_Controller
 
         // if ($this->form_validation->run()){
            echo 'ok';
-            // $pwd = $this->input->post('pwd');
-			// $pwdConf = $this->input->post('pwdConf');
-			// if($pwd==$pwdConf)
-			// {
+            $pwd = $this->input->post('pwd');
+			$pwdConf = $this->input->post('confpwd');
+			if($pwd==$pwdConf)
+			{
 				echo $this->input->post('logo');
 
 				$entreprise = array(
@@ -66,6 +66,7 @@ class EntrepriseController extends CI_Controller
 					"email" 		=> $this->input->post('email'),
 					"adresse" 		=> $this->input->post('adresse'),
 					"description"   => $this->input->post('desc'),
+					"pwd"			=> $this->input->post('pwd');
 				);
 				try{
 					$this->EntreprisesModel->register($entreprise);
@@ -73,10 +74,10 @@ class EntrepriseController extends CI_Controller
 				}catch (Exception $e){
 					print_r($e);
 				}
-			// }
-			// else{
-			// 	redirect('Welcome/register');
-			// }
+			}
+			else{
+				redirect('Welcome/register');
+			}
 //         }
 //         else{
 //             $data['error'] = array('err1'=>'','err2'=>'');
