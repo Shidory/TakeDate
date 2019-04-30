@@ -24,24 +24,48 @@ class EntrepriseController extends CI_Controller
 		$this->load->view("header");
 		$this->load->view("register");
 	}
+
+	public function upload_logo(){
+		$config['upload_path'] = base_url("/assets/img");
+		$config["allowed_type"] = 'jpg|jpeg|gif|png';
+
+		$this->load->library('upload', $config);
+
+		if(!$this->upload->do_upload()){
+			echo "error";
+		}
+
+		else{
+			$file_data   = $this->upload->data();
+			$data['img'] = base_url()."/assets/img/".$file_data['file_name'];
+
+			
+			echo $data['img'];
+		}
+
+	}
 	
 	public function inscription_entreprise()
     {
-        $this->_rules();
+		$image_path = $this->upload_logo();
+		echo $image_path;
+        // $this->_rules();
 
         // if ($this->form_validation->run()){
            echo 'ok';
-            $pwd = $this->input->post('pwd');
-			$pwdConf = $this->input->post('pwdConf');
-			if($pwd==$pwdConf)
-			{
+            // $pwd = $this->input->post('pwd');
+			// $pwdConf = $this->input->post('pwdConf');
+			// if($pwd==$pwdConf)
+			// {
+				echo $this->input->post('logo');
+
 				$entreprise = array(
-					"nomEntreprise" => $this->input->post('nom'),
-					"description" => $this->input->post('description'),
-					"telephone" => $this->input->post('telephone'),
-					"email" => $this->input->post('email'),
-					"pwd" => $this->input->post('pwd'),
-				
+					"nomEntreprise" => $this->input->post('name'),
+					"secteur" 		=> $this->input->post('secteur'),
+					"telephone" 	=> $this->input->post('tel'),
+					"email" 		=> $this->input->post('email'),
+					"adresse" 		=> $this->input->post('adresse'),
+					"description"   => $this->input->post('desc'),
 				);
 				try{
 					$this->EntreprisesModel->register($entreprise);
@@ -49,10 +73,10 @@ class EntrepriseController extends CI_Controller
 				}catch (Exception $e){
 					print_r($e);
 				}
-			}
-			else{
-				redirect('Welcome/register');
-			}
+			// }
+			// else{
+			// 	redirect('Welcome/register');
+			// }
 //         }
 //         else{
 //             $data['error'] = array('err1'=>'','err2'=>'');
