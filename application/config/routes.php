@@ -57,7 +57,7 @@ $route['login_validation']    = 'login/LoginController/login_validation';
 
 $route['annuler_rdv']         = 'client/ClientController';
 $route['modifier_rdv']        = 'client/ClientController/modifier_rdv';
-$route['login_validation']    = 'login/loginController';
+// $route['login_validation']    = 'login/loginController/login_validation';
 
 //rooting vers le controlleur de l'entreprise
 
