@@ -64,16 +64,24 @@ class EntreprisesModel extends CI_Model
     
     public function can_login($data)
     {
-        $tb_agent = 'tb_agent';
-        $this->db->where('username', $data['username']);
+        $tb_agent = 'tb_entreprise';
+        $this->db->where('email', $data['email']);
         $this->db->where('pwd', $data['password']);
-        $query = $this->db->get($this->tb_agent);
+        $query = $this->db->get($tb_agent);
 
         if ($query->num_rows() > 0) {
             return true;
         } else {
             return false;
         }
+    }
+    #########################################################################
+    public function get_ligne($email){
+        $this->db->where('email', $email)
+                 ->select('*')
+                 
+        $req = $this->db->get('tb_entreprise');
+        return $req;
     }
   
   ###########################################################################
