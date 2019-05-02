@@ -47,6 +47,7 @@ class EntreprisesModel extends CI_Model
         return $this->db->get('tb_rdv');
     }
 
+    #######################################################
     public function update_data($id, $state){
         $this->db->where("idRdv", $id);
         $this->db->update("tb_rdv", $state);
@@ -76,7 +77,7 @@ class EntreprisesModel extends CI_Model
         }
     }
     #########################################################################
-    public function get_ligne($data){
+    public function verification($data){
 
         $this->db->select('*')
                  ->where('email', $data['email'])
@@ -91,6 +92,15 @@ class EntreprisesModel extends CI_Model
             return False;   
         }
         
+    }
+    #########################################################################
+    public function get_entreprise_line($data){
+        $req = $this->db->select("*")
+                        ->where('email', $data['email'])
+                        ->where('pwd', $data['pwd'])
+                        ->get('tb_entreprise')
+                        ->result();
+        return $req;
     }
   
   ###########################################################################
