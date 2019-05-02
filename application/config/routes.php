@@ -75,6 +75,7 @@ $route['rdv']                 = 'rdv/RdvController';
 $route['login']               = 'login/LoginController';
 $route['register']            = 'entreprise/EntrepriseController/register';
 $route['inscription']         = 'entreprise/EntrepriseController/inscription_entreprise';
-$route['inscription2']         = 'entreprise/EntrepriseController/upload_logo';
+$route['inscription2']        = 'entreprise/EntrepriseController/upload_logo';
+$route['agent']               = 'agent/AgentController';  
 
 // $route['index']               = '';
