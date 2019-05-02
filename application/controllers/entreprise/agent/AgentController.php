@@ -5,7 +5,7 @@ class AgentController extends CI_Controller {
 
 	public function index()
 	{
-		$this->agent_view();
+		$this->load->view('agent');
 	}
 	public function ajouter_agent()
 	{
@@ -36,6 +36,6 @@ class AgentController extends CI_Controller {
 
 	public function agent_view(){
 		//chargement de la page ajouter_agent dans la vue
-		$this->load->view('ajouter_agent');
+		$this->load->view('agent');
 	}
 }
