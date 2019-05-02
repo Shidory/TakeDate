@@ -76,12 +76,21 @@ class EntreprisesModel extends CI_Model
         }
     }
     #########################################################################
-    public function get_ligne($email){
-        $this->db->where('email', $email)
-                 ->select('*')
-                 
-        $req = $this->db->get('tb_entreprise');
-        return $req;
+    public function get_ligne($data){
+
+        $this->db->select('*')
+                 ->where('email', $data['email'])
+                 ->where('pwd', $data['pwd']);
+         $req = $this->db->get('tb_entreprise');
+
+        if($req->num_rows() > 0){
+            return True;
+        }
+
+        else{
+            return False;   
+        }
+        
     }
   
   ###########################################################################
