@@ -6,6 +6,9 @@ class AgentController extends CI_Controller {
 	public function index()
 	{
 		//chargement de la page ajouter_agent dans la vue
+		// var_dump($this->session->userdata);
+		echo $this->session->userdata('id');
+
 		$this->load->view('agent');
 	}
 	public function ajouter_agent()
