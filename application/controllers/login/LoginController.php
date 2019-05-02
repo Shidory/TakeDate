@@ -18,10 +18,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 'pwd'   => $password
             );
             // Données venant de la base de données pour permettre la vérification de l'authentification
-            $data_db = $this->EntreprisesModel->get_ligne($data);
+            $data_db  =   $this->EntreprisesModel->verification($data);
+            $admin    =   $this->EntreprisesModel->get_entreprise_line($data);
         
             if($data_db){
-                redirect('agent/AgentController');
+                foreach($admin as $adm){
+                    $data_session = array(
+                        'id' => $adm->idEntreprise,
+                        'email' => $adm->email
+                    );
+
+                    $this->session->set_userdata('id',$data_session);    
+                }
+                redirect(base_url('/agent/AgentController'));
             }
             else{
                 $data['error'] = "Email ou mot de passe incorrect";
@@ -29,7 +38,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
-   // Fonction de déconnexion
+        // Fonction de déconnexion
 
         public function logout(){
             $this->session->unset_userdata($session_data);//Destruction des valeurs de session
