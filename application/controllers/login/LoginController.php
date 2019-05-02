@@ -29,16 +29,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
 
-        // Fonction de redirection en cas de resultat positif de la verification de l'authentification
-        public function enter(){
-            if($this->session->userdata['username'] != '' && $this->session->userdata['id'] != null){
-                echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
-                echo '<label><a href="'.base_url('login/logout').'">logout</a></label>';
-            }
-            else{
-                redirect(base_url('login'));
-            }
-        }
    // Fonction de déconnexion
 
         public function logout(){
