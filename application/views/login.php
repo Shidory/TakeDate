@@ -301,7 +301,7 @@
 			<li> <a href="account/register.html" id="customer_register_link">S'inscrire</a> </li>
 	
 			<li class="site-nav--active active">
-				<a href="index.html" class="site-nav__link">Acceuil</a>
+				<a href="welcome" class="site-nav__link">Acceuil</a>
 			</li>
 			<li>
 				<a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
@@ -340,7 +340,10 @@
 			</header>
 		</div>
 	</div>
-
+	
+	<div class="row">
+		<p style="color : rgb(255,0,0); text-align:center;"><?= $error;?></p>
+	</div>
 	<main role="main" id="MainContent">
 		<div class="section container">
 			<div class="row">
@@ -349,7 +352,7 @@
 						<div class="card-content">
 							<div id="CustomerLoginForm">
 								<form method="post"
-									action="login_validation"
+									action="login_valide"
 									id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type"
 										value="customer_login" /><input type="hidden" name="utf8" value="✓" />
 									<h4 class="center">Se connecter</h4>
