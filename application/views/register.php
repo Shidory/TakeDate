@@ -327,7 +327,7 @@
 					<div class="card login-wrapper">
 						<div class="card-content">
 
-							<form method="post" enctype="multipart/form-data" action="inscription2" id="create_customer" accept-charset="UTF-8">
+							<form method="post" enctype="multipart/form-data" action="inscription" id="create_customer" accept-charset="UTF-8">
 								<input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
 								<h4 class="center">Créez un compte prestataire</h4>
 
