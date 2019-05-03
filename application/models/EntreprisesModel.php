@@ -6,17 +6,21 @@ class EntreprisesModel extends CI_Model
     {
         parent::__construct();
     }
+
+    #######################################################
     public function register($produit)
     {
          $this->db->insert('tb_entreprise', $produit);
     }
+
+    #######################################################
     public function fetch_data()
 	{
         $query = $this->db->get("tb_rdv");
         return $query;
     }
     
-    ##################################################
+    #######################################################
     public function  profil($data, $id){
         
         $this->db->where('idEntreprise', $id)

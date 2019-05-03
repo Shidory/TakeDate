@@ -28,7 +28,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         'email' => $adm->email
                     );
 
-                    $this->session->set_userdata('id',$data_session);    
+                    $this->session->set_userdata('user',$data_session);    
                 }
                 redirect(base_url('/agent/AgentController'));
             }
