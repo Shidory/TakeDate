@@ -7,7 +7,12 @@ class AgentController extends CI_Controller {
 	{
 		//chargement de la page ajouter_agent dans la vue
 		// var_dump($this->session->userdata);
-		echo $this->session->userdata('id');
+		var_dump($this->session->userdata('user'));
+		$users  = $this->session->userdata('user');
+
+		foreach($users as $user){
+			echo $user;
+		}
 
 		$this->load->view('agent');
 	}
