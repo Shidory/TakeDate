@@ -78,4 +78,3 @@ $route['inscription']         = 'entreprise/EntrepriseController/inscription_ent
 $route['inscription2']        = 'entreprise/EntrepriseController/upload_logo';
 $route['agent']               = 'agent/AgentController';  
 
-// $route['index']               = '';

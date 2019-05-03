@@ -125,45 +125,45 @@
                     <?php foreach ($agent as $row) { ?>
                         <div class="col s12 m6 l4 xl3">
                        
-                            <a class="modal-trigger" href="#horaire">
-                                <div class="card row">
-                                    <div class="col s4">
-                                        <img src="yuna.jpg" alt="profil" width="80" class="circle">
-                                    </div>
-                                    <div class="col s8 blue-text">
-                                        <h5><?php echo $row['nomAgent'] ?></h5>
-                                        <p>Secretaire adjoint</p>
+                            <a class="modal-trigger" href="#horaire_<?php echo $row['idAgent'] ?>">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col s4">
+                                            <img src="yuna.jpg" alt="profil" width="80" class="circle">
+                                        </div>
+                                        <div class="col s8 blue-text">
+                                            <h5><?php echo $row['nomAgent'] ?></h5>
+                                            <p>Secretaire adjoint</p>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                         <div id="horaire" class="modal modal-fixed-footer">
+                         <div id="horaire_<?php echo $row['idAgent'] ?>" class="modal modal-fixed-footer">
                             <div class="modal-content">
                                 <h5>Horaire de <?php echo $row['nomAgent'] ?></h5>
                                 <table class="striped">
                                     <thead>
                                         <tr>
-                                            <th>Jour</th>
+                                            <th>Date</th>
                                             <th>Heures</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($horaire as $hor) { ?>
+                                       
+                                        <?php
+                                        if(count($hor)!=0) if ($hor[0]['idAgent']==$row['idAgent']) {
+                                            foreach ($hor as $h){
+                                        ?>
                                         <tr>
-                                            <td>Lundi 30/05</td>
-                                            <td>12h - 16h</td>
-                                            <td><a class="blue-text" href="rdv">Ajouter un RDV</a></td>
+                                            <td><?php echo $h['date'] ?></td>
+                                            <td><?php echo $h['heureDebut'] ?> - <?php echo $h['heureFin'] ?></td>
+                                            <td><a class="blue-text" href="rdv?horaire=<?php echo $h['idHoraire'] ?>">Ajouter un RDV</a></td>
                                         </tr>
-                                        <tr>
-                                            <td>Mardi 01/06</td>
-                                            <td>12h - 14h</td>
-                                            <td><a class="blue-text" href="#">Ajouter un RDV</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jeudi 03/06</td>
-                                            <td>12h - 18h</td>
-                                            <td><a class="blue-text" href="#">Ajouter un RDV</a></td>
-                                        </tr>
+                                        <?php }}?>
+                                    <?php }?>
                                     </tbody>
                                 </table>
                             </div>

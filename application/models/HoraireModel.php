@@ -16,14 +16,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             return $this->db->get('tb_agent')->result_array();
         }
         // =======================================================================>
-        public function get_horaire($idAgent){
-            // recuperation de l'horaire par rapport a un agent
-            $req = $this->db->select('h.jour, h.heure_debut, h.heure_fin, a.nomAgent')
-                     ->from('tb_horaire as h')
-                     ->join('tb_agent as a', 'a.idAgent = h.idAgent')
-                     ->get();  
-
-            return $req;
+        // public function get_horaire($idAgent){
+        //     // recuperation de l'horaire par rapport a un agent
+        //     $req = $this->db->select('*')
+        //              ->from('tb_horaire as h')
+        //              ->join('tb_agent as a', 'a.idAgent = h.idAgent')
+        //              ->get();  
+        //     return $req;
+        // }
+        public function get_horaire($idAgent)
+        {
+            $this->db->select('*');
+            $this->db->where('idAgent',$idAgent);
+            return $this->db->get('tb_horaire')->result_array();
         }
     }
 ?>

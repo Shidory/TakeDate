@@ -38,4 +38,12 @@ class AgentController extends CI_Controller {
 		//chargement de la page ajouter_agent dans la vue
 		$this->load->view('agent');
 	}
+
+	#######################################################
+	public function notifier(){
+
+		
+	}
+
+	#######################################################
 }

@@ -42,7 +42,10 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
     <link rel="stylesheet" href="<?php echo base_url('')?>assets/calendar/css/style.css">
+<<<<<<< HEAD:application/views/pages test/agent/agent.php
     <link rel="stylesheet" href="<?= base_url('assets/materialize/css/materialize.min.css');?>">
+=======
+>>>>>>> 723a9abec1eb6b0cb585444aae6633049c3e5002:application/views/agent.php
     <style>
         #shopify-section-header>nav,
         .gradient-back {
@@ -159,10 +162,7 @@
         <script src="https://use.fontawesome.com/484df5253e.js"></script>
     </head>
     <div id="shopify-section-header" class="shopify-section">
-
         <nav class="nav-extended">
-
-
             <div class="nav-background">
                 <div class="pattern active"
                     style="background-image: url('<?= base_url('') ?>assets/img/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
@@ -172,19 +172,15 @@
                 <a href="index2.html" itemprop="url" class="brand-logo site-logo">
                     TakeDate
                 </a>
-
-
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
 
                     <li class="site-nav--active active">
                         <a href="<?= base_url()?>" class="site-nav__link">Acceuil</a>
                     </li>
-
                     <li>
                         <a href="" class="site-nav__link">Rendez-Vous</a>
                     </li>
-
                     <li>
                         <a href="<?= base_url('entreprise')?>">
                             Entreprises
@@ -195,7 +191,6 @@
                             <i class="material-icons">search</i>
                         </a>
                     </li>
-
                     <li>
                         <a href="<?= base_url('login'); ?>" id="customer_login_link">Se deconnecter</a>
                     </li>
@@ -207,11 +202,9 @@
                             <i style="background-color : #00E676; height:9px; width : 9px; float:right; border-radius:100%; margin-top:-8px;"></i>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </nav>
-
         <div id="add_agent_form" class="modal">
             <div class="modal-content">
                 <h5>Ajouter un agent</h5>
@@ -260,7 +253,6 @@
                 </form>
             </div>
         </div>
-
         <div class="row">
             <div class="col s12">
                 <div class="container">
@@ -286,7 +278,15 @@
 
         <div id="app"></div>
         
-
+        <div id="aside_modal" class="modal">
+            <div class="modal-content">
+                <h5>Modal Header</h5>
+                <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
         <!-- Javascript -->
 
 
@@ -313,6 +313,10 @@
         <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
         <script src="<?php echo base_url('')?>assets/calendar/js/index.js"></script>
+<<<<<<< HEAD:application/views/pages test/agent/agent.php
+=======
+        <script src="<?php echo base_url('')?>assets/js/agent.js"></script>
+>>>>>>> 723a9abec1eb6b0cb585444aae6633049c3e5002:application/views/agent.php
 
         <script>
             $(document).ready(function () {
@@ -321,10 +325,8 @@
                     categories.pushpin({ top: categories.offset().top });
                 }
             });
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.modal');
-                var instances = M.Modal.init(elems);
-            });
+            var base_url = '<?php echo base_url('')?>';
+            
         </script>
 
 </body>

@@ -13,6 +13,7 @@ class AgentsModel extends CI_Model{
     {
         $this->db->select('*');
         $this->db->where('idEntreprise',$idEntreprise);
+        
         return $this->db->get('tb_agent')->result_array();
     }
        

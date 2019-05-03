@@ -39,7 +39,7 @@ class ClientController extends CI_Controller {
 			);
 			$this->ClientModel->annuler_rdv($id,$data);
 
-		}
+		}}
 		public function modifier_rdv(){
 			// recuperation des donnée du formulaire
 			$id = $this->input->get("id");
