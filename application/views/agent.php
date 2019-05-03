@@ -42,10 +42,8 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
     <link rel="stylesheet" href="<?php echo base_url('')?>assets/calendar/css/style.css">
-<<<<<<< HEAD:application/views/pages test/agent/agent.php
     <link rel="stylesheet" href="<?= base_url('assets/materialize/css/materialize.min.css');?>">
-=======
->>>>>>> 723a9abec1eb6b0cb585444aae6633049c3e5002:application/views/agent.php
+
     <style>
         #shopify-section-header>nav,
         .gradient-back {
