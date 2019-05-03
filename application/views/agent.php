@@ -20,10 +20,10 @@
     </title>
 
 
-    <link href="../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/gallery-materialize.mincfcd.css?0" rel="stylesheet"
+    <link href="<?php echo base_url('')?>assets/css/gallery-materialize.mincfcd.css?0" rel="stylesheet"
         type="text/css" media="all" />
 
-    <link href="../cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.scsscfcd.css?0" rel="stylesheet" type="text/css"
+    <link href="<?php echo base_url('')?>assets/css/theme.scsscfcd.css?0" rel="stylesheet" type="text/css"
         media="all" />
 
     <!-- Material Icons -->
@@ -39,7 +39,7 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
-    <link rel="stylesheet" href="calendar/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url('')?>assets/calendar/css/style.css">
     <style>
         #shopify-section-header>nav,
         .gradient-back {
@@ -67,7 +67,7 @@
             background: rgba(221, 135, 182, 0.4);
         }
         .mt-1{
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         #p p {
@@ -156,10 +156,7 @@
         <script src="https://use.fontawesome.com/484df5253e.js"></script>
     </head>
     <div id="shopify-section-header" class="shopify-section">
-
         <nav class="nav-extended">
-
-
             <div class="nav-background">
                 <div class="pattern active"
                     style="background-image: url('../cdn.shopify.com/s/files/1/2030/2737/files/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
@@ -169,19 +166,15 @@
                 <a href="index2.html" itemprop="url" class="brand-logo site-logo">
                     Meet Space
                 </a>
-
-
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
 
                     <li class="site-nav--active active">
                         <a href="index2.html" class="site-nav__link">Acceuil</a>
                     </li>
-
                     <li>
                         <a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
                     </li>
-
                     <li>
                         <a href="list_entreprise.html">
                             Entreprises
@@ -192,18 +185,15 @@
                             <i class="material-icons">search</i>
                         </a>
                     </li>
-
                     <li>
                         <a href="account/login.html" id="customer_login_link">Se connecter</a>
                     </li>
                     <li>
                         <a href="account/register.html" id="customer_register_link">S'inscrire</a>
                     </li>
-
                 </ul>
             </div>
         </nav>
-
         <div id="add_agent_form" class="modal">
             <div class="modal-content">
                 <h5>Ajouter un agent</h5>
@@ -251,7 +241,6 @@
                 </form>
             </div>
         </div>
-
         <div class="row">
             <div class="col s12">
                 <div class="container">
@@ -277,7 +266,15 @@
 
         <div id="app"></div>
         
-
+        <div id="aside_modal" class="modal">
+            <div class="modal-content">
+                <h5>Modal Header</h5>
+                <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
         <!-- Javascript -->
 
 
@@ -303,7 +300,8 @@
         <!--<![endif]-->
         <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
-        <script src="calendar/js/index.js"></script>
+        <script src="<?php echo base_url('')?>assets/calendar/js/index.js"></script>
+        <script src="<?php echo base_url('')?>assets/js/agent.js"></script>
 
         <script>
             $(document).ready(function () {
@@ -312,10 +310,8 @@
                     categories.pushpin({ top: categories.offset().top });
                 }
             });
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.modal');
-                var instances = M.Modal.init(elems);
-            });
+            var base_url = '<?php echo base_url('')?>';
+            
         </script>
 
 </body>

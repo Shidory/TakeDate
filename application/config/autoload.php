@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Instructions
 | -------------------------------------------------------------------
 |
-| These are the things you can load automatically:
+| These are the things you can load automatically:var_dump($nom);
 |
 | 1. Packages
 | 2. Libraries
@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 */
 
 
-$autoload['libraries'] = array('form_validation', 'database', 'session');
+$autoload['libraries'] = array('database', 'session');
 
 /*
 | -------------------------------------------------------------------
