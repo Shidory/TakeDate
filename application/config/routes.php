@@ -57,7 +57,7 @@ $route['annuler_rdv'] = 'client/ClientController';
 $route['modifier_rdv'] = 'client/ClientController/modifier_rdv';
 $route['login_validation'] = 'login/loginController';
 //rooting vers le controlleur de l'entreprise
-$route['repporter_rdv'] = 'entreprise/EntrepriseController';
+$route['reporter_rdv'] = 'entreprise/EntrepriseController/notifier';
 $route['lister_entreprise'] = 'entreprise/EntrepriseController/get_Entreprise';
 $route['horaire'] = 'horaire/HoraireController';
 $route['rdv'] = 'rdv/RdvController';

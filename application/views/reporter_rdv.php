@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="repporter_rdv" method="post">
+    <form action="reporter_rdv" method="post">
         <label for="motif" id="motif">motif: </label>
         <input type="text" name="motif">
         <label for="date" id="date">date: </label>

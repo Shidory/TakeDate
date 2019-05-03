@@ -52,7 +52,7 @@ class EntreprisesModel extends CI_Model
         $this->db->update('tb_rdv', $data);
     }
     
-  ##########################################################################
+    #######################################################
     
     public function can_login($data)
     {
@@ -68,7 +68,7 @@ class EntreprisesModel extends CI_Model
         }
     }
   
-  ###########################################################################
+    #######################################################
     public function get_Entreprise()
     {
         //cette methode recupere tout les elements de la table tb_entreprise
@@ -86,6 +86,7 @@ class EntreprisesModel extends CI_Model
 
     #########################################################################
    
+
     public function get_Random_Entreprises()
     {
         //cette methode recupere une seule entreprise dans la table tb_entreprise d'une maniere aleatoire
@@ -94,5 +95,6 @@ class EntreprisesModel extends CI_Model
         $this->db->limit(1);
         return $this->db->get('tb_entreprise')->result_array();
     }
+
 }
 ?>

@@ -4,6 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     class LoginController extends CI_Controller{
 
         public function index(){
+
+            $this->login_validation();
+
             $this->load->view('login');//Chargement de la page de connexion
         }
         // Methode de validation des données du formulaire
@@ -56,6 +59,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         }
    // Fonction de déconnexion
+
+        // Fonction de déconnexion
 
         public function logout(){
             $this->session->unset_userdata($session_data);//Destruction des valeurs de session
