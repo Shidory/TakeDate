@@ -86,7 +86,7 @@ class EntreprisesModel extends CI_Model
 
     #########################################################################
    
->>>>>>> c6e819e34df9b314f7c8e722bbbe16515e030f72
+
     public function get_Random_Entreprises()
     {
         //cette methode recupere une seule entreprise dans la table tb_entreprise d'une maniere aleatoire

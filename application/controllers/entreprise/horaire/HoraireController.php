@@ -10,28 +10,20 @@
             $this->load->view('horaire_view');
         }
 
-        public function enregistrer(){
+        public function get_horaire(){
 
-            $jour        = $this->input->post('jour');
-            $heure_debut = $this->input->post('heuredebut');
-            $heure_fin   = $this->input->post('heurefin');
-            // $this->session->userdata['id']
-            $idagent     =  1 ;
-
-            if($this->form_validation->run()){
-                echo "hey";
-            }
-            else{
-                echo "salut";
-            }
-            // $data        = array(
-            //                     'idAgent'       => $idagent,
-            //                     'jour'          => $jour,
-            //                     'heureDebut'    => $heure_debut,
-            //                     'heureFin'      => $heure_fin
-            //                );
-
-            // $this->HoraireModel->ajouter_horaire($data);
+            $idAgent=$this->input->get('id');
+            $horaire = $this->HoraireModel->get_Horaire($idAgent);
+		    $data['randomEntreprise'] = $horaire;
+		    $this->load->view('',$data);
         }
+        public function ajouter_horaire($data)
+        {
+            //insertion des donnees dans la base des donnees
+            $this->db->insert('tb_horaire', $data);
+        }
+    
+
+       
     }
 ?>

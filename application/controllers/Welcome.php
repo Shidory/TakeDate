@@ -42,41 +42,50 @@ class Welcome extends CI_Controller {
 	}
 	public function entreprise()
 	{
-		$idEntreprise=$this->input->get('id');
-		$agent = $this->AgentsModel->get_Agent($idEntreprise);
 		
+		$idEntreprise=$this->input->get('id');
+		$agents = $this->AgentsModel->get_Agent($idEntreprise);
+		$horaires = array();
+		
+		foreach($agents as $agent){
+			$idAgent=$agent['idAgent'];
+			$horaires[] = $this->HoraireModel->get_Horaire($idAgent);
+			
+		}
 		$random = $this->EntreprisesModel->get_Random_Entreprises();
 		$data['randomEntreprise'] = $random;
-		$data['agent'] = $agent;
+		$data['agent'] = $agents;
+		$data['horaire'] = $horaires;
+
+		//$data['horaire'] = $horaire;
 		$this->load->view('entreprise',$data);
+	
 	}
 	public function rdv()
 	{
-		$this->load->view('rdv');	
+		$this->load->view('rdv');
 	}
-
-	public function enregistrer(){
-
-		$jour        = $this->input->post('jour');
-		$heure_debut = $this->input->post('heuredebut');
-		$heure_fin   = $this->input->post('heurefin');
-		// $this->session->userdata['id']
-		$idagent     =  1 ;
-
-		if($this->form_validation->run() == FALSE){
-			echo "hey";
-		}
-		else{
-			echo "salut";
-		}
-		// $data        = array(
-		//                     'idAgent'       => $idagent,
-		//                     'jour'          => $jour,
-		//                     'heureDebut'    => $heure_debut,
-		//                     'heureFin'      => $heure_fin
-		//                );
-
-		// $this->HoraireModel->ajouter_horaire($data);
+	public function agent()
+	{
+		$this->load->view('agent');
 	}
-	
+	public function enregistrer()
+	{
+
+		$agent=1;
+		$this->load->helper(array('form', 'url'));
+		$data = array(
+			'idAgent' => $agent,
+			'titre' => $this->input->post('titre'),
+			'note' => $this->input->post('note'),
+			'date' => $this->input->post('format'),
+			'HeureFin' => $this->input->post('fin'),
+			'HeureDebut' => $this->input->post('deb'),
+			'Nbrdv' => $this->input->post('nbrdv')
+		);
+		$this->HoraireModel->ajouter_horaire($data);
+		echo 'ok';
+	}
 }
+
+
