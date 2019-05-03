@@ -57,20 +57,19 @@ class EntrepriseController extends CI_Controller
 			$pwdConf = $this->input->post('confpwd');
 			if($pwd==$pwdConf)
 			{
-				echo $this->input->post('logo');
+				$password = sha1($this->input->post('pwd'));
 
 				$entreprise = array(
 					"nomEntreprise" => $this->input->post('name'),
 					"secteur" 		=> $this->input->post('secteur'),
-					"telephone" 	=> $this->input->post('tel'),
+					"phone" 		=> $this->input->post('tel'),
 					"email" 		=> $this->input->post('email'),
-					"adresse" 		=> $this->input->post('adresse'),
 					"description"   => $this->input->post('desc'),
-					"pwd"			=> $this->input->post('pwd')
+					"pwd"			=> $password
 				);
 				try{
 					$this->EntreprisesModel->register($entreprise);
-					redirect('Welcome/index');
+					redirect(base_url('login'));
 				}catch (Exception $e){
 					print_r($e);
 				}
