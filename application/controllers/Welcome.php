@@ -6,20 +6,11 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-
-		//$this->load->view('horaire/horaire_view');
-		$this->load->view('entreprise/notifier');
-
-		$id_rdv = 1;
-		$this->load->model("EntreprisesModel");
-		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
-		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
-		$this->load->view('accepter_view', $data);
-
-		$entreprise = $this->EntreprisesModel->get_Entreprise_Index();
-		$data['dataEntreprise'] = $entreprise;
-		$this->load->view('header');
-		$this->load->view('index',$data);
+		// $entreprise = $this->EntreprisesModel->get_Entreprise_Index();
+		// $data['dataEntreprise'] = $entreprise;
+		// $this->load->view('header');
+		// $this->load->view('index',$data);
+		$this->load->view('rdv');
 	}
 	public function list_entreprise()
 	{
@@ -78,32 +69,6 @@ class Welcome extends CI_Controller {
 	}
 	public function enregistrer()
 	{
-
-<<<<<<< HEAD
-	public function enregistrer(){
-
-		$jour        = $this->input->post('jour');
-		$heure_debut = $this->input->post('heuredebut');
-		$heure_fin   = $this->input->post('heurefin');
-		// $this->session->userdata['id']
-		$idagent     =  1 ;
-		
-		
-		if($this->form_validation->run()){
-			echo "hey";
-		}
-		else{
-			echo "salut";
-		}
-		// $data        = array(
-		//                     'idAgent'       => $idagent,
-		//                     'jour'          => $jour,
-		//                     'heureDebut'    => $heure_debut,
-		//                     'heureFin'      => $heure_fin
-		//                );
-
-		// $this->HoraireModel->ajouter_horaire($data);
-=======
 		$agent=1;
 		$this->load->helper(array('form', 'url'));
 		$data = array(
@@ -117,7 +82,6 @@ class Welcome extends CI_Controller {
 		);
 		$this->HoraireModel->ajouter_horaire($data);
 		echo 'ok';
->>>>>>> 723a9abec1eb6b0cb585444aae6633049c3e5002
 	}
 }
 
