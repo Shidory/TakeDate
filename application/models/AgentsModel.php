@@ -14,13 +14,30 @@ class AgentsModel extends CI_Model{
         $this->db->select('*');
         $this->db->where('idEntreprise',$idEntreprise);
         
-        return $this->db->get('tb_agent')->result_array();
+        return $this->db->get('tb_agent')->result();
     }
        
     public function repondre_commentaire($data)
     {
         //recuperation de l'id du commentaire client
         $this->db->insert('tb_reponse_commentaire',$data);
+    }
+
+    public function verification($data){
+
+        $this->db->select('*')
+                 ->where('email', $data['email'])
+                 ->where('pwd', $data['pwd']);
+         $req = $this->db->get('tb_entreprise');
+
+        if($req->num_rows() > 0){
+            return True;
+        }
+
+        else{
+            return False;   
+        }
+        
     }
 }
 ?>
