@@ -28,7 +28,7 @@ class AgentsModel extends CI_Model{
         $this->db->select('*')
                  ->where('email', $data['email'])
                  ->where('pwd', $data['pwd']);
-         $req = $this->db->get('tb_entreprise');
+         $req = $this->db->get('tb_agent');
 
         if($req->num_rows() > 0){
             return True;
