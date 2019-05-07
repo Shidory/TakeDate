@@ -27,10 +27,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         'id' => $adm->idEntreprise,
                         'email' => $adm->email
                     );
-
-                    $this->session->set_userdata('user',$data_session);    
+                    // echo $data_session['email'];
+                    $this->session->set_userdata('id', $data_session['id']);
+                    $this->session->set_userdata('email', $data_session['email']);    
                 }
-                redirect(base_url('/agent/AgentController'));
+                redirect(base_url('/departement/DepartementController'));
             }
             else{
                 $data['error'] = "Email ou mot de passe incorrect";
