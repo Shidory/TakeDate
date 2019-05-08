@@ -53,8 +53,8 @@ class AgentController extends CI_Controller {
 		
 	}
 
-	public function login(){
-		
+	public function modifier_agent(){
+
 	}
 	
 }
