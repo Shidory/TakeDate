@@ -50,18 +50,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['default_controller'] = 'welcome';
-$route['login_validation'] = 'login/LoginController/login_validation';
+$route['default_controller']  =  'welcome';
+$route['login_valide']        = 'login/LoginController/login_validation';
+
 //le routing du client
-$route['annuler_rdv'] = 'client/ClientController';
-$route['modifier_rdv'] = 'client/ClientController/modifier_rdv';
-$route['login_validation'] = 'login/loginController';
+
+$route['annuler_rdv']         = 'client/ClientController';
+$route['modifier_rdv']        = 'client/ClientController/modifier_rdv';
+// $route['login_validation']    = 'login/loginController/login_validation';
+
 //rooting vers le controlleur de l'entreprise
-$route['reporter_rdv'] = 'entreprise/EntrepriseController/notifier';
-$route['lister_entreprise'] = 'entreprise/EntrepriseController/get_Entreprise';
-$route['horaire'] = 'horaire/HoraireController';
-$route['rdv'] = 'rdv/RdvController';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
-$route['horaire'] = 'entreprise/horaire/HoraireController';
-$route['rdv'] = 'rdv/RdvController';
+
+$route['entreprise']          = 'welcome/list_entreprise';   
+$route['lister_entreprise']   = 'entreprise/EntrepriseController/get_Entreprise';
+$route['horaire']             = 'horaire/HoraireController';
+$route['rdv']                 = 'rdv/RdvController';
+$route['404_override']        = '';
+$route['translate_uri_dashes']= FALSE;
+$route['horaire']             = 'entreprise/horaire/HoraireController';
+$route['rdv']                 = 'rdv/RdvController';
+
+// rooting vers le controlleur login
+
+$route['login']               = 'login/LoginController';
+$route['register']            = 'entreprise/EntrepriseController/register';
+$route['inscription']         = 'entreprise/EntrepriseController/inscription_entreprise';
+$route['inscription2']        = 'entreprise/EntrepriseController/upload_logo';
+$route['agent']               = 'agent/AgentController';  
+$route['ajouter_agent']       = 'agent/AgentController/ajouter_agent';
+$route['ajouter_departement'] = 'departement/DepartementController/enregstrer_departement';
+$route['modifier_agent']      = 'agent/AgentController/modifier_agent';
+$route['logout']              = 'login/LoginController/logout';
+$route['login_agent']         = 'login/loginController/login_agent';
+$route['agent_login']         = 'login/loginController/load_login_view';
+$route['entreprise2']         = 'welcome/entreprise';

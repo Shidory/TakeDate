@@ -6,21 +6,13 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-
-		//$this->load->view('horaire/horaire_view');
-		$this->load->view('entreprise/notifier');
-
-		$id_rdv = 1;
-		$this->load->model("EntreprisesModel");
-		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
-		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
-		$this->load->view('accepter_view', $data);
-
 		$entreprise = $this->EntreprisesModel->get_Entreprise_Index();
 		$data['dataEntreprise'] = $entreprise;
+		$this->load->view('header');
 		$this->load->view('index',$data);
+		// $this->load->view('rdv');
 	}
-	public function listentreprise()
+	public function list_entreprise()
 	{
 		$entreprise = $this->EntreprisesModel->get_Entreprise();
 		$random = $this->EntreprisesModel->get_Random_Entreprises();
@@ -28,18 +20,23 @@ class Welcome extends CI_Controller {
 		$data['randomEntreprise'] = $random;
 		$this->load->view('listentreprise',$data);
 	}
+
 	public function login()
 	{
-		$this->load->view('login');
+		$data['error'] = "";
+		$this->load->view('login',$data);
 	}
+
 	public function register()
 	{
 		$this->load->view('register');
 	}
+
 	public function test()
 	{
 		$this->load->view('test');
 	}
+
 	public function entreprise()
 	{
 		
@@ -48,7 +45,7 @@ class Welcome extends CI_Controller {
 		$horaires = array();
 		
 		foreach($agents as $agent){
-			$idAgent=$agent['idAgent'];
+			$idAgent = $agent->idAgent;
 			$horaires[] = $this->HoraireModel->get_Horaire($idAgent);
 			
 		}
@@ -61,6 +58,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('entreprise',$data);
 	
 	}
+
 	public function rdv()
 	{
 		$this->load->view('rdv');
@@ -71,7 +69,6 @@ class Welcome extends CI_Controller {
 	}
 	public function enregistrer()
 	{
-
 		$agent=1;
 		$this->load->helper(array('form', 'url'));
 		$data = array(

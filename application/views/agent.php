@@ -31,15 +31,19 @@
 
     <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/20302737/digital_wallets/dialog">
 
+
     <script integrity="sha256-ZGMHgi9G7WU+Z7WiP2suSn84yzoN83sGf9nMWJhVHAw=" defer="defer"
         src="../cdn.shopify.com/s/assets/storefront/express_buttons-646307822f46ed653e67b5a23f6b2e4a7f38cb3a0df37b067fd9cc5898551c0c.js"
         crossorigin="anonymous"></script>
     <script integrity="sha256-6HOSr+Kf4wcoL05qrRLLS8wq/v1rf+vwtw7f0xX5aEw=" defer="defer"
         src="../cdn.shopify.com/s/assets/storefront/features-e87392afe29fe307282f4e6aad12cb4bcc2afefd6b7febf0b70edfd315f9684c.js"
         crossorigin="anonymous"></script>
+    <script src="<?= base_url('assets/materialize/js/materialize.min.js');?>"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
     <link rel="stylesheet" href="<?php echo base_url('')?>assets/calendar/css/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets/materialize/css/materialize.min.css');?>">
+
     <style>
         #shopify-section-header>nav,
         .gradient-back {
@@ -159,24 +163,24 @@
         <nav class="nav-extended">
             <div class="nav-background">
                 <div class="pattern active"
-                    style="background-image: url('../cdn.shopify.com/s/files/1/2030/2737/files/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
+                    style="background-image: url('<?= base_url('') ?>assets/img/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
                 </div>
             </div>
             <div class="nav-wrapper container">
                 <a href="index2.html" itemprop="url" class="brand-logo site-logo">
-                    Meet Space
+                    TakeDate
                 </a>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
 
                     <li class="site-nav--active active">
-                        <a href="index2.html" class="site-nav__link">Acceuil</a>
+                        <a href="<?= base_url('welcome')?>" class="site-nav__link">Acceuil</a>
                     </li>
                     <li>
-                        <a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
+                        <a href="<?= base_url('rdv');?>" class="site-nav__link">Rendez-Vous</a>
                     </li>
                     <li>
-                        <a href="list_entreprise.html">
+                        <a href="<?= base_url('entreprise')?>">
                             Entreprises
                         </a>
                     </li>
@@ -186,10 +190,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="account/login.html" id="customer_login_link">Se connecter</a>
+                        <a href="<?= base_url('logout'); ?>" id="customer_login_link">Se deconnecter</a>
                     </li>
                     <li>
-                        <a href="account/register.html" id="customer_register_link">S'inscrire</a>
+                        <a href="#profil" class="modal-trigger btn-floating right waves-effect btn-flat" style="margin-top: 20px;">
+                            <div class="circle" style="background: rgba(15,15,15,0.3); margin-top: 2pxpx;">
+                                <img src="<?= base_url('assets/img/avatar/avatar-7.png');?>" alt="" srcset="" class="circle right" style="margin-top: 0px;">
+                            </div>
+                            <i style="background-color : #00E676; height:7px; width : 7px; float:right; border-radius:100%; margin-top:-8px; margin-left:-20px;"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -197,8 +206,9 @@
         <div id="add_agent_form" class="modal">
             <div class="modal-content">
                 <h5>Ajouter un agent</h5>
-                <form method="post" action="#" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type"
-                        value="create_customer" /><input type="hidden" name="utf8" value="✓" />
+                <form method="post" action="<?= base_url('ajouter_agent');?>" id="create_customer" accept-charset="UTF-8">
+                    <input type="hidden" name="idEntreprise" value="" />
+                    <input type="hidden" name="idDpt" value="✓" />
                     <div class="input-field">
                         <label for="name">
                             Nom
@@ -247,9 +257,9 @@
                     <div class="row">
                         <div class="col s12">
                             <div class="card row">
-                                <h4 class="collection-title col s8">Julie Kitumbula &bull; Google</h4>
+                                <h4 class="collection-title col s8"> &bull; Agent</h4>
                                 <div class="mt-1 col s4">
-                                    <a class="btn-floating right waves-effect btn-flat">
+                                    <a href="#app" class="btn-floating right waves-effect btn-flat">
                                         <i class="material-icons black-text">settings</i>
                                     </a>
                                     <a href="#add_agent_form" class="modal-trigger btn-floating right waves-effect btn-flat">
@@ -264,7 +274,51 @@
         </div>
 
 
-        <div id="app"></div>
+        <div id="app">
+            
+        </div>
+        
+        <div id="profil" class="modal">
+            <div id="profil" class="modal_content">
+                <div class="row">
+                    <h5>Mettez a jour votre profil</h5>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="<?= base_url('assets/img/apps.64902.9007199266242800.856b3755-5c57-4455-8c4a-1c980462c57b.821d4cb6-9593-4c09-a396-9c9e9fddc466.jpg');?>" alt="" srcset="">
+                            </div>
+                            <input type="file" name="" id="">
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="input-field m6">
+                                    <label for="name">
+                                        Nom
+                                    </label>
+                                    <input type="text" name="name" id="name" class="validate">
+                                </div>
+                                <div class="input-field s6">
+                                    <label for="name">
+                                        Nom
+                                    </label>
+                                    <input type="text" name="name" id="name" class="validate">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+       
         
         <div id="aside_modal" class="modal">
             <div class="modal-content">
@@ -277,6 +331,7 @@
         </div>
         <!-- Javascript -->
 
+        
 
         <script
             src="../cdn.shopify.com/s/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js"
@@ -301,6 +356,7 @@
         <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
         <script src="<?php echo base_url('')?>assets/calendar/js/index.js"></script>
+
         <script src="<?php echo base_url('')?>assets/js/agent.js"></script>
 
         <script>
@@ -309,6 +365,9 @@
                 if (categories.length) {
                     categories.pushpin({ top: categories.offset().top });
                 }
+
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems);
             });
             var base_url = '<?php echo base_url('')?>';
             

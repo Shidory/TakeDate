@@ -4,66 +4,99 @@ defined('BASEPATH') or exit('No direct script access allowed');
     class LoginController extends CI_Controller{
 
         public function index(){
-
-            $this->login_validation();
-
-            $this->load->view('login');//Chargement de la page de connexion
+            $data['error'] = "";
+            $this->load->view('login',$data);//Chargement de la page de connexion
         }
         // Methode de validation des données du formulaire
         public function login_validation(){
             // Données venant du formulaire
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-            $hash = sha1($password);//Encodage du mot de passe
+            $username = $this->input->post('email');
+            $password = sha1($this->input->post('pwd'));
+
+            $data = array(
+                'email' => $username,
+                'pwd'   => $password
+            );
             // Données venant de la base de données pour permettre la vérification de l'authentification
-            $data_db = $this->EntreprisesModel->get_db_data($username);
-            // Cette ligne permet de convertir la variable $pass_db en une chaîne de caractères
-            $data_db = json_decode(json_encode($data_db), TRUE);
-            // Vérification de l'authentification
-            if($data_db['pwd'] == $hash){
-                // Création d'un tableau de données
-                $data = array(
-                    'username' => $username,
-                    'password' => $hash
-                );
-                // Vérification de la valeur de la fonction can_login du model EntreprisesModel
-                if($this->EntreprisesModel->can_login($data)){
-                    // Création d'un tableau de données de session
-                    $session_data = array(
-                        'id' => $data_db['idAgent'],
-                        'username' => $data['username']
+            $data_db  =   $this->EntreprisesModel->verification($data);
+            $admin    =   $this->EntreprisesModel->get_entreprise_line($data);
+
+            // var_dump($admin);
+
+            $agents_data   =   $this->AgentsModel->verification($data);
+            $agents        =   $this->AgentsModel->get_agents_line($data);
+        
+            if($data_db){
+                foreach($admin as $adm){
+                    $data_session = array(
+                        'id' => $adm->idEntreprise,
+                        'email' => $adm->email
                     );
-                    // Création des données de session
-                    $this->session->set_userdata($session_data);
-                    redirect(base_url('loginController/enter'));
+                    // echo $data_session['email'];
+                    $this->session->set_userdata('id', $data_session['id']);
+                    $this->session->set_userdata('email', $data_session['email']);    
                 }
-                else{
-                    redirect(base_url('loginController'));
-                }
+                
+                redirect(base_url('/departement/DepartementController'));
+            }
+            elseif($agents_data){
+                
+                foreach($agents as $agent){
+        
+                    $this->session->set_userdata('id', $agent->idAgent);
+                    $this->session->set_userdata('email', $agent->email);
 
+                    redirect(base_url('/agent/AgentController'));
+                }
             }
             else{
-                //redirect(base_url('LoginController'));
-                redirect('login_validation');
+                $data['error'] = "Email ou mot de passe incorrect";
+                $this->load->view('login', $data);
             }
         }
 
-        // Fonction de redirection en cas de resultat positif de la verification de l'authentification
-        public function enter(){
-            if($this->session->userdata['username'] != '' && $this->session->userdata['id'] != null){
-                echo '<h1>Welcome '.$this->session->userdata['username'].'</h1>';
-                echo '<label><a href="'.base_url('login/logout').'">logout</a></label>';
-            }
-            else{
-                redirect(base_url('login'));
-            }
+       
+        public function load_login_view(){
+            $data['error'] = "";
+            $this->load->view('agent_login',$data);
         }
-   // Fonction de déconnexion
+
+        public function login_agent(){
+            
+            $email = $this->input->post('email');
+            $pwd = sha1($this->input->post('pwd'));
+
+            echo $pwd;
+            $data = array(
+                'email' => $email,
+                'pwd'   => $pwd
+            );
+
+            $agents_data   =   $this->AgentsModel->verification($data);
+            // $agents        =   $this->AgentsModel->get_agents_line($data);
+            var_dump($agents_data);
+
+            // if($agents_data){
+            //     foreach($agents as $agent){
+
+            //         $this->session->set_userdata('id', $agent->idAgent);
+            //         $this->session->set_userdata('email', $agent->email);
+            //     }
+
+            //     redirect(base_url('/agent/AgentController'));
+
+            // }
+            // else{
+            //     redirect(base_url('agent_login'));
+            // }
+
+        }
 
         // Fonction de déconnexion
 
         public function logout(){
-            $this->session->unset_userdata($session_data);//Destruction des valeurs de session
+            $this->session->unset_userdata('id');//Destruction des valeurs de session
+            $this->session->unset_userdata('email');
             redirect(base_url('login'));
         }
     }

@@ -277,11 +277,11 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li class="site-nav--active active">
-						<a href="index" class="site-nav__link">Acceuil</a>
+						<a href="welcome" class="site-nav__link">Acceuil</a>
 					</li>
 					
 					<li>
-						<a href="listentreprise.html">
+						<a href="entreprise">
 							Entreprises
 						</a>
 					</li>
@@ -301,7 +301,7 @@
 			<li> <a href="account/register.html" id="customer_register_link">S'inscrire</a> </li>
 	
 			<li class="site-nav--active active">
-				<a href="index.html" class="site-nav__link">Acceuil</a>
+				<a href="welcome" class="site-nav__link">Acceuil</a>
 			</li>
 			<li>
 				<a href="blogs/news.html" class="site-nav__link">Rendez-Vous</a>
@@ -340,7 +340,10 @@
 			</header>
 		</div>
 	</div>
-
+	
+	<div class="row">
+		<p style="color : rgb(255,0,0); text-align:center;"><?= $error;?></p>
+	</div>
 	<main role="main" id="MainContent">
 		<div class="section container">
 			<div class="row">
@@ -349,7 +352,7 @@
 						<div class="card-content">
 							<div id="CustomerLoginForm">
 								<form method="post"
-									action="#"
+									action="login_valide"
 									id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type"
 										value="customer_login" /><input type="hidden" name="utf8" value="✓" />
 									<h4 class="center">Se connecter</h4>
@@ -361,13 +364,14 @@
 											spellcheck="false" autocomplete="off" autocapitalize="off" autofocus>
 									</div>
 									<div class="input-field">
-										<label for="CustomerPassword">
+										<label for="pwd">
 											Mot de passe
 										</label>
-										<input type="password" name="email" id="email" class="">
+										<input type="password" name="pwd" id="pwd" class="">
 									</div>
 									<input type="submit" class="btn-large z-depth-0" value="Se connecter">
 									<a href="#recover" class="blue-text" id="RecoverPassword">Mot de passe oublié?</a>
+									<a href="<?= base_url('agent_login');?>" class="blue-text" >Se connecter en tant qu'agent</a>
 								</form>
 							</div>
 

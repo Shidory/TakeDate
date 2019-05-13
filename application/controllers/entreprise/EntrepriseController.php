@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class EntrepriseController extends CI_Controller{
 
-
 	public function _rules() 
     {
         $this->form_validation->set_rules('nom','Nom Entreprise','trim|required', array('required' => 'Saisissez le nom de l entreprise'));
@@ -13,28 +12,58 @@ class EntrepriseController extends CI_Controller{
         $this->form_validation->set_rules('pwd','Mot de passe','trim|required', array('required' => 'Saisissez le mot de passe'));
         $this->form_validation->set_rules('pwdConf','Confirmation Mot de passe','trim|required', array('required' => 'Confirmez le mot de passe'));
         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-    }
+	}
+
+	public function register(){
+		$this->load->view("header");
+		$this->load->view("register");
+	}
+
+	public function upload_logo(){
+		$config['upload_path'] = base_url("/assets/img");
+		$config["allowed_type"] = 'jpg|jpeg|gif|png';
+
+		$this->load->library('upload', $config);
+
+		if(!$this->upload->do_upload()){
+			echo "error";
+		}
+
+		else{
+			$file_data   = $this->upload->data();
+			$data['img'] = base_url()."/assets/img/".$file_data['file_name'];
+
+			
+			echo $data['img'];
+		}
+
+	}
+	
 	public function inscription_entreprise()
     {
-        $this->_rules();
+		$image_path = $this->upload_logo();
+		echo $image_path;
+        // $this->_rules();
 
-        if ($this->form_validation->run()){
+        // if ($this->form_validation->run()){
            echo 'ok';
             $pwd = $this->input->post('pwd');
-			$pwdConf = $this->input->post('pwdConf');
+			$pwdConf = $this->input->post('confpwd');
 			if($pwd==$pwdConf)
 			{
+				$password = sha1($this->input->post('pwd'));
+
 				$entreprise = array(
-					"nomEntreprise" => $this->input->post('nom'),
-					"description" => $this->input->post('description'),
-					"telephone" => $this->input->post('telephone'),
-					"email" => $this->input->post('email'),
-					"pwd" => $this->input->post('pwd'),
-				
+					"nomEntreprise" => $this->input->post('name'),
+					"secteur" 		=> $this->input->post('secteur'),
+					"phone" 		=> $this->input->post('tel'),
+					"email" 		=> $this->input->post('email'),
+					"description"   => $this->input->post('desc'),
+					"pwd"			=> $password
 				);
 				try{
 					$this->EntreprisesModel->register($entreprise);
-					redirect('Welcome/index');
+					redirect(base_url('login'));
 				}catch (Exception $e){
 					print_r($e);
 				}
@@ -42,16 +71,26 @@ class EntrepriseController extends CI_Controller{
 			else{
 				redirect('Welcome/register');
 			}
-        }
-        else{
-            $data['error'] = array('err1'=>'','err2'=>'');
-            $data['title'] = "Inscription entreprise";
-//            $this->load->view('_inc/header_admin',$data);
-redirect('Welcome/register');
-//            $this->load->view('_inc/footer_admin');
-        }
+//         }
+//         else{
+//             $data['error'] = array('err1'=>'','err2'=>'');
+//             $data['title'] = "Inscription entreprise";
+// //            $this->load->view('_inc/header_admin',$data);
+// redirect('Welcome/register');
+// //            $this->load->view('_inc/footer_admin');
+//         }
 
     }
+
+	// public function index()
+	// {
+	// 	$this->load->model("EntreprisesModel");
+	// 	$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
+	// 	$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
+	// 	$this->load->view('accepter_view', $data);
+	// 	$this->accepter_controller();
+	// }
+
 	public function index()
 	{
 		$this->load->model("EntreprisesModel");
@@ -80,6 +119,7 @@ redirect('Welcome/register');
 		  
 		  echo $this->email->print_debugger();*/
 	}
+
 
 	public function update_data(){
 
@@ -123,20 +163,21 @@ redirect('Welcome/register');
 	}
 
 	#######################################################
-	public function reporter_rdv(){
+	// public function reporter_rdv(){
 
-		//Réccupération des données venant du formulaire
-		$idRdv = $this->input->get("idRdv");
+	// 	//Réccupération des données venant du formulaire
+	// 	$idRdv = $this->input->get("idRdv");
 		
-		$motif = $this->input->post("motif");
-		$date = $this->input->post("date");
-		$heure = $this->input->post("heure");
-		$duree = $this->input->post("duree");
-		$commentaire = $this->input->post("commentaire");
+	// 	$motif = $this->input->post("motif");
+	// 	$date = $this->input->post("date");
+	// 	$heure = $this->input->post("heure");
+	// 	$duree = $this->input->post("duree");
+	// 	$commentaire = $this->input->post("commentaire");
 
-		}
-	}
-		#######################################################
+	// 	}
+	// }
+
+	#######################################################
 	public function reporter_rdv(){
 
 		//Réccupération des données venant du formulaire
@@ -148,8 +189,6 @@ redirect('Welcome/register');
 			$duree = $this->input->post("duree");
 			$commentaire = $this->input->post("commentaire");
 
-			//Vérification de l'existance des clés fournies
-			if(isset($motif, $date, $heure, $duree, $commentaire)){
 		//Vérification de l'existance des clés fournies
 		if(isset($motif, $date, $heure, $duree, $commentaire)){
 
@@ -293,6 +332,15 @@ redirect('Welcome/register');
 		//à une vue
 		$random = $this->EntreprisesModel->get_Random_Entreprises();
 		$data['dataEntreprises'] = $random;
+	}
+
+	public function load_setting_view(){
+		$id = 3;
+		$idEntreprise = (int) $this->session->userdata('id');
+		$data['agents'] = $this->AgentsModel->get_Agent($idEntreprise);
+		$data['depts']	= $this->DepartementModel->get_departement($id);
+		$data['error']  = '';
+		$this->load->view('setting', $data);
 	}
 
 }

@@ -6,7 +6,9 @@ class RdvController extends CI_Controller {
 	public function index()
 	{
 		//chargement de la methode prendre rdv
-		$this->prendre_rdv();
+		// $this->prendre_rdv();
+		$this->load->view('header');
+		$this->load->view('rdv');
 	}
 	public function prendre_rdv()
 	{

@@ -23,7 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://'.$_SERVER["SERVER_NAME"].':8088/Projet-itot';
+
+$config['base_url'] = 'http://'.$_SERVER["SERVER_NAME"].'/projet/Projet-itot';
+
 
 /*
 |--------------------------------------------------------------------------

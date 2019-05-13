@@ -6,24 +6,36 @@ class EntreprisesModel extends CI_Model
     {
         parent::__construct();
     }
+
+    #######################################################
     public function register($produit)
     {
-        $this->db->set('nomEntreprise',$produit['nom']);
-        $this->db->set('description',$produit['description']);
-        $this->db->set('telephone',$produit['telephone']);
-        $this->db->set('email',$produit['email']);
-        $this->db->set('pwd',$produit['pwd']);
-       
-
-        return $this->db->insert('tb_entreprise');
+         $this->db->insert('tb_entreprise', $produit);
     }
+
+    #######################################################
     public function fetch_data()
 	{
         $query = $this->db->get("tb_rdv");
         return $query;
-	}
+    }
+    
+    #######################################################
+    public function  profil($data, $id){
+        
+        $this->db->where('idEntreprise', $id)
+                ->update("tb_entreprise", array(
+                        'adresse' => $data["adresse"],
+                        'logo' => $data["logo"],
+                        'pays' => $data["pays"],
+                        'codePostal' => $data["code_postal"],
+                        'siteWeb' => $data["site_web"]
+                ));
 
+        return true;
+    } 
 
+    ######################################################
     function accepter_refuser_rdv($id)
     {
         $this->db->where('idRdv', $id);
@@ -39,6 +51,7 @@ class EntreprisesModel extends CI_Model
         return $this->db->get('tb_rdv');
     }
 
+    #######################################################
     public function update_data($id, $state){
         $this->db->where("idRdv", $id);
         $this->db->update("tb_rdv", $state);
@@ -56,16 +69,42 @@ class EntreprisesModel extends CI_Model
     
     public function can_login($data)
     {
-        $tb_agent = 'tb_agent';
-        $this->db->where('username', $data['username']);
+        $tb_agent = 'tb_entreprise';
+        $this->db->where('email', $data['email']);
         $this->db->where('pwd', $data['password']);
-        $query = $this->db->get($this->tb_agent);
+        $query = $this->db->get($tb_agent);
 
         if ($query->num_rows() > 0) {
             return true;
         } else {
             return false;
         }
+    }
+    #########################################################################
+    public function verification($data){
+
+        $this->db->select('*')
+                 ->where('email', $data['email'])
+                 ->where('pwd', $data['pwd']);
+         $req = $this->db->get('tb_entreprise');
+
+        if($req->num_rows() > 0){
+            return True;
+        }
+
+        else{
+            return False;   
+        }
+        
+    }
+    #########################################################################
+    public function get_entreprise_line($data){
+        $req = $this->db->select("*")
+                        ->where('email', $data['email'])
+                        ->where('pwd', $data['pwd'])
+                        ->get('tb_entreprise')
+                        ->result();
+        return $req;
     }
   
     #######################################################
@@ -76,6 +115,7 @@ class EntreprisesModel extends CI_Model
         return $this->db->get('tb_entreprise')->result_array();
     }
 
+    #########################################################################
     public function get_Entreprise_Index()
     {
         //cette methode recupere tout les elements de la table tb_entreprise

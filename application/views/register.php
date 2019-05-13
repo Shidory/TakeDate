@@ -74,7 +74,7 @@
 
 
 	<meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/20302737/digital_wallets/dialog">
-	<script id="shopify-features"<head>
+	<script id="shopify-features">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -132,7 +132,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
 
-		type="application/json">{"accessToken":"35296d37158a1bea1de61bf4abf416cf","betas":[],"domain":"materialize-shopify-themes.myshopify.com","shopId":20302737,"smart_payment_buttons_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/spb.en.js"}</script>
+	<script>	type="application/json">{"accessToken":"35296d37158a1bea1de61bf4abf416cf","betas":[],"domain":"materialize-shopify-themes.myshopify.com","shopId":20302737,"smart_payment_buttons_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/spb.en.js"}</script>
 	<script>var Shopify = Shopify || {};
 		Shopify.shop = "materialize-shopify-themes.myshopify.com";
 		Shopify.currency = { "active": "USD", "rate": "1.0" };
@@ -318,78 +318,7 @@
 
 <body id="create-account" class="template-register ">
 
-	<div id="shopify-section-header" class="shopify-section">
-	
-		<nav class="nav-extended">
-			<div class="nav-background">
-				<div class="pattern active"
-					style="background-image: url('<?php echo base_url('')?>assets/img/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e837cb.png?v=1496294246');">
-				</div>
-			</div>
-			<div class="nav-wrapper container">
-				<a href="index.html" itemprop="url" class="brand-logo site-logo">
-					Meet All
-				</a>
-				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li class="site-nav--active active">
-						<a href="index" class="site-nav__link">Acceuil</a>
-					</li>
-					
-					<li>
-						<a href="listentreprise">
-							Entreprises
-						</a>
-					</li>
-					
-					<li>
-						<a href="login" id="customer_login_link">Se connecter</a>
-					</li>
-					<li>
-						<a href="register" id="customer_register_link">S'inscrire</a>
-					</li>
-	
-				</ul>
-			</div>
-		</nav>
-		<ul class="side-nav" id="nav-mobile">
-			<li> <a href="login" id="customer_login_link">Se connecter</a> </li>
-			<li> <a href="register" id="customer_register_link">S'inscrire</a> </li>
-	
-			<li class="site-nav--active active">
-				<a href="index" class="site-nav__link">Acceuil</a>
-			</li>
 		
-			<li>
-				<a href="listentreprise">
-					Entreprises
-				</a>
-			</li>
-			
-		</ul>
-	
-		<div data-section-id="header" data-section-type="header-section">
-			<header role="banner">
-				<div class="popup-search-wrapper">
-					<form action="https://materialize-shopify-themes.myshopify.com/search" method="get" role="search">
-						<label for="Search" class="label-hidden">
-							Taper un mot clé
-						</label>
-						<input type="search" name="q" id="Search" value="" placeholder="Taper un mot clé">
-						<button type="submit" class="btn-flat btn-floating waves-effect">
-							<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-								viewBox="0 0 20 20">
-								<path fill="#444"
-									d="M18.64 17.02l-5.31-5.31c.81-1.08 1.26-2.43 1.26-3.87C14.5 4.06 11.44 1 7.75 1S1 4.06 1 7.75s3.06 6.75 6.75 6.75c1.44 0 2.79-.45 3.87-1.26l5.31 5.31c.45.45 1.26.54 1.71.09.45-.36.45-1.17 0-1.62zM3.25 7.75c0-2.52 1.98-4.5 4.5-4.5s4.5 1.98 4.5 4.5-1.98 4.5-4.5 4.5-4.5-1.98-4.5-4.5z" />
-							</svg>
-							<span class="icon-fallback-text">Search</span>
-						</button>
-					</form>
-					<i class="popup-close material-icons">close</i>
-				</div>
-			</header>
-		</div>
-	</div>
 
 	<main role="main" id="MainContent">
 		<div class="section container">
@@ -398,53 +327,59 @@
 					<div class="card login-wrapper">
 						<div class="card-content">
 
-							<form method="post" action="<?php echo base_url('entreprise/EntrepriseController/inscription_entreprise')?>"
-								id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type"
-									value="create_customer" /><input type="hidden" name="utf8" value="✓" />
+							<form method="post" enctype="multipart/form-data" action="inscription" id="create_customer" accept-charset="UTF-8">
+								<input type="hidden" name="form_type" value="create_customer" /><input type="hidden" name="utf8" value="✓" />
 								<h4 class="center">Créez un compte prestataire</h4>
 
 								<div class="input-field">
 									<label for="name">
 										Nom
 									</label>
-									<input type="text" name="name" id="nom">
+									<input type="text" name="name" id="name">
+								</div>
+
+								<div class="input-field">
+									<label for="secteur">
+										Secteur
+									</label>
+									<input type="text" name="secteur" id="secteur">
 								</div>
 
 								<div class="input-field">
 									<label for="phone">
 										Numero de téléphone
 									</label>
-									<input type="text" name="customer[last_name]" id="telephone">
+									<input type="text" name="tel" id="phone">
 								</div>
 
 								<div class="input-field">
-									<label for="Email">
+									<label for="email">
 										Email
 									</label>
 									<input type="email" name="email" id="email" class="" value=""
 										spellcheck="false" autocomplete="off" autocapitalize="off">
 								</div>
-								
+
 								<div class="input-field">
                         			<label for="desc">
                            					 Description
                         					</label>
-                        				<textarea name="desc" id="description" rows="10"></textarea>
+                        				<textarea name="desc" id="desc" rows="10"></textarea>
                     			</div>
 
 								<div class="input-field">
-									<label for="pwd">
-										Mot de passe
-									</label>
-									<input type="password" name="pwd" id="pwd" class="">
-								</div>
+                        			<label for="pwd">
+                           					 Mot de passe
+                        					</label>
+                        				<input type="password" name="pwd" id="pwd">
+                    			</div>
 
 								<div class="input-field">
-									<label for="pwd">
-										Confirmez le Mot de passe
-									</label>
-									<input type="password" name="pwd" id="pwdConf" class="">
-								</div>
+                        			<label for="confpwd">
+                           					 Confirmer le mot de passe
+                        					</label>
+                        				<input type="password" name="confpwd" id="confpwd">
+                    			</div>
 
 								<p>
 									<input type="submit" value="Créer" class="btn-large z-depth-0">
