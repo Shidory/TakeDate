@@ -352,7 +352,7 @@
 						<div class="card-content">
 							<div id="CustomerLoginForm">
 								<form method="post"
-									action="login_valide"
+									action="login_agent"
 									id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type"
 										value="customer_login" /><input type="hidden" name="utf8" value="✓" />
 									<h4 class="center">Se connecter</h4>
@@ -371,7 +371,6 @@
 									</div>
 									<input type="submit" class="btn-large z-depth-0" value="Se connecter">
 									<a href="#recover" class="blue-text" id="RecoverPassword">Mot de passe oublié?</a>
-									<a href="<?= base_url('agent_login');?>" class="blue-text" >Se connecter en tant qu'agent</a>
 								</form>
 							</div>
 

@@ -6,11 +6,11 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-		// $entreprise = $this->EntreprisesModel->get_Entreprise_Index();
-		// $data['dataEntreprise'] = $entreprise;
-		// $this->load->view('header');
-		// $this->load->view('index',$data);
-		$this->load->view('rdv');
+		$entreprise = $this->EntreprisesModel->get_Entreprise_Index();
+		$data['dataEntreprise'] = $entreprise;
+		$this->load->view('header');
+		$this->load->view('index',$data);
+		// $this->load->view('rdv');
 	}
 	public function list_entreprise()
 	{
@@ -45,7 +45,7 @@ class Welcome extends CI_Controller {
 		$horaires = array();
 		
 		foreach($agents as $agent){
-			$idAgent=$agent['idAgent'];
+			$idAgent = $agent->idAgent;
 			$horaires[] = $this->HoraireModel->get_Horaire($idAgent);
 			
 		}

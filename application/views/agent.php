@@ -174,10 +174,10 @@
                 <ul class="right hide-on-med-and-down">
 
                     <li class="site-nav--active active">
-                        <a href="<?= base_url()?>" class="site-nav__link">Acceuil</a>
+                        <a href="<?= base_url('welcome')?>" class="site-nav__link">Acceuil</a>
                     </li>
                     <li>
-                        <a href="" class="site-nav__link">Rendez-Vous</a>
+                        <a href="<?= base_url('rdv');?>" class="site-nav__link">Rendez-Vous</a>
                     </li>
                     <li>
                         <a href="<?= base_url('entreprise')?>">
@@ -190,14 +190,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('login'); ?>" id="customer_login_link">Se deconnecter</a>
+                        <a href="<?= base_url('logout'); ?>" id="customer_login_link">Se deconnecter</a>
                     </li>
                     <li>
-                        <a href="http://">
-                            <div class="circle" style="background: rgba(15,15,15,0.3); margin-top: 20px;">
+                        <a href="#profil" class="modal-trigger btn-floating right waves-effect btn-flat" style="margin-top: 20px;">
+                            <div class="circle" style="background: rgba(15,15,15,0.3); margin-top: 2pxpx;">
                                 <img src="<?= base_url('assets/img/avatar/avatar-7.png');?>" alt="" srcset="" class="circle right" style="margin-top: 0px;">
                             </div>
-                            <i style="background-color : #00E676; height:9px; width : 9px; float:right; border-radius:100%; margin-top:-8px;"></i>
+                            <i style="background-color : #00E676; height:7px; width : 7px; float:right; border-radius:100%; margin-top:-8px; margin-left:-20px;"></i>
                         </a>
                     </li>
                 </ul>
@@ -206,8 +206,8 @@
         <div id="add_agent_form" class="modal">
             <div class="modal-content">
                 <h5>Ajouter un agent</h5>
-                <form method="post" action="#" id="create_customer" accept-charset="UTF-8">
-                    <input type="hidden" name="idEntreprise" value="<?= $this->session->userdata['id'];?>" />
+                <form method="post" action="<?= base_url('ajouter_agent');?>" id="create_customer" accept-charset="UTF-8">
+                    <input type="hidden" name="idEntreprise" value="" />
                     <input type="hidden" name="idDpt" value="✓" />
                     <div class="input-field">
                         <label for="name">
@@ -257,9 +257,9 @@
                     <div class="row">
                         <div class="col s12">
                             <div class="card row">
-                                <h4 class="collection-title col s8">Julie Kitumbula &bull; Google</h4>
+                                <h4 class="collection-title col s8"> &bull; Agent</h4>
                                 <div class="mt-1 col s4">
-                                    <a class="btn-floating right waves-effect btn-flat">
+                                    <a href="#app" class="btn-floating right waves-effect btn-flat">
                                         <i class="material-icons black-text">settings</i>
                                     </a>
                                     <a href="#add_agent_form" class="modal-trigger btn-floating right waves-effect btn-flat">
@@ -274,7 +274,51 @@
         </div>
 
 
-        <div id="app"></div>
+        <div id="app">
+            
+        </div>
+        
+        <div id="profil" class="modal">
+            <div id="profil" class="modal_content">
+                <div class="row">
+                    <h5>Mettez a jour votre profil</h5>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="<?= base_url('assets/img/apps.64902.9007199266242800.856b3755-5c57-4455-8c4a-1c980462c57b.821d4cb6-9593-4c09-a396-9c9e9fddc466.jpg');?>" alt="" srcset="">
+                            </div>
+                            <input type="file" name="" id="">
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="row">
+                                <div class="input-field m6">
+                                    <label for="name">
+                                        Nom
+                                    </label>
+                                    <input type="text" name="name" id="name" class="validate">
+                                </div>
+                                <div class="input-field s6">
+                                    <label for="name">
+                                        Nom
+                                    </label>
+                                    <input type="text" name="name" id="name" class="validate">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+       
         
         <div id="aside_modal" class="modal">
             <div class="modal-content">
@@ -287,6 +331,7 @@
         </div>
         <!-- Javascript -->
 
+        
 
         <script
             src="../cdn.shopify.com/s/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js"
@@ -311,10 +356,8 @@
         <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?0"></script><![endif]-->
 
         <script src="<?php echo base_url('')?>assets/calendar/js/index.js"></script>
-<<<<<<< HEAD:application/views/pages test/agent/agent.php
-=======
+
         <script src="<?php echo base_url('')?>assets/js/agent.js"></script>
->>>>>>> 723a9abec1eb6b0cb585444aae6633049c3e5002:application/views/agent.php
 
         <script>
             $(document).ready(function () {
@@ -322,6 +365,9 @@
                 if (categories.length) {
                     categories.pushpin({ top: categories.offset().top });
                 }
+
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems);
             });
             var base_url = '<?php echo base_url('')?>';
             

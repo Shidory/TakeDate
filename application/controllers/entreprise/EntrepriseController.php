@@ -82,14 +82,14 @@ class EntrepriseController extends CI_Controller{
 
     }
 
-	public function index()
-	{
-		$this->load->model("EntreprisesModel");
-		$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
-		$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
-		$this->load->view('accepter_view', $data);
-		$this->accepter_controller();
-	}
+	// public function index()
+	// {
+	// 	$this->load->model("EntreprisesModel");
+	// 	$data["fetch_data"] = $this->EntreprisesModel->fetch_data();
+	// 	$data["rdv_data"] = $this->EntreprisesModel->accepter_refuser_rdv($id_rdv);
+	// 	$this->load->view('accepter_view', $data);
+	// 	$this->accepter_controller();
+	// }
 
 	public function index()
 	{
@@ -119,7 +119,7 @@ class EntrepriseController extends CI_Controller{
 		  
 		  echo $this->email->print_debugger();*/
 	}
->>>>>>> 723a9abec1eb6b0cb585444aae6633049c3e5002
+
 
 	public function update_data(){
 
@@ -163,20 +163,21 @@ class EntrepriseController extends CI_Controller{
 	}
 
 	#######################################################
-	public function reporter_rdv(){
+	// public function reporter_rdv(){
 
-		//Réccupération des données venant du formulaire
-		$idRdv = $this->input->get("idRdv");
+	// 	//Réccupération des données venant du formulaire
+	// 	$idRdv = $this->input->get("idRdv");
 		
-		$motif = $this->input->post("motif");
-		$date = $this->input->post("date");
-		$heure = $this->input->post("heure");
-		$duree = $this->input->post("duree");
-		$commentaire = $this->input->post("commentaire");
+	// 	$motif = $this->input->post("motif");
+	// 	$date = $this->input->post("date");
+	// 	$heure = $this->input->post("heure");
+	// 	$duree = $this->input->post("duree");
+	// 	$commentaire = $this->input->post("commentaire");
 
-		}
-	}
-		#######################################################
+	// 	}
+	// }
+
+	#######################################################
 	public function reporter_rdv(){
 
 		//Réccupération des données venant du formulaire
@@ -188,8 +189,6 @@ class EntrepriseController extends CI_Controller{
 			$duree = $this->input->post("duree");
 			$commentaire = $this->input->post("commentaire");
 
-			//Vérification de l'existance des clés fournies
-			if(isset($motif, $date, $heure, $duree, $commentaire)){
 		//Vérification de l'existance des clés fournies
 		if(isset($motif, $date, $heure, $duree, $commentaire)){
 
@@ -333,6 +332,15 @@ class EntrepriseController extends CI_Controller{
 		//à une vue
 		$random = $this->EntreprisesModel->get_Random_Entreprises();
 		$data['dataEntreprises'] = $random;
+	}
+
+	public function load_setting_view(){
+		$id = 3;
+		$idEntreprise = (int) $this->session->userdata('id');
+		$data['agents'] = $this->AgentsModel->get_Agent($idEntreprise);
+		$data['depts']	= $this->DepartementModel->get_departement($id);
+		$data['error']  = '';
+		$this->load->view('setting', $data);
 	}
 
 }

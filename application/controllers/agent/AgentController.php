@@ -54,7 +54,10 @@ class AgentController extends CI_Controller {
 	}
 
 	public function modifier_agent(){
+		$idEntreprise = (int) $this->session->userdata('id');
+		$data['agents'] = $this->AgentsModel->get_Agent($idEntreprise);
 
+		$this->load->view('modifier_agent', $data);
 	}
 	
 }

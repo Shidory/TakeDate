@@ -5,5 +5,12 @@ class DepartementModel extends CI_Model{
     public function enregister($data){
         $this->db->insert('tb_departement', $data);
     }
+
+    public function get_departement($id){
+        $this->db->select('*');
+        $this->db->where('idDept',$id);
+        
+        return $this->db->get('tb_departement')->result();
+    }
 }
 ?>

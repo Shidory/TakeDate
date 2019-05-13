@@ -101,7 +101,10 @@
 				</div>
 				<?php foreach($dataEntreprise as $row){?>
 				<div class="col s12 m6 l4">
-				<a href="entreprise?id=<?php echo $row['idEntreprise']?>">
+				<?php
+					$id = $row['idEntreprise'];
+				?>
+				<a href="entreprise2?id=<?php echo $id?>">
 					<div class="card">
 						<div class="card-image">
 							<img src="<?php echo base_url('')?>assets/img/google-wallpaper-11.jpg">

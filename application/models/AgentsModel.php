@@ -39,5 +39,14 @@ class AgentsModel extends CI_Model{
         }
         
     }
+
+    public function get_agents_line($data){
+        $req = $this->db->select("*")
+                        ->where('email', $data['email'])
+                        ->where('pwd', $data['pwd'])
+                        ->get('tb_agent')
+                        ->result();
+        return $req;
+    }
 }
 ?>

@@ -108,7 +108,8 @@
         </nav>
         <?php foreach ($randomEntreprise as $row) { ?>
             <div class="row center">
-                <h2 class="collection-title"><?php echo $row['nomEntreprise'] ?> est l'entreprise de la semaine</h2>
+                <h2 class="collection-title"><?php echo $row['nomEntreprise'] 
+                ?></h2>
                 <div class="card" style="background-image : url('<?php echo base_url('') ?>assets/img/apps.64902.9007199266242800.856b3755-5c57-4455-8c4a-1c980462c57b.821d4cb6-9593-4c09-a396-9c9e9fddc466.jpg');" id="semaine">
                     <div class="card-content center" id="p">
                         <p><?php echo $row['description'] ?></p>
@@ -125,23 +126,23 @@
                     <?php foreach ($agent as $row) { ?>
                         <div class="col s12 m6 l4 xl3">
                        
-                            <a class="modal-trigger" href="#horaire_<?php echo $row['idAgent'] ?>">
+                            <a class="modal-trigger" href="#horaire_<?php echo $row->idAgent; ?>">
                                 <div class="card">
                                     <div class="row">
                                         <div class="col s4">
                                             <img src="yuna.jpg" alt="profil" width="80" class="circle">
                                         </div>
                                         <div class="col s8 blue-text">
-                                            <h5><?php echo $row['nomAgent'] ?></h5>
+                                            <h5><?php echo $row->nomAgent ?></h5>
                                             <p>Secretaire adjoint</p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                         <div id="horaire_<?php echo $row['idAgent'] ?>" class="modal modal-fixed-footer">
+                         <div id="horaire_<?php echo $row->idAgent ?>" class="modal modal-fixed-footer">
                             <div class="modal-content">
-                                <h5>Horaire de <?php echo $row['nomAgent'] ?></h5>
+                                <h5>Horaire de <?php echo $row->nomAgent ?></h5>
                                 <table class="striped">
                                     <thead>
                                         <tr>

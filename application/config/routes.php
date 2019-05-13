@@ -79,4 +79,8 @@ $route['inscription2']        = 'entreprise/EntrepriseController/upload_logo';
 $route['agent']               = 'agent/AgentController';  
 $route['ajouter_agent']       = 'agent/AgentController/ajouter_agent';
 $route['ajouter_departement'] = 'departement/DepartementController/enregstrer_departement';
-
+$route['modifier_agent']      = 'agent/AgentController/modifier_agent';
+$route['logout']              = 'login/LoginController/logout';
+$route['login_agent']         = 'login/loginController/login_agent';
+$route['agent_login']         = 'login/loginController/load_login_view';
+$route['entreprise2']         = 'welcome/entreprise';
