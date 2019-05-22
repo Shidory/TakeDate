@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://'.$_SERVER["SERVER_NAME"].'/projet/Projet-itot';
+$config['base_url'] = 'http://'.$_SERVER["SERVER_NAME"].'/Projet-itot';
 
 
 /*
