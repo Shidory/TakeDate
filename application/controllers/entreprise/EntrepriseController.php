@@ -56,7 +56,7 @@ class EntrepriseController extends CI_Controller{
 				$entreprise = array(
 					"nomEntreprise" => $this->input->post('name'),
 					"secteur" 		=> $this->input->post('secteur'),
-					"phone" 		=> $this->input->post('tel'),
+					"telephone" 		=> $this->input->post('tel'),
 					"email" 		=> $this->input->post('email'),
 					"description"   => $this->input->post('desc'),
 					"pwd"			=> $password
