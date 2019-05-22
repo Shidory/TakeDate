@@ -152,6 +152,9 @@
             margin: 10px;
 
         }
+        #shopify-section-footer{
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -479,6 +482,18 @@
         <script src="<?php echo base_url('')?>assets/js/agent.js"></script>
 
         <script>
+            window.onresize = jesaispas;
+            function jesaispas (){
+                var mainElement = document.querySelector('#shopify-section-header');
+                var footer = document.querySelector('#shopify-section-footer');
+                if(mainElement.clientHeight < window.innerHeight){
+                    footer.style.position = 'absolute';
+                    footer.style.bottom = '0';
+                } else{
+                    footer.style.position = 'static';
+                }
+            }
+            jesaispas();
             $(document).ready(function () {
                 var categories = $('nav .categories-container');
                 if (categories.length) {
